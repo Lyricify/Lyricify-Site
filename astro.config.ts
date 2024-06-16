@@ -1,5 +1,5 @@
-import {defineConfig, passthroughImageService} from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,6 +30,9 @@ export default defineConfig({
                 './src/styles/custom.css',
                 './src/fonts/fontface.css',
             ],
+            components: {
+                SiteTitle: '@components/SiteTitle.astro',
+            }
         }),
     ],
 });
