@@ -23,13 +23,20 @@ export default defineConfig({
                 },
             ],
             customCss: [
-                // 你的自定义 CSS 文件的相对路径
                 './src/styles/custom.css',
                 './src/fonts/fontface.css',
             ],
-            components: {
-
-            }
+            components: {},
+            defaultLocale: 'root',
+            locales: {
+                root: {
+                    label: '简体中文',
+                    lang: 'zh-cn',
+                },
+                en: {
+                    label: 'English',
+                },
+            },
         }),
     ],
 });

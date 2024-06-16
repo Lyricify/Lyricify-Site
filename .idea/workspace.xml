@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="init">
+    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Removed custom component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/astro.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SiteTitle.astro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +26,20 @@
   }
 }]]></component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Removed custom component">
+      <option name="closed" value="true" />
+      <created>1718555435057</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718555435058</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="Removed custom component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed custom component" />
   </component>
 </project>
