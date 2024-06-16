@@ -4,15 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Add i18n env">
-      <change afterPath="$PROJECT_DIR$/src/content/docs/en/index.mdx" afterDir="false" />
+    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Add download links and communities">
+      <change afterPath="$PROJECT_DIR$/src/js/ms-store-badge.bundled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astro.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/en/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/get-started/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/get-started/index.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/docs/reference/example.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Astro Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,7 +31,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Users/makarov/Desktop/Lyricify/lyricify-docs/src/content/docs/en",
+    "last_opened_file_path": "C:/Users/makarov/Desktop/Lyricify/lyricify-docs/src/js",
     "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "configurable.group.appearance",
     "ts.external.directory.path": "C:\\Users\\makarov\\Desktop\\Lyricify\\lyricify-docs\\node_modules\\typescript\\lib"
@@ -28,6 +39,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\makarov\Desktop\Lyricify\lyricify-docs\src\js" />
       <recent name="C:\Users\makarov\Desktop\Lyricify\lyricify-docs\src\content\docs\en" />
     </key>
   </component>
@@ -48,13 +60,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718555759505</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add English homepage">
+      <option name="closed" value="true" />
+      <created>1718558986494</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718558986495</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="Removed custom component" />
     <MESSAGE value="Add i18n env" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add i18n env" />
+    <MESSAGE value="Add English homepage" />
+    <MESSAGE value="Add download links and communities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add download links and communities" />
   </component>
 </project>
