@@ -28,3 +28,13 @@
     --sl-color-gray-7: #f4f7f3;
     --sl-color-black: #ffffff;
 }
+
+/* Global font */
+:root {
+    --sl-font-system: 'Spotify Mix', sans-serif;
+}
+
+/* Global font */
+:root {
+    --sl-font-system: 'Spotify Mix', sans-serif;
+}

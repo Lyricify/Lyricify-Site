@@ -30,6 +30,9 @@ export default defineConfig({
                 './src/styles/custom.css',
                 './src/fonts/fontface.css',
             ],
+            components: {
+                SiteTitle: '@components/SiteTitle.astro',
+            }
         }),
     ],
 });

@@ -1,14 +1,11 @@
 @font-face {
     font-family: 'Spotify Mix';
-    /* 使用相对路径来引用本地字体文件。 */
-    src: url("./SpotifyMix-Bold.woff") format('woff2');
-    src: url("./SpotifyMix-BoldItalic.woff") format("woff2");
-    src: url("./SpotifyMix-Extrabold.woff") format("woff");
-    src: url("./SpotifyMix-ExtraboldItalic.woff") format("woff2");
-    src: url("./SpotifyMix-Light.woff") format("woff2");
-    src: url("./SpotifyMix-LightItalic.woff") format("woff2");
-    src: url("./SpotifyMix-Medium.woff") format("woff2");
-    src: url("./SpotifyMix-MediumItalic.woff") format("woff2");
     src: url("./SpotifyMix-Regular.woff") format("woff2");
-    src: url("./SpotifyMix-RegularItalic.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-Bold.woff") format('woff2');
+    font-weight: bold;
 }
