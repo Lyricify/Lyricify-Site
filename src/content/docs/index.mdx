@@ -17,37 +17,85 @@ hero:
       icon: github
       variant: secondary
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import {Card, CardGrid} from '@astrojs/starlight/components';
+
+export const QQGroups = [
+    ['用户群 1', '972282479', true],
+    ['用户群 2', '653663090'],
+    ['用户群 5', '561373781'],
+];
+
+<script type="module" src="/src/js/ms-store-badge.bundled.js"></script>
 
 ### 歌词从未如此生动
 
 <CardGrid stagger>
-	<Card title="1:1 复刻的 Apple Music 歌词样式" icon="apple">
+    <Card title="1:1 复刻的 Apple Music 歌词样式" icon="apple">
 
-		精确到音节的**逐字歌词<sup>1</sup>**、**流畅丝滑的动画**、**对唱视图**和**背景人声**，
+        精确到音节的**逐字歌词<sup>1</sup>**、**流畅丝滑的动画**、**对唱视图**和**背景人声**，
         甚至还有 Lyricify 独创**妙控条**给你不一样的操作体验
 
-	</Card>
-	<Card title="Spotify 原味界面" icon="bars">
+    </Card>
+    <Card title="Spotify 原味界面" icon="bars">
 
-		清晰易用的 Spotify 样式歌词，让你清晰地感受每个音节。搭配上你一直以来喜爱而熟悉的界面风格：
+        清晰易用的 Spotify 样式歌词，让你清晰地感受每个音节。搭配上你一直以来喜爱而熟悉的界面风格：
         直白，流畅
 
     </Card>
-	<Card title="丰富的自定义选项" icon="setting">
+    <Card title="丰富的自定义选项" icon="setting">
 
-		你的歌词，你做主！从 Apple Music 样式歌词到灵动词岛，
+        你的歌词，你做主！从 Apple Music 样式歌词到灵动词岛，
         我们提供~~可能是这个世界上最~~丰富强大的可自定义歌词<sup>2</sup>。个性，从不妥协
 
     </Card>
-	<Card title="由强大的 Lyricify 设计驱动" icon="rocket">
+    <Card title="由强大的 Lyricify 设计驱动" icon="rocket">
 
         不仅有 **Lyricify 歌词库**为数万用户提供的歌词天地，更有独创 **Lyricify 智能引擎**强劲内驱<sup>3</sup>，
         只为让你的音乐体验更上一层楼
 
     </Card>
+    <Card title="数不尽的更多功能" icon="list-format">
+
+        - 歌词翻译
+        - 简繁转换、日语罗马字、俄文拉丁转写<sup>4</sup>
+        - 灵动词岛和大陆模式
+        - 桌面歌词
+        - 网易云、QQ音乐歌词
+        - 歌词分享 \
+        ...
+
+    </Card>
 </CardGrid>
+
+## 立即下载
+#### 开启不一样的歌词体验
+
+<ms-store-badge
+    productid="9p4wb75rhwch"
+    window-mode="popup"
+    theme="dark"
+    language="zh-cn"
+    animation="off"
+/>
+
+在找 Lyricify mobile 或其他版本？[**前往 GitHub 下载**](https://github.com/WXRIW/Lyricify-App/releases/latest)
+
+
+## 因为有你&emsp;Lyricify 更精彩
+#### 成为我们社区的一员
+
+<ul>
+    {
+        QQGroups.map(([name, groupID, isFull]) => (
+                <li>Lyricify {name}&emsp;<code>{groupID}</code> <b>{isFull ? '已满' : ''}</b></li>
+            )
+        )
+    }
+</ul>
+
+---
 
 <sup>1</sup>逐字歌词并非所有歌曲可用 \
 <sup>2</sup>部分自定义设置可能需要 Microsoft Store 版 \
-<sup>3</sup>Lyricify 智能引擎需要有效的 Spotify Premium 订阅
+<sup>3</sup>Lyricify 智能引擎需要有效的 Spotify Premium 订阅 \
+<sup>4</sup>俄文拉丁转写功能即将上线

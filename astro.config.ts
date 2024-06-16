@@ -15,11 +15,23 @@ export default defineConfig({
             sidebar: [
                 {
                     label: '快速上手',
-                    autogenerate: {directory: 'get-started'}
+                    autogenerate: {directory: 'get-started'},
+                    translations: {
+                        'en': 'Get started',
+                    },
                 },
                 {
                     label: '常见问题',
                     autogenerate: {directory: 'faq'},
+                    translations: {
+                        'en': 'FAQ',
+                    },
+                },
+                {
+                    label: 'Lyricify mobile',
+                    items: [
+                        // To be updated
+                    ],
                 },
             ],
             customCss: [
@@ -31,7 +43,7 @@ export default defineConfig({
             locales: {
                 root: {
                     label: '简体中文',
-                    lang: 'zh-cn',
+                    lang: 'zh-CN',
                 },
                 en: {
                     label: 'English',

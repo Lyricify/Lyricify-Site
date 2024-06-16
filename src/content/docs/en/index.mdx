@@ -17,38 +17,84 @@ hero:
       icon: github
       variant: secondary
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import {Card, CardGrid} from '@astrojs/starlight/components';
+// import {QQGroups} from "../index.mdx";
 
-### Lyrics have never been that alive
+<script type="module" src="/src/js/ms-store-badge.bundled.js"></script>
+
+## Lyrics have never been that alive
 
 <CardGrid stagger>
-	<Card title="1:1 Apple Music Style" icon="apple">
+    <Card title="1:1 Apple Music Style" icon="apple">
 
         With **syllable-by-syllable lyrics**, **smooth and silky animations**,
         **duet views** and **background vocals**, and even Lyricify's very own **Magic Control Bar**,
         you'll be able to do things differently
 
-	</Card>
-	<Card title="Spotify Original Interface" icon="bars">
+    </Card>
+    <Card title="Spotify Original Interface" icon="bars">
 
-		Clear, easy-to-use Spotify-style lyrics interface makes every syllable beats right with your pulse,
+        Clear, easy-to-use Spotify-style lyrics interface makes every syllable beats right with your pulse,
         along with the interface you know and love: Always straightforward and fluid
 
     </Card>
-	<Card title="Rich Customizablility" icon="setting">
+    <Card title="Rich Customizablility" icon="setting">
 
         Your lyrics are in your way! From Apple Music style lyrics to Dynamic Lyrics Island, we offer
         ~~probably the richest and most~~ powerful customizable lyrics. Personalization, without compromise
 
     </Card>
-	<Card title="Powered By Lyricify Intelligence" icon="rocket">
+    <Card title="Powered By Lyricify Intelligence" icon="rocket">
 
         Not only **Lyricify Vault** that connects thousands of users, but also the
         **Lyricify Intelligent Engine**<sup>3</sup> are along with you, enriching your music experience
 
     </Card>
+    <Card title="A ton of features" icon="list-format">
+
+        - Lyrics translations (Chinese)
+        - Chinese Simplified/Traditional switch, \
+        Japanese Romaji, Russian Latinization<sup>4</sup>
+        - Dynamic Lyrics Island and Byland Mode
+        - Desktop lyrics
+        - Lyrics from Netease Cloud Music and Tencent Music
+        - Lyrics share \
+        ...
+
+    </Card>
 </CardGrid>
+
+## Download Now
+#### Start the whole new journey
+
+<ms-store-badge
+    productid="9p4wb75rhwch"
+    window-mode="popup"
+    theme="dark"
+    language="en-us"
+    animation="off"
+/>
+
+Looking for Lyricify mobile or other versions?
+[**Get it from GitHub**](https://github.com/WXRIW/Lyricify-App/releases/latest)
+
+
+## You Are with Lyricify
+#### Join our community
+
+{/*
+<ul>
+    {
+        QQGroups.map(([name, groupID, isFull]) => (
+                <li>Lyricify {name}&emsp;<code>{groupID}</code> <b>{isFull ? '已满' : ''}</b></li>
+            )
+        )
+    }
+</ul>
+*/}
+---
 
 <sup>1</sup> Syllable-by-syllable lyrics might not be available in some tracks \
 <sup>2</sup> A Microsoft Edition copy is required for some customization features \
-<sup>3</sup> Lyricify Intelligent Engine requires an active Spotify Premium subscription
+<sup>3</sup> Lyricify Intelligent Engine requires an active Spotify Premium subscription \
+<sup>4</sup> Russian Latinization feature is on the way
