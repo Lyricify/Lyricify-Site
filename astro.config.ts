@@ -1,11 +1,8 @@
 import starlight from '@astrojs/starlight';
-import { defineConfig, passthroughImageService } from 'astro/config';
+import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    image: {
-        service: passthroughImageService()
-    },
     integrations: [
         starlight({
             title: 'Lyricify',
@@ -31,7 +28,7 @@ export default defineConfig({
                 './src/fonts/fontface.css',
             ],
             components: {
-                SiteTitle: '@components/SiteTitle.astro',
+
             }
         }),
     ],
