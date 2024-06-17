@@ -6,7 +6,7 @@ hero:
   title: More than lyrics
   tagline: A powerful lyrics app, designed for Spotify
   image:
-    file: /public/preview.jpg
+    file: /public/preview.png
   actions:
     - text: Get Started Now
       link: ./get-started
@@ -18,24 +18,23 @@ hero:
       variant: secondary
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
+import MicrosoftButton from '/src/assets/ms-store-dark-en-us.svg';
 // import {QQGroups} from "../index.mdx";
-
-<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
 
 ## Lyrics have never been that alive
 
 <CardGrid stagger>
+    <Card title="Spotify Original Interface" icon="bars">
+
+        Clear, easy-to-use Spotify-style lyrics interface makes every syllable beats right with your pulse,
+        along with the interface you know and love: Always straightforward and fluid
+
+    </Card>
     <Card title="1:1 Apple Music Style" icon="apple">
 
         With **syllable-by-syllable lyrics**, **smooth and silky animations**,
         **duet views** and **background vocals**, and even Lyricify's very own **Magic Control Bar**,
         you'll be able to do things differently
-
-    </Card>
-    <Card title="Spotify Original Interface" icon="bars">
-
-        Clear, easy-to-use Spotify-style lyrics interface makes every syllable beats right with your pulse,
-        along with the interface you know and love: Always straightforward and fluid
 
     </Card>
     <Card title="Rich Customizablility" icon="setting">
@@ -67,15 +66,11 @@ import {Card, CardGrid} from '@astrojs/starlight/components';
 ## Download Now
 #### Start the whole new journey
 
-<ms-store-badge
-    productid="9p4wb75rhwch"
-    window-mode="full"
-    theme="dark"
-    language="en-us"
-    animation="off"
-/>
+<a href="https://apps.microsoft.com/detail/Lyricify/9p4wb75rhwch?mode=full">
+    <img src={MicrosoftButton.src} width="200" alt="Get from Microsoft Store"/>
+</a>
 
-Looking for Lyricify mobile or other versions?
+Looking for **Lyricify Mobile** or other versions?
 [**Get it from GitHub**](https://github.com/WXRIW/Lyricify-App/releases/latest)
 
 

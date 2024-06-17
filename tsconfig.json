@@ -5,6 +5,7 @@
       "@components/*": [
         "src/components/*"
       ]
-    }
-  }
+    },
+    "moduleResolution": "node16"
+  },
 }
