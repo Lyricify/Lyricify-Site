@@ -1,7 +1,9 @@
 {
   "$schema": "./node_modules/@lunariajs/core/config.schema.json",
   "repository": {
-    "name": "Lyricify/Lyricify-Site"
+    "name": "Lyricify/Lyricify-Site",
+    "hosting": "github",
+    "branch": "main"
   },
   "files": [
     {
@@ -30,7 +32,7 @@
     "favicon": {
       "external": [
         {
-          "link": "https://rookies.group/favicon.ico",
+          "link": "https://dev.rookies.group/favicon.ico",
           "type": "image/x-icon"
         }
       ]
