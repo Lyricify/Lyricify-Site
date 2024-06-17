@@ -1,4 +1,5 @@
 import starlight from '@astrojs/starlight';
+import lunaria from '@lunariajs/starlight';
 import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
@@ -49,6 +50,10 @@ export default defineConfig({
                     label: 'English',
                 },
             },
+            plugins: [lunaria({
+                sync: true,
+                route: "/i18n",
+            })],
         }),
     ],
 });
