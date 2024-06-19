@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Update btn and communities" />
+    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Temp ignore a file @ignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +104,7 @@
       <workItem from="1718565801283" duration="14000" />
       <workItem from="1718600285334" duration="3464000" />
       <workItem from="1718801616844" duration="6165000" />
+      <workItem from="1718808022740" duration="120000" />
     </task>
     <task id="LOCAL-00005" summary="Add 4 buttons">
       <option name="closed" value="true" />
@@ -129,7 +130,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718807713001</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Temp ignore a file @ignore">
+      <option name="closed" value="true" />
+      <created>1718808099341</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1718808099341</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Temp ignore a file @ignore">
+      <option name="closed" value="true" />
+      <created>1718808108578</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1718808108578</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,10 +172,15 @@
     <MESSAGE value="Add 4 buttons" />
     <MESSAGE value="Add i18n tracker&#10;Fix ms button" />
     <MESSAGE value="Update btn and communities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update btn and communities" />
+    <MESSAGE value="Temp ignore a file @ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Temp ignore a file @ignore" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [
+    {
+      "branch": "dev",
+      "currentBranchFilter": true
+    },
     {
       "branch": "dev",
       "currentBranchFilter": true

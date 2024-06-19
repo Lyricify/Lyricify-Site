@@ -87,17 +87,7 @@ import {Communities} from "@data/Lyricify";
 ## You Are with Lyricify
 #### Join our community
 
-<ul>
-    {
-        Communities.map((item) => (
-            <li><b>{item.name}</b>: {item.isFull ?
-                <>
-                    <del><code>{item.ID}</code></del>
-                    <b>已满员</b></>
-                : <code>{item.ID}</code>}</li>
-        ))
-    }
-</ul>
+
 
 ---
 

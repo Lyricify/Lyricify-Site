@@ -23,7 +23,7 @@
     "lang": "zh-cn"
   },
   "ignoreKeywords": [
-    "@ignore"
+    "#ignore", "#noi18n"
   ],
   "dashboard": {
     "title": "Lyricify Site i18n",
