@@ -18,15 +18,9 @@ hero:
       variant: secondary
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
-import MicrosoftButton from '/src/assets/ms-store-dark-zh-cn.svg';
-
-export const QQGroups = [
-    ['用户群 1', '972282479', true],
-    ['用户群 2', '653663090'],
-    ['用户群 5', '561373781'],
-];
-
-<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+import MSDark from '/src/assets/ms-store-dark-zh-cn.svg';
+import MSLight from '/src/assets/ms-store-light-zh-cn.svg';
+import {CommunitiesQQ} from "@data/Lyricify";
 
 ### 歌词从未如此生动
 
@@ -42,7 +36,7 @@ export const QQGroups = [
         精确到音节的**逐字歌词<sup>1</sup>**、**流畅丝滑的动画**、**对唱视图**和**背景人声**，
         甚至还有 Lyricify 独创**妙控条**给你不一样的操作体验
 
-    </Card> 
+    </Card>
     <Card title="丰富的自定义选项" icon="setting">
 
         你的歌词，你做主！从 Apple Music 样式歌词到灵动词岛，
@@ -68,27 +62,43 @@ export const QQGroups = [
     </Card>
 </CardGrid>
 
-## 立即下载
-#### 开启不一样的歌词体验
+<center>
 
-<a href="https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full">
-    <img src={MicrosoftButton.src} width="200" alt="从 Microsoft Store 获取"/>
-</a>
+    ---
 
-在找 **Lyricify Mobile** 或其他版本？[**前往 GitHub 下载**](https://github.com/WXRIW/Lyricify-App/releases/latest)
+    ## 立即下载
+    #### 开启不一样的歌词体验
 
+    <div>
+        <a href="https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full">
+            <img src={MSDark.src} width="200" alt="从 Microsoft Store 获取" className="light:sl-hidden"/>
+            <img src={MSLight.src} width="200" alt="从 Microsoft Store 获取" className="dark:sl-hidden"/>
+        </a>
+    </div>
 
-## 因为有你&emsp;Lyricify 更精彩
+    在找 **Lyricify Mobile** 或其他版本？
+    [**前往 GitHub 下载**](https://github.com/WXRIW/Lyricify-App/releases/latest)
+
+    <br/>
+</center>
+
+---
+
+## 因为有你，Lyricify 更精彩
 #### 成为我们社区的一员
+##### QQ 群
 
-<ul>
+<Fragment>
     {
-        QQGroups.map(([name, groupID, isFull]) => (
-                <li>Lyricify {name}&emsp;<code>{groupID}</code> <b>{isFull ? '已满' : ''}</b></li>
-            )
-        )
+        CommunitiesQQ.map((item) => (
+            <p><b>{item.name}</b>: {item.isFull ?
+                <>
+                    <del><code>{item.ID}</code></del>
+                    <b> 已满员</b></>
+                : <code>{item.ID}</code>}</p>
+        ))
     }
-</ul>
+</Fragment>
 
 ---
 

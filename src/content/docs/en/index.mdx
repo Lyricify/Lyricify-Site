@@ -18,8 +18,9 @@ hero:
       variant: secondary
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
-import MicrosoftButton from '/src/assets/ms-store-dark-en-us.svg';
-// import {QQGroups} from "../index.mdx";
+import MSDark from '/src/assets/ms-store-dark-en-us.svg';
+import MSLight from '/src/assets/ms-store-light-en-us.svg';
+import {Communities} from "@data/Lyricify";
 
 ## Lyrics have never been that alive
 
@@ -63,30 +64,31 @@ import MicrosoftButton from '/src/assets/ms-store-dark-en-us.svg';
     </Card>
 </CardGrid>
 
-## Download Now
-#### Start the whole new journey
+<center>
 
-<a href="https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full">
-    <img src={MicrosoftButton.src} width="200" alt="Get from Microsoft Store"/>
-</a>
+    ---
 
-Looking for **Lyricify Mobile** or other versions?
-[**Get it from GitHub**](https://github.com/WXRIW/Lyricify-App/releases/latest)
+    ## Download Now
+    #### Enjoy the lyrics like you've never experienced before
 
+    <div>
+        <a href="https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full">
+            <img src={MSDark.src} width="200" alt="Get it from Microsoft Store" className="light:sl-hidden"/>
+            <img src={MSLight.src} width="200" alt="Get it from Microsoft Store" className="dark:sl-hidden"/>
+        </a>
+    </div>
+
+    Looking for **Lyricify Mobile** or other versions？
+    [**Go to GitHub**](https://github.com/WXRIW/Lyricify-App/releases/latest)
+
+    <br/>
+</center>
 
 ## You Are with Lyricify
 #### Join our community
 
-{/*
-<ul>
-    {
-        QQGroups.map(([name, groupID, isFull]) => (
-                <li>Lyricify {name}&emsp;<code>{groupID}</code> <b>{isFull ? '已满' : ''}</b></li>
-            )
-        )
-    }
-</ul>
-*/}
+
+
 ---
 
 <sup>1</sup> Syllable-by-syllable lyrics might not be available in some tracks \
