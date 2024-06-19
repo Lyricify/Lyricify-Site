@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Temp ignore a file @ignore" />
+    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Fix a typo #ignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,6 +105,7 @@
       <workItem from="1718600285334" duration="3464000" />
       <workItem from="1718801616844" duration="6165000" />
       <workItem from="1718808022740" duration="120000" />
+      <workItem from="1718808243176" duration="97000" />
     </task>
     <task id="LOCAL-00005" summary="Add 4 buttons">
       <option name="closed" value="true" />
@@ -146,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718808108578</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fix a typo #ignore">
+      <option name="closed" value="true" />
+      <created>1718808322350</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1718808322350</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,10 +182,15 @@
     <MESSAGE value="Add i18n tracker&#10;Fix ms button" />
     <MESSAGE value="Update btn and communities" />
     <MESSAGE value="Temp ignore a file @ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Temp ignore a file @ignore" />
+    <MESSAGE value="Fix a typo #ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix a typo #ignore" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [
+    {
+      "branch": "dev",
+      "currentBranchFilter": true
+    },
     {
       "branch": "dev",
       "currentBranchFilter": true
