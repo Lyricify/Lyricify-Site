@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Add i18n tracker&#10;Fix ms button">
-      <change afterPath="$PROJECT_DIR$/src/data/Lyricify.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/astro.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/docs/en/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/en/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/docs/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-    </list>
+    <list default="true" id="94cbf575-087d-4703-8cc2-b2496d616a79" name="更改" comment="Update btn and communities" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +103,7 @@
       <updated>1718565796108</updated>
       <workItem from="1718565801283" duration="14000" />
       <workItem from="1718600285334" duration="3464000" />
-      <workItem from="1718801616844" duration="5987000" />
+      <workItem from="1718801616844" duration="6165000" />
     </task>
     <task id="LOCAL-00005" summary="Add 4 buttons">
       <option name="closed" value="true" />
@@ -128,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718603778319</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update btn and communities">
+      <option name="closed" value="true" />
+      <created>1718807713001</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718807713001</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +154,8 @@
     <MESSAGE value="Add download links and communities" />
     <MESSAGE value="Add 4 buttons" />
     <MESSAGE value="Add i18n tracker&#10;Fix ms button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add i18n tracker&#10;Fix ms button" />
+    <MESSAGE value="Update btn and communities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update btn and communities" />
   </component>
   <component name="WfRunsListSearchHistory"><![CDATA[{
   "history": [
