@@ -10,6 +10,7 @@ export default defineConfig({
             logo: {
                 src: '/src/assets/icon.webp',
             },
+            favicon: 'favicon.ico',
             social: {
                 github: 'https://github.com/WXRIW/Lyricify-App',
             },
