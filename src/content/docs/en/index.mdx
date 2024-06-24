@@ -18,9 +18,10 @@ hero:
       variant: secondary
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
+import Communities from '@components/Communities.astro';
 import MSDark from '/src/assets/ms-store-dark-en-us.svg';
 import MSLight from '/src/assets/ms-store-light-en-us.svg';
-import {Communities} from "@data/Lyricify";
+import {QQGroups, TelegramGroups} from "@data/Groups";
 
 ## Lyrics have never been that alive
 
@@ -86,8 +87,23 @@ import {Communities} from "@data/Lyricify";
 
 ## You Are with Lyricify
 #### Join our community
+##### Tencent QQ
 
+<Communities
+    communities={
+        QQGroups
+    }
+    lang="en"
+/>
 
+##### Telegram
+
+<Communities
+    communities={
+        TelegramGroups
+    }
+    lang="en"
+/>
 
 ---
 

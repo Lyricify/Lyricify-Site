@@ -1,0 +1,38 @@
+---
+import {Community} from "../data/LyricifyCustomTypes";
+
+interface Props {
+    communities: Community[];
+    lang: string;
+}
+
+const wordIsFullMap = {
+    zh: '已满', en: 'full'
+}
+
+const {communities, lang = 'zh'} = Astro.props;
+---
+<ul>
+    {
+        communities.map((item => {
+            return (
+                    <li>
+                        <p>
+                            <b>{item.name[lang]}</b>:
+                            {
+                                item.isFull ?
+                                        <>
+                                            <del><code>{item.value}</code></del>
+                                            <b>{wordIsFullMap[lang]}</b>
+                                        </>
+                                    :
+                                        <>
+                                            <code>{item.value}</code>
+                                        </>
+                            }
+                        </p>
+                    </li>
+            );
+        }))
+    }
+</ul>

@@ -1,5 +1,5 @@
 ---
-title: 不只有歌词
+title: 不仅有歌词
 description: 为 Spotify 量身打造的强大的歌词工具
 template: splash
 hero:
@@ -18,9 +18,10 @@ hero:
       variant: secondary
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
+import Communities from '@components/Communities.astro';
 import MSDark from '/src/assets/ms-store-dark-zh-cn.svg';
 import MSLight from '/src/assets/ms-store-light-zh-cn.svg';
-import {CommunitiesQQ} from "@data/Lyricify";
+import {QQGroups, TelegramGroups} from "@data/Groups";
 
 ### 歌词从未如此生动
 
@@ -88,17 +89,21 @@ import {CommunitiesQQ} from "@data/Lyricify";
 #### 成为我们社区的一员
 ##### QQ 群
 
-<Fragment>
-    {
-        CommunitiesQQ.map((item) => (
-            <p><b>{item.name}</b>: {item.isFull ?
-                <>
-                    <del><code>{item.ID}</code></del>
-                    <b> 已满员</b></>
-                : <code>{item.ID}</code>}</p>
-        ))
+<Communities
+    communities={
+        QQGroups
     }
-</Fragment>
+    lang="zh"
+/>
+
+##### Telegram
+
+<Communities
+    communities={
+        TelegramGroups
+    }
+    lang="zh"
+/>
 
 ---
 
