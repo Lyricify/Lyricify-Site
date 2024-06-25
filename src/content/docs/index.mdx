@@ -12,16 +12,17 @@ hero:
       link: ./get-started
       icon: right-caret
       variant: primary
-    - text: Star Repo
-      link: https://github.com/WXRIW/Lyricify-App
-      icon: github
+    - text: 立即获取 Lyricify
+      link: https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full
+      icon: seti:windows
       variant: secondary
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
 import Communities from '@components/Communities.astro';
+import TwoColumn from '@components/TwoColumn.astro'
 import MSDark from '/src/assets/ms-store-dark-zh-cn.svg';
 import MSLight from '/src/assets/ms-store-light-zh-cn.svg';
-import {QQGroups, TelegramGroups} from "@data/Groups";
+import {QQGroups, TelegramGroups} from "@data/LyricifyData";
 
 ### 歌词从未如此生动
 
@@ -87,23 +88,32 @@ import {QQGroups, TelegramGroups} from "@data/Groups";
 
 ## 因为有你，Lyricify 更精彩
 #### 成为我们社区的一员
-##### QQ 群
 
-<Communities
-    communities={
-        QQGroups
-    }
-    lang="zh"
-/>
+<TwoColumn>
 
-##### Telegram
+    <div slot="left">
 
-<Communities
-    communities={
-        TelegramGroups
-    }
-    lang="zh"
-/>
+        ##### QQ 群
+
+        <Communities
+            communities={
+                QQGroups
+            }
+            lang="zh"
+        />
+
+    </div>
+    <div slot="right">
+        ##### Telegram
+
+        <Communities
+            communities={
+                TelegramGroups
+            }
+            lang="zh"
+        />
+    </div>
+</TwoColumn>
 
 ---
 

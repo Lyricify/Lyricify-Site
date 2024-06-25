@@ -1,0 +1,26 @@
+---
+
+---
+<div class="twoColumnDiv">
+    <div class="leftColumn">
+        <slot name="left"/>
+    </div>
+    <div class="rightColumn">
+        <slot name="right"/>
+    </div>
+</div>
+
+<style>
+    .twoColumnDiv {
+        height: auto;
+        display: flex;
+    }
+
+    .leftColumn {
+        flex: 1;
+    }
+
+    .rightColumn {
+        flex: 1;
+    }
+</style>
