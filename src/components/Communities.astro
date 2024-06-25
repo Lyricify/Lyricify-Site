@@ -1,33 +1,44 @@
 ---
-import {Community} from "../data/LyricifyCustomTypes";
+import {translatableString, Community} from '@data/LyricifyCustomTypes';
 
 interface Props {
     communities: Community[];
-    lang: string;
+    lang?: string;
 }
 
 const wordIsFullMap = {
     zh: '已满', en: 'full'
-}
+};
 
-const {communities, lang = 'zh'} = Astro.props;
+const {communities, lang} = Astro.props;
 ---
 <ul>
     {
         communities.map((item => {
+            if (!lang && item.name instanceof translatableString) {
+                throw new Error('String is not localizable');
+            }
+             
+            const communityName = (item.name instanceof translatableString) ? 
+                    item.name[lang] : item.name;
+            const communityHasUrl = !!item.url;
+            const communityIsFull = !!item.isFull;
+            const wordIsFull = wordIsFullMap[lang];
+            const communityValue = item.value;
+            
             return (
                     <li>
                         <p>
-                            <b>{item.name[lang]}</b>:
+                            <b>{communityName}</b>:
                             {
-                                item.isFull ?
+                                communityIsFull ?
                                         <>
-                                            <del><code>{item.value}</code></del>
-                                            <b>{wordIsFullMap[lang]}</b>
+                                            <del><code>{communityValue}</code></del>
+                                            <b>{wordIsFull}</b>
                                         </>
                                     :
                                         <>
-                                            <code>{item.value}</code>
+                                            <code>{communityValue}</code>
                                         </>
                             }
                         </p>

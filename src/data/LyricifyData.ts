@@ -1,4 +1,4 @@
-import {Community} from "@data/LyricifyCustomTypes.js";
+import {Community, translatableString} from "@data/LyricifyCustomTypes.js";
 
 export const QQGroups: Community[] = [
     new Community({
@@ -25,16 +25,19 @@ export const QQGroups: Community[] = [
     }),
     new Community({
         name: {zh: 'Lyricify 用户群 6', en: 'Lyricify Users Group 6'},
-        value: '636998823',
+        value: '636998823', 
     }),
 ];
 export const TelegramGroups: Community[] = [
     new Community({
         name: {zh: 'Lyricify 用户群', en: 'Lyricify Users Group'},
         value: 'https://t.me/lyricify',
+        url: 'https://t.me/lyricify',
     }),
     new Community({
         name: {zh: 'Lyricify 频道', en: 'Lyricify Releases'},
         value: 'https://t.me/lyricifyreleases',
+        url: 'https://t.me/lyricifyreleases',
     }),
 ];
+ 
