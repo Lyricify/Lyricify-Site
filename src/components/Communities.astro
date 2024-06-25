@@ -15,11 +15,11 @@ const {communities, lang} = Astro.props;
 <ul>
     {
         communities.map((item => {
-            if (!lang && item.name instanceof translatableString) {
+            if (!lang && item.name instanceof translatableString()) {
                 throw new Error('String is not localizable');
             }
              
-            const communityName = (item.name instanceof translatableString) ? 
+            const communityName = (item.name instanceof translatableString()) ? 
                     item.name[lang] : item.name;
             const communityHasUrl = !!item.url;
             const communityIsFull = !!item.isFull;
