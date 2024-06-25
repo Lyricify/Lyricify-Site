@@ -19,7 +19,8 @@ hero:
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
 import Communities from '@components/Communities.astro';
-import TwoColumn from '@components/TwoColumn.astro'
+import TwoColumn from '@components/TwoColumn.astro';
+import Footer from '@components/CustomFooter.astro';
 import MSDark from '/src/assets/ms-store-dark-zh-cn.svg';
 import MSLight from '/src/assets/ms-store-light-zh-cn.svg';
 import {QQGroups, TelegramGroups} from "@data/LyricifyData";
@@ -95,23 +96,14 @@ import {QQGroups, TelegramGroups} from "@data/LyricifyData";
 
         ##### QQ 群
 
-        <Communities
-            communities={
-                QQGroups
-            }
-            lang="zh"
-        />
+        <Communities communities={QQGroups}/>
 
     </div>
     <div slot="right">
+
         ##### Telegram
 
-        <Communities
-            communities={
-                TelegramGroups
-            }
-            lang="zh"
-        />
+        <Communities communities={TelegramGroups}/>
     </div>
 </TwoColumn>
 
@@ -121,3 +113,5 @@ import {QQGroups, TelegramGroups} from "@data/LyricifyData";
 <sup>2</sup>部分自定义设置可能需要 Microsoft Store 版 \
 <sup>3</sup>Lyricify 智能引擎需要有效的 Spotify Premium 订阅 \
 <sup>4</sup>俄文拉丁转写功能即将上线
+
+<Footer/>

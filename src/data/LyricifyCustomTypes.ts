@@ -1,13 +1,13 @@
-export type translatableString = Record<string, string> | string;
+export type translatable = Record<string, any> | string;
 
 export class Community {
-    name: translatableString;
+    name: translatable;
     value: string;
     url: string | null = null;
     isFull: boolean = false;
 
     constructor({name, value, url = null, isFull = false}: {
-        name: translatableString,
+        name: translatable,
         value: string,
         url?: string,
         isFull?: boolean
