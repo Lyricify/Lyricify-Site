@@ -20,6 +20,7 @@ hero:
 import {Card, CardGrid} from '@astrojs/starlight/components';
 import Communities from '@components/Communities.astro';
 import TwoColumn from '@components/TwoColumn.astro';
+import Footer from "@components/CustomFooter.astro";
 import MSDark from '/src/assets/ms-store-dark-en-us.svg';
 import MSLight from '/src/assets/ms-store-light-en-us.svg';
 import {QQGroups, TelegramGroups} from "@data/LyricifyData";
@@ -97,23 +98,14 @@ import {QQGroups, TelegramGroups} from "@data/LyricifyData";
 
         ##### QQ Communities
 
-        <Communities
-            communities={
-                QQGroups
-            }
-            lang="en"
-        />
+        <Communities communities={QQGroups}/>
 
     </div>
     <div slot="right">
+
         ##### Telegram
 
-        <Communities
-            communities={
-                TelegramGroups
-            }
-            lang="en"
-        />
+        <Communities communities={TelegramGroups}/>
     </div>
 </TwoColumn>
 
@@ -123,3 +115,5 @@ import {QQGroups, TelegramGroups} from "@data/LyricifyData";
 <sup>2</sup> A Microsoft Edition copy is required for some customization features \
 <sup>3</sup> Lyricify Intelligent Engine requires an active Spotify Premium subscription \
 <sup>4</sup> Russian Latinization feature is on the way
+
+<Footer/>

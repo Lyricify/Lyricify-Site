@@ -1,0 +1,79 @@
+---
+import {MadeBy, Copyright, PoweredBy, BuiltBy} from "../data/LyricifyLabels";
+---
+<div class="customFooter">
+    <hr/>
+    <div class="brand not-content">
+        <img class="logo" src="/LyricifyIcon.png" alt="Darker gray Lyricify logo">
+        <h1>Lyricify</h1>
+    </div>
+
+    <div class="columns not-content">
+        <div class="left">
+            <div class="info">
+                <p class="MadeByHeart">{MadeBy[Astro.currentLocale]}</p>
+                <p>{Copyright[Astro.currentLocale]}</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="info">
+                <p>{PoweredBy[Astro.currentLocale]}</p>
+                <p>{BuiltBy[Astro.currentLocale]}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .customFooter {
+        width: 100%;
+        text-align: left;
+        padding-top: 3rem;
+        padding-bottom: 0;
+    }
+
+    .brand {
+        display: inline-block;
+    }
+
+    .info {
+        margin-top: 0.5rem;
+    }
+
+    .brand .logo {
+        filter: grayscale(80%);
+        width: 3rem;
+        vertical-align: middle;
+        margin-right: 0.4rem;
+    }
+
+    .brand h1 {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+
+    .customFooter p {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+
+    .columns {
+        display: flex;
+    }
+
+    .left {
+        flex: 1;
+    }
+
+    .right {
+        flex: 1;
+        text-align: right;
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>

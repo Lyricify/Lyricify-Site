@@ -4,6 +4,7 @@ import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://lyricify.app',
     integrations: [
         starlight({
             title: 'Lyricify',
@@ -40,7 +41,9 @@ export default defineConfig({
                 './src/styles/custom.css',
                 './src/fonts/fontface.css',
             ],
-            components: {},
+            components: {
+
+            },
             defaultLocale: 'root',
             locales: {
                 root: {
