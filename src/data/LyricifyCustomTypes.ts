@@ -16,7 +16,7 @@ export class Community {
     url: string | null = null;
     isFull: boolean = false;
 
-    constructor({name, value, isFull = false}: { name: translatableString, value: string, url?: string, isFull?: boolean }) {
+    constructor({name, value, url = null, isFull = false}: { name: translatableString, value: string, url?: string, isFull?: boolean }) {
         this.name = name;
         this.value = value;
         this.url = url;
