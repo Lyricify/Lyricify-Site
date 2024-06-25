@@ -1,5 +1,5 @@
 ---
-import {translatableString, Community} from '@data/LyricifyCustomTypes';
+import {Community} from '@data/LyricifyCustomTypes';
 
 interface Props {
     communities: Community[];
@@ -15,31 +15,44 @@ const {communities, lang} = Astro.props;
 <ul>
     {
         communities.map((item => {
-            if (!lang && item.name instanceof translatableString()) {
+            if (!lang && item.name instanceof Object) {
                 throw new Error('String is not localizable');
             }
-             
-            const communityName = (item.name instanceof translatableString()) ? 
-                    item.name[lang] : item.name;
+
+            const communityName = (item.name instanceof Object) ?
+                item.name[lang] : item.name;
             const communityHasUrl = !!item.url;
             const communityIsFull = !!item.isFull;
             const wordIsFull = wordIsFullMap[lang];
             const communityValue = item.value;
-            
+
+            const tmplWithUrl = <a href={item.url} style="text-decoration: none">{communityValue}</a>;
+            const tmpl = <code>{item.value}</code>;
+            const tmplFull =
+                    <>
+                        <del><code>{item.value}</code></del>
+                        <b>{wordIsFull}</b>
+                    </>;
+            const tmplWithUrlFull =
+                    <>
+                        <del><a href={item.url} style="text-decoration: none">{communityValue}</a></del>
+                        <b>{wordIsFull}</b>
+                    </>;
+
             return (
                     <li>
                         <p>
                             <b>{communityName}</b>:
                             {
-                                communityIsFull ?
-                                        <>
-                                            <del><code>{communityValue}</code></del>
-                                            <b>{wordIsFull}</b>
-                                        </>
-                                    :
-                                        <>
-                                            <code>{communityValue}</code>
-                                        </>
+                                communityHasUrl ?
+                                    communityIsFull ?
+                                            <Fragment set:html={tmplWithUrlFull}/>
+                                        :
+                                            <Fragment set:html={tmplWithUrl}/>
+                                    : communityIsFull ?
+                                                <Fragment set:html={tmplFull}/>
+                                        :
+                                                <Fragment set:html={tmpl}/>
                             }
                         </p>
                     </li>
