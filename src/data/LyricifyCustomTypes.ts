@@ -13,7 +13,7 @@ export class Community extends Data {
 export class Community {
     name: translatableString;
     value: string;
-    url: string | null;
+    url: string | null = null;
     isFull: boolean = false;
 
     constructor({name, value, isFull = false}: { name: translatableString, value: string, url?: string, isFull?: boolean }) {
