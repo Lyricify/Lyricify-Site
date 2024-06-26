@@ -9,23 +9,24 @@ import Adaptive from '@components/Adaptive.astro'
         <h1 class="brand-name"><b>Lyricify</b></h1>
     </div>
 
-    <Adaptive mobile>
-        <div class="info-item" id="left">
-            <p>
-                {MadeBy[Astro.currentLocale]}
-                <br/>
-                {Copyright[Astro.currentLocale]}
-            </p>
-        </div>
-        <div class="info-item" id="right">
-            <p>
-                {PoweredBy[Astro.currentLocale]}
-                <br/>
-                {BuiltBy[Astro.currentLocale]}
-            </p>
-        </div>
-    </Adaptive>
-
+    <div class="not-content">
+        <Adaptive mobile>
+            <div class="info-item" id="left">
+                <p>
+                    {MadeBy[Astro.currentLocale]}
+                    <br/>
+                    {Copyright[Astro.currentLocale]}
+                </p>
+            </div>
+            <div class="info-item" id="right">
+                <p>
+                    {PoweredBy[Astro.currentLocale]}
+                    <br/>
+                    {BuiltBy[Astro.currentLocale]}
+                </p>
+            </div>
+        </Adaptive>
+    </div>
 </div>
 
 <style>
@@ -67,5 +68,9 @@ import Adaptive from '@components/Adaptive.astro'
         div#right {
             text-align: inherit;
         }
+    }
+
+    p {
+        margin-top: 0;
     }
 </style>

@@ -5,6 +5,7 @@
       "@components/*": ["src/components/*"],
       "@data/*": ["src/data/*"]
     },
-    "moduleResolution": "node16"
+    "moduleResolution": "node16",
+    "module": "CommonJS"
   }
 }
