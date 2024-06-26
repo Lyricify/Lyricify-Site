@@ -1,5 +1,5 @@
 import starlight from '@astrojs/starlight';
-import lunaria from '@lunariajs/starlight';
+// import lunaria from '@lunariajs/starlight';
 import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
@@ -41,23 +41,25 @@ export default defineConfig({
                 './src/styles/custom.css',
                 './src/fonts/fontface.css',
             ],
-            components: {
-
-            },
-            defaultLocale: 'root',
+            components: {},
+            defaultLocale: 'zh-cn',
             locales: {
                 root: {
+                    label: 'English',
+                    lang: 'en',
+                },
+                'zh-cn': {
                     label: '简体中文',
                     lang: 'zh-CN',
                 },
-                en: {
-                    label: 'English',
-                },
             },
-            plugins: [lunaria({
-                sync: true,
-                route: "/i18n",
-            })],
+            plugins: [
+                /*lunaria({
+                        sync: true,
+                        route: "/i18n",
+                    },
+                ),*/
+            ],
         }),
     ],
 });

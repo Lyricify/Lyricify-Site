@@ -18,6 +18,7 @@
     "@material/web": "^1.5.1",
     "astro": "^4.10.2",
     "sharp": "^0.32.5",
+    "starlight-theme-rapide": "^0.1.1",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
