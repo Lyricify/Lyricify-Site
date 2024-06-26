@@ -1,79 +1,92 @@
 ---
 import {MadeBy, Copyright, PoweredBy, BuiltBy} from "../data/LyricifyLabels";
 ---
-<div class="customFooter">
+<div class="footer-container">
     <hr/>
     <div class="brand not-content">
         <img class="logo" src="/LyricifyIcon.png" alt="Darker gray Lyricify logo">
-        <h1>Lyricify</h1>
+        <h1 class="brand-name">Lyricify</h1>
     </div>
 
-    <div class="columns not-content">
-        <div class="left">
-            <div class="info">
-                <p class="MadeByHeart">{MadeBy[Astro.currentLocale]}</p>
-                <p>{Copyright[Astro.currentLocale]}</p>
-            </div>
+    <div class="info-container">
+        <div class="info-item" id="left">
+            <p>
+                {MadeBy[Astro.currentLocale]}
+                <br/>
+                {Copyright[Astro.currentLocale]}
+            </p>
         </div>
-        <div class="right">
-            <div class="info">
-                <p>{PoweredBy[Astro.currentLocale]}</p>
-                <p>{BuiltBy[Astro.currentLocale]}</p>
-            </div>
+        <div class="info-item" id="right">
+            <p>
+                {PoweredBy[Astro.currentLocale]}
+                <br/>
+                {BuiltBy[Astro.currentLocale]}
+            </p>
         </div>
     </div>
 
 </div>
 
 <style>
-    .customFooter {
+
+    .footer-container {
         width: 100%;
         text-align: left;
-        padding-top: 3rem;
-        padding-bottom: 0;
+        padding-top: 5rem;
     }
 
-    .brand {
+    .footer-container .brand {
         display: inline-block;
     }
 
-    .info {
-        margin-top: 0.5rem;
-    }
-
-    .brand .logo {
-        filter: grayscale(80%);
+    :root .footer-container .brand .logo {
+        filter: none;
         width: 3rem;
         vertical-align: middle;
-        margin-right: 0.4rem;
     }
 
-    .brand h1 {
+    :root[data-theme="dark"] .footer-container .brand .logo {
+        filter: grayscale(50%);
+    }
+
+    .footer-container .brand .brand-name {
         display: inline-block;
         vertical-align: middle;
-        font-size: 2rem;
-        margin: 0 auto;
     }
 
-    .customFooter p {
-        font-size: 1rem;
-        line-height: 2rem;
-    }
-
-    .columns {
+    .info-container {
         display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        // align-items: flex-start;
     }
 
-    .left {
+    .info-container .info-item#left {
+        text-align: inherit;
         flex: 1;
+        order: 1;
     }
 
-    .right {
+    .info-container .info-item#right {
         flex: 1;
         text-align: right;
+        order: 2;
     }
 
-    a {
-        text-decoration: none;
+    @media (max-width: 50rem) {
+        .footer-container {
+            text-align: center;
+        }
+
+        .info-container {
+            flex-direction: column;
+        }
+
+        .info-container .info-item#right {
+            text-align: inherit;
+        }
+
     }
 </style>

@@ -9,3 +9,10 @@
     src: url("./SpotifyMix-Bold.woff") format('woff2');
     font-weight: bold;
 }
+
+@font-face {
+    font-family: "Spotify Circular";
+    src: url("./CircularSpotifyText-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
