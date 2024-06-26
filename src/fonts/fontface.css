@@ -1,18 +1,78 @@
-@font-face {
-    font-family: 'Spotify Mix';
-    src: url("./SpotifyMix-Regular.woff") format("woff2");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: 'Spotify Mix';
-    src: url("./SpotifyMix-Bold.woff") format('woff2');
-    font-weight: bold;
-}
-
+/* Spotify Circular family */
 @font-face {
     font-family: "Spotify Circular";
     src: url("./CircularSpotifyText-Bold.otf") format("opentype");
     font-weight: bold;
     font-style: normal;
+}
+
+/* SpotifyMix family */
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-Bold.woff") format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-BoldItalic.woff") format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-Extrabold.woff") format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-ExtraboldItalic.woff") format('woff2');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-Light.woff") format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-LightItalic.woff") format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-Medium.woff") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-MediumItalic.woff") format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-Regular.woff") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url("./SpotifyMix-RegularItalic.woff") format('woff2');
+    font-weight: normal;
+    font-style: italic;
 }

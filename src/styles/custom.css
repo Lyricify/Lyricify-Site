@@ -37,10 +37,10 @@
 /* SiteTitle font uses special Circular */
 .site-title {
     gap: calc(.25 * var(--sl-nav-gap));
+    vertical-align: middle;
 }
 
 .site-title span {
     font-family: "Spotify Circular", sans-serif;
     font-weight: bold;
-    margin-top: .55ex;
 }

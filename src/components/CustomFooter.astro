@@ -1,14 +1,15 @@
 ---
-import {MadeBy, Copyright, PoweredBy, BuiltBy} from "../data/LyricifyLabels";
+import {MadeBy, Copyright, PoweredBy, BuiltBy} from '@data/LyricifyLabels';
+import Adaptive from '@components/Adaptive.astro'
 ---
 <div class="footer-container">
     <hr/>
     <div class="brand not-content">
         <img class="logo" src="/LyricifyIcon.png" alt="Darker gray Lyricify logo">
-        <h1 class="brand-name">Lyricify</h1>
+        <h1 class="brand-name"><b>Lyricify</b></h1>
     </div>
 
-    <div class="info-container">
+    <Adaptive mobile>
         <div class="info-item" id="left">
             <p>
                 {MadeBy[Astro.currentLocale]}
@@ -23,7 +24,7 @@ import {MadeBy, Copyright, PoweredBy, BuiltBy} from "../data/LyricifyLabels";
                 {BuiltBy[Astro.currentLocale]}
             </p>
         </div>
-    </div>
+    </Adaptive>
 
 </div>
 
@@ -54,39 +55,17 @@ import {MadeBy, Copyright, PoweredBy, BuiltBy} from "../data/LyricifyLabels";
         vertical-align: middle;
     }
 
-    .info-container {
-        display: flex;
-        display: -webkit-flex;
-        justify-content: space-between;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        // align-items: flex-start;
-    }
-
-    .info-container .info-item#left {
-        text-align: inherit;
-        flex: 1;
-        order: 1;
-    }
-
-    .info-container .info-item#right {
-        flex: 1;
+    div#right {
         text-align: right;
-        order: 2;
     }
 
-    @media (max-width: 50rem) {
+    @media (width < 50rem) {
         .footer-container {
             text-align: center;
         }
 
-        .info-container {
-            flex-direction: column;
-        }
-
-        .info-container .info-item#right {
+        div#right {
             text-align: inherit;
         }
-
     }
 </style>

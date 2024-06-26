@@ -19,7 +19,7 @@ hero:
 ---
 import {Card, CardGrid} from '@astrojs/starlight/components';
 import Communities from '@components/Communities.astro';
-import TwoColumn from '@components/TwoColumn.astro';
+import Adaptive from '@components/Adaptive.astro';
 import Footer from '@components/CustomFooter.astro';
 import MSDark from '/src/assets/ms-store-dark-zh-cn.svg';
 import MSLight from '/src/assets/ms-store-light-zh-cn.svg';
@@ -90,22 +90,23 @@ import {QQGroups, TelegramGroups} from "@data/LyricifyData";
 ## 因为有你，Lyricify 更精彩
 #### 成为我们社区的一员
 
-<TwoColumn>
+<Adaptive mobile>
 
-    <div slot="left">
+    <div>
 
         ##### QQ 群
 
         <Communities communities={QQGroups}/>
 
     </div>
-    <div slot="right">
+    <div>
 
         ##### Telegram
 
         <Communities communities={TelegramGroups}/>
     </div>
-</TwoColumn>
+
+</Adaptive>
 
 ---
 
