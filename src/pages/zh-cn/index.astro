@@ -4,20 +4,18 @@ import {Card, CardGrid} from '@astrojs/starlight/components';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 // Custom components
-import Communities from '../../components/Communities.astro';
-import Adaptive from '../../components/Adaptive.astro';
-import Footer from '../../components/CustomFooter.astro';
+import Communities from '@components/Communities.astro';
+import Adaptive from '@components/Adaptive.astro';
+import Footer from '@components/CustomFooter.astro';
 
 // Dynamic resourses
 import MSDark from '/src/assets/ms-store-dark-zh-cn.svg';
 import MSLight from '/src/assets/ms-store-light-zh-cn.svg';
-import bannerPic from '/public/preview.png';
+import bannerPic from '/public/showcase/showcase1.png';
 
 // Data
 import {QQGroups, TelegramGroups} from "../../data/LyricifyData";
-
 ---
-
 <StarlightPage frontmatter={
     {
         title: '不仅有歌词',
@@ -41,12 +39,11 @@ import {QQGroups, TelegramGroups} from "../../data/LyricifyData";
                 },
             ],
             image: {
-                html: `<img src=${bannerPic.src} alt="Lyricify" width="100%"/>`,
+                html: `<img src=${bannerPic.src} alt='Lyricify screenshot' width='100%'/>`,
             }
         }
     }
 }>
-
     <h3>歌词从未如此生动</h3>
     <CardGrid stagger>
         <Card title="Spotify 原味界面" icon="bars">
