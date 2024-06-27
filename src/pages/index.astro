@@ -1,7 +1,6 @@
 ---
 // Starlight components & layouts
 import {Card, CardGrid} from '@astrojs/starlight/components';
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 // Custom components
 import Communities from '../components/Communities.astro';
@@ -15,6 +14,9 @@ import bannerPic from '/public/preview.png';
 
 // Data
 import {QQGroups, TelegramGroups} from "../data/LyricifyData";
+
+// Misc
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 ---
 <StarlightPage frontmatter={
     {
