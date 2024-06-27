@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/starlight": "^0.24.2",
+    "@astrojs/starlight": "^0.24.4",
     "@lunariajs/core": "^0.1.0",
     "@lunariajs/starlight": "^0.1.0",
-    "astro": "^4.10.2",
-    "dataclass": "^2.1.1",
-    "fs": "^0.0.1-security",
+    "@material/web": "^1.5.1",
+    "astro": "^4.11.3",
     "sharp": "^0.32.5",
+    "starlight-theme-rapide": "^0.1.1",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
