@@ -17,32 +17,45 @@ export default defineConfig({
             },
             sidebar: [
                 {
-                    label: '快速上手',
+                    label: 'Get started',
                     autogenerate: {directory: 'get-started'},
                     translations: {
-                        'en': 'Get started',
+                        'zh-CN': '快速上手',
                     },
                 },
                 {
-                    label: '常见问题',
+                    label: 'FAQ',
                     autogenerate: {directory: 'faq'},
                     translations: {
-                        'en': 'FAQ',
+                        'zh-CN': '常见问题',
                     },
                 },
                 {
-                    label: 'Lyricify mobile',
+                    label: 'Lyricify Mobile',
                     items: [
                         // To be updated
                     ],
                 },
+                {
+                    label: 'i18n Guide',
+                    translations: {
+                        'zh-CN': '本站 i18n 指导',
+                    },
+                    link: '/i18n-instruction',
+                    badge: {
+                        text: 'NEW',
+                        variant: 'default'
+                    },
+                }
             ],
             customCss: [
                 './src/styles/custom.css',
                 './src/fonts/fontface.css',
             ],
-            components: {},
-            defaultLocale: 'zh-cn',
+            components: {
+                Footer: './src/components/rewrite/Footer.astro',
+            },
+            defaultLocale: 'root',
             locales: {
                 root: {
                     label: 'English',
@@ -60,6 +73,7 @@ export default defineConfig({
                     },
                 ),*/
             ],
+            // credits: true,
         }),
     ],
 });

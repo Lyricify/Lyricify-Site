@@ -1,32 +1,33 @@
 ---
-import {MadeBy, Copyright, PoweredBy, BuiltBy} from '@data/LyricifyLabels';
-import Adaptive from '@components/Adaptive.astro'
+// import type { Props } from '@astrojs/starlight/props';
+import Adaptive from '@components/Adaptive.astro';
 ---
 <div class="footer-container">
-    <hr/>
+
     <div class="brand not-content">
         <img class="logo" src="/LyricifyIcon.png" alt="Darker gray Lyricify logo">
         <h1 class="brand-name"><b>Lyricify</b></h1>
     </div>
 
-    <div class="not-content">
+    <div class="credits">
         <Adaptive mobile>
             <div class="info-item" id="left">
                 <p>
-                    {MadeBy[Astro.currentLocale]}
+                    {Astro.props.labels['lyricify.madeBy']}
                     <br/>
-                    {Copyright[Astro.currentLocale]}
+                    {Astro.props.labels['lyricify.copyright']}
                 </p>
             </div>
             <div class="info-item" id="right">
                 <p>
-                    {PoweredBy[Astro.currentLocale]}
+                    {Astro.props.labels['lyricify.poweredBy']}
                     <br/>
-                    {BuiltBy[Astro.currentLocale]}
+                    {Astro.props.labels['lyricify.writtenBy'].replace(/\[CONTRIBUTOR]/, 'TSAVPYN & fred913')}
                 </p>
             </div>
         </Adaptive>
     </div>
+
 </div>
 
 <style>
@@ -70,7 +71,11 @@ import Adaptive from '@components/Adaptive.astro'
         }
     }
 
+    .footer-container .credits {
+        margin-top: 1rem;
+    }
+
     p {
-        margin-top: 0;
+        line-height: 2rem;
     }
 </style>

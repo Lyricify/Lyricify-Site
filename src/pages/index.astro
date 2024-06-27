@@ -4,11 +4,10 @@ import {Card, CardGrid} from '@astrojs/starlight/components';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro'
 
 // Custom components
-import Communities from '../components/Communities.astro';
-import Adaptive from '../components/Adaptive.astro';
-import Footer from '../components/CustomFooter.astro';
+import Communities from '@components/Communities.astro';
+import Adaptive from '@components/Adaptive.astro';
 
-// Dynamic resourses
+// Dynamic resources
 import MSDark from '/src/assets/ms-store-dark-en-us.svg';
 import MSLight from '/src/assets/ms-store-light-en-us.svg';
 import bannerPic from '/public/preview.png';
@@ -124,5 +123,4 @@ import {QQGroups, TelegramGroups} from "../data/LyricifyData";
         <sup>3</sup>Lyricify Intelligent Engine requires an active Spotify Premium subscription<br/>
         <sup>4</sup>Russian Latinization feature is on the way
     </p>
-    <Footer/>
 </StarlightPage>
