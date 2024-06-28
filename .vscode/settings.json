@@ -1,13 +1,13 @@
 {
-    "javascript.format.semicolons": "remove",
-    "typescript.format.semicolons": "remove",
-    "mdx.server.enable": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.semi": false,
-    "prettier.singleQuote": true,
-    "prettier.tabWidth": 4,
-    "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode"
-    },
-    "editor.tabSize": 4
+  "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove",
+  "mdx.server.enable": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 4,
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "editor.tabSize": 4
 }

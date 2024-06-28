@@ -1,10 +1,10 @@
 {
-    "label.communityIsFull": {
-        "zh-CN": "已满",
-        "en": "Full"
-    },
-    "label.getItFromMicrosoftStore": {
-        "zh-CN": "从 Microsoft Store 获取",
-        "en": "Get it from Microsoft Store"
-    }
+  "label.communityIsFull": {
+    "zh-CN": "已满",
+    "en": "Full"
+  },
+  "label.getItFromMicrosoftStore": {
+    "zh-CN": "从 Microsoft Store 获取",
+    "en": "Get it from Microsoft Store"
+  }
 }

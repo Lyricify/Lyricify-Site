@@ -1,61 +1,61 @@
 {
-    "$schema": "./node_modules/@lunariajs/core/config.schema.json",
-    "repository": {
-        "name": "Lyricify/Lyricify-Site",
-        "hosting": "github",
-        "branch": "main"
-    },
-    "files": [
-        {
-            "location": "src/content/docs/**/*.{md,mdx}",
-            "pattern": "src/content/docs/@lang/@path",
-            "type": "universal"
-        }
-    ],
-    "locales": [
-        {
-            "label": "English",
-            "lang": "en"
-        }
-    ],
-    "defaultLocale": {
-        "label": "简体中文",
-        "lang": "zh-cn"
-    },
-    "ignoreKeywords": ["#ignore", "#noi18n"],
-    "dashboard": {
-        "title": "Lyricify Site i18n",
-        "description": "Lyricify/Lyricify-Site 文档国际化进度跟踪",
-        "site": "https://i18n.rookies.group",
-        "favicon": {
-            "external": [
-                {
-                    "link": "https://dev.rookies.group/favicon.ico",
-                    "type": "image/x-icon"
-                }
-            ]
-        },
-        "ui": {
-            "dir": "ltr",
-            "lang": "zh-CN",
-            "status.emojiDone": "✔️",
-            "status.emojiMissing": "❌",
-            "status.emojiOutdated": "🔄",
-            "status.done": "完成",
-            "status.missing": "缺失",
-            "status.outdated": "需要更新",
-            "statusByFile.heading": "每个文件的i18n状态",
-            "statusByFile.tableRowFile": "文件",
-            "statusByFile.tableSummaryFormat": "{missing_emoji} {missing_word} &nbsp; {outdated_emoji} {outdated_word} &nbsp; {done_emoji} {done_word}",
-            "statusByLocale.completeLocalization": "这个国际化完成了，恭喜！🎉",
-            "statusByLocale.createFileLink": "创建副本以供翻译",
-            "statusByLocale.detailsSummaryFormat": "{done_amount} {done_word}, {outdated_amount} {outdated_word}, {missing_amount} {missing_word}",
-            "statusByLocale.detailsTitleFormat": "{locale_name} ({locale_tag})",
-            "statusByLocale.heading": "每个语言的i18n状态",
-            "statusByLocale.outdatedLocalizationLink": "过期的国际化",
-            "statusByLocale.sourceChangeHistoryLink": "源改动历史",
-            "statusByLocale.incompleteLocalizationLink": "未完成的国际化",
-            "statusByLocale.missingKeys": "缺失条目"
-        }
+  "$schema": "./node_modules/@lunariajs/core/config.schema.json",
+  "repository": {
+    "name": "Lyricify/Lyricify-Site",
+    "hosting": "github",
+    "branch": "main"
+  },
+  "files": [
+    {
+      "location": "src/content/docs/**/*.{md,mdx}",
+      "pattern": "src/content/docs/@lang/@path",
+      "type": "universal"
     }
+  ],
+  "locales": [
+    {
+      "label": "English",
+      "lang": "en"
+    }
+  ],
+  "defaultLocale": {
+    "label": "简体中文",
+    "lang": "zh-cn"
+  },
+  "ignoreKeywords": ["#ignore", "#noi18n"],
+  "dashboard": {
+    "title": "Lyricify Site i18n",
+    "description": "Lyricify/Lyricify-Site 文档国际化进度跟踪",
+    "site": "https://i18n.rookies.group",
+    "favicon": {
+      "external": [
+        {
+          "link": "https://dev.rookies.group/favicon.ico",
+          "type": "image/x-icon"
+        }
+      ]
+    },
+    "ui": {
+      "dir": "ltr",
+      "lang": "zh-CN",
+      "status.emojiDone": "✔️",
+      "status.emojiMissing": "❌",
+      "status.emojiOutdated": "🔄",
+      "status.done": "完成",
+      "status.missing": "缺失",
+      "status.outdated": "需要更新",
+      "statusByFile.heading": "每个文件的i18n状态",
+      "statusByFile.tableRowFile": "文件",
+      "statusByFile.tableSummaryFormat": "{missing_emoji} {missing_word} &nbsp; {outdated_emoji} {outdated_word} &nbsp; {done_emoji} {done_word}",
+      "statusByLocale.completeLocalization": "这个国际化完成了，恭喜！🎉",
+      "statusByLocale.createFileLink": "创建副本以供翻译",
+      "statusByLocale.detailsSummaryFormat": "{done_amount} {done_word}, {outdated_amount} {outdated_word}, {missing_amount} {missing_word}",
+      "statusByLocale.detailsTitleFormat": "{locale_name} ({locale_tag})",
+      "statusByLocale.heading": "每个语言的i18n状态",
+      "statusByLocale.outdatedLocalizationLink": "过期的国际化",
+      "statusByLocale.sourceChangeHistoryLink": "源改动历史",
+      "statusByLocale.incompleteLocalizationLink": "未完成的国际化",
+      "statusByLocale.missingKeys": "缺失条目"
+    }
+  }
 }
