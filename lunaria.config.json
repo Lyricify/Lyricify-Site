@@ -22,7 +22,10 @@
     "label": "简体中文",
     "lang": "zh-cn"
   },
-  "ignoreKeywords": ["#ignore", "#noi18n"],
+  "ignoreKeywords": [
+    "#ignore",
+    "#noi18n"
+  ],
   "dashboard": {
     "title": "Lyricify Site i18n",
     "description": "Lyricify/Lyricify-Site 文档国际化进度跟踪",

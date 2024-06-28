@@ -31,63 +31,63 @@
 
 /* Dark mode colors. */
 :root {
-  --sl-color-accent-low: #002d0e;
-  --sl-color-accent: #008035;
-  /* Thanks fred913 for this optimized color for Dark Mode: #35c969*/
-  /*--sl-color-accent-high: #a3d8ab;*/
-  --sl-color-accent-high: #35c969;
-  --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eeeeee;
-  --sl-color-gray-2: #c2c2c2;
-  --sl-color-gray-3: #8b8b8b;
-  --sl-color-gray-4: #585858;
-  --sl-color-gray-5: #383838;
-  --sl-color-gray-6: #272727;
-  --sl-color-black: #181818;
+    --sl-color-accent-low: #002d0e;
+    --sl-color-accent: #008035;
+    /* Thanks fred913 for this optimized color for Dark Mode: #35c969*/
+    /*--sl-color-accent-high: #a3d8ab;*/
+    --sl-color-accent-high: #35c969;
+    --sl-color-white: #ffffff;
+    --sl-color-gray-1: #eeeeee;
+    --sl-color-gray-2: #c2c2c2;
+    --sl-color-gray-3: #8b8b8b;
+    --sl-color-gray-4: #585858;
+    --sl-color-gray-5: #383838;
+    --sl-color-gray-6: #272727;
+    --sl-color-black: #181818;
 }
 
 /* Light mode colors. */
 :root[data-theme="light"] {
-  --sl-color-accent-low: #bbe3c1;
-  --sl-color-accent: #008236;
-  --sl-color-accent-high: #003e16;
-  --sl-color-white: #181818;
-  --sl-color-gray-1: #272727;
-  --sl-color-gray-2: #383838;
-  --sl-color-gray-3: #585858;
-  --sl-color-gray-4: #8b8b8b;
-  --sl-color-gray-5: #c2c2c2;
-  --sl-color-gray-6: #eeeeee;
-  --sl-color-gray-7: #f6f6f6;
-  --sl-color-black: #ffffff;
+    --sl-color-accent-low: #bbe3c1;
+    --sl-color-accent: #008236;
+    --sl-color-accent-high: #003e16;
+    --sl-color-white: #181818;
+    --sl-color-gray-1: #272727;
+    --sl-color-gray-2: #383838;
+    --sl-color-gray-3: #585858;
+    --sl-color-gray-4: #8b8b8b;
+    --sl-color-gray-5: #c2c2c2;
+    --sl-color-gray-6: #eeeeee;
+    --sl-color-gray-7: #f6f6f6;
+    --sl-color-black: #ffffff;
 }
 
 /* Global font */
 :root {
-  --sl-font-system: "Spotify Mix", sans-serif;
+    --sl-font-system: "Spotify Mix", sans-serif;
 }
 
 /* SiteTitle font uses special Circular */
 .site-title {
-  gap: calc(0.25 * var(--sl-nav-gap));
+    gap: calc(0.25 * var(--sl-nav-gap));
 }
 
 .site-title span {
-  font-family: "Spotify Circular", sans-serif;
-  font-weight: bold;
-  color: var(--sl-color-accent);
+    font-family: "Spotify Circular", sans-serif;
+    font-weight: bold;
+    color: var(--sl-color-accent);
 }
 
 :root[data-theme="dark"] .site-title span {
-  color: var(--sl-color-accent-high);
+    color: var(--sl-color-accent-high);
 }
 
 /* Misc */
 :root {
-  --sl-content-width: 60rem;
-  --sl-sidebar-width: 20rem;
+    --sl-content-width: 60rem;
+    --sl-sidebar-width: 20rem;
 }
 
 .social-icons svg {
-  color: var(--sl-color-white);
+    color: var(--sl-color-white);
 }

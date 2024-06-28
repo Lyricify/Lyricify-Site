@@ -3,11 +3,11 @@ interface Props {
     mobile?: boolean
 }
 
-const { mobile = false } = Astro.props
+const {mobile = false} = Astro.props
 ---
 
 <div class={mobile ? 'mobile container' : 'container'}>
-    <slot />
+    <slot/>
 </div>
 
 <style>
