@@ -13,7 +13,7 @@ const {communities} = Astro.props
 <ul>
     {
         communities.map((item) => {
-            if (!item.name instanceof Object) {
+            if (!(item.name instanceof Object)) {
                 throw new Error('String is not localizable')
             }
 

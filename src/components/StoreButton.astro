@@ -1,17 +1,17 @@
 ---
-import {Labels} from '@data/DataHelper'
+import {Labels} from '@data/DataHelper';
 
 interface Props {
     url: string
-}
+};
 
-const {url} = Astro.props
+const {url} = Astro.props;
 const storeButtonPath = (theme: string) => {
     return `/store-buttons/ms-store-${theme}-${Astro.currentLocale}.svg`
-}
+};
 const t = (translatable: object) => {
-    return translatable[Astro.currentLocale]
-}
+    return translatable[Astro.currentLocale];
+};
 ---
 
 <center>

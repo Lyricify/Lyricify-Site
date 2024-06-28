@@ -1,27 +1,35 @@
 {
-  "javascript.format.semicolons": "remove",
-  "typescript.format.semicolons": "remove",
-  "mdx.server.enable": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
-  },
-  "editor.tabSize": 4,
-  "[markdown]": {
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "off"
+    "javascript.format.semicolons": "remove",
+    "typescript.format.semicolons": "remove",
+    "mdx.server.enable": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
     },
-    "editor.tabSize": 2
-  },
-  "[mdx]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.configPath": ".prettierrc.ts"
+    "editor.tabSize": 4,
+    "[markdown]": {
+        "editor.defaultFormatter": null,
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "editor.tabSize": 4
+    },
+    "[mdx]": {
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+    },
+    "prettier.configPath": ".prettierrc.mjs",
+    "prettier.bracketSpacing": false,
+    "prettier.embeddedLanguageFormatting": "off",
+    "prettier.jsxSingleQuote": true,
+    "prettier.printWidth": 80,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.useEditorConfig": false
 }

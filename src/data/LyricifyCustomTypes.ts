@@ -7,11 +7,11 @@ export class Community {
     isFull: boolean = false;
 
     constructor({
-                    name,
-                    value,
-                    url = null,
-                    isFull = false,
-                }: {
+        name,
+        value,
+        url = null,
+        isFull = false,
+    }: {
         name: translatable;
         value: string;
         url?: string;
