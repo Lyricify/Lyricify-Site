@@ -2,7 +2,7 @@
 title: i18n Instruction
 ---
 
-import { FileTree } from "@astrojs/starlight/components";
+import { FileTree } from '@astrojs/starlight/components'
 
 Thanks to the efforts of our i18n crews, now Lyricify has a more modern and beautiful website.
 
@@ -27,9 +27,9 @@ If you have ample time, we still recommend that you read the complete guide to e
 
 In Lyricify-Site, translatable contents include:
 
-- Set of pages
-- Set of docs
-- Data (TypeScript, json, etc.)
+-   Set of pages
+-   Set of docs
+-   Data (TypeScript, json, etc.)
 
 ### Set of Pages
 
@@ -37,10 +37,10 @@ Pages are dedicated to serve single and simple functions, for example, **Home pa
 
 Pages are:
 
-- located under `/src/pages/`
-- formatted as `.astro`
-- mostly written in **HTML** (Astro standard)
-- came with [Standard i18n Structure](#standard-i18n-structure)
+-   located under `/src/pages/`
+-   formatted as `.astro`
+-   mostly written in **HTML** (Astro standard)
+-   came with [Standard i18n Structure](#standard-i18n-structure)
 
 ### Set of Docs
 
@@ -49,10 +49,10 @@ give instructions and provide large-amount information.
 
 Docs are:
 
-- located under `/src/content/docs/`
-- formatted as `.mdx` or `.md`
-- mostly written in Markdown / MDX
-- came with [Standard i18n Structure](#standard-i18n-structure)
+-   located under `/src/content/docs/`
+-   formatted as `.mdx` or `.md`
+-   mostly written in Markdown / MDX
+-   came with [Standard i18n Structure](#standard-i18n-structure)
 
 ### Data
 
@@ -127,13 +127,13 @@ TypeScript 数据源存放在`/src/data/LyricifyData.ts`里
 
 ```ts {3}
 export const QQGroups: Community[] = [
-  new Community({
-    name: { "zh-CN": "Lyricify 用户群 1", en: "Lyricify Users Group 1" },
-    value: "972282479",
-    url: "https://jq.qq.com/?_wv=1027&k=hZG8VRV4",
-    isFull: true,
-  }),
-];
+    new Community({
+        name: { 'zh-CN': 'Lyricify 用户群 1', en: 'Lyricify Users Group 1' },
+        value: '972282479',
+        url: 'https://jq.qq.com/?_wv=1027&k=hZG8VRV4',
+        isFull: true,
+    }),
+]
 ```
 
 在上面的例子中，`name`键的值是一个对象（也可以大致理解为字典），这个对象特别地包含了几个键值对：
@@ -143,18 +143,18 @@ export const QQGroups: Community[] = [
 
 ```ts del={3} add={4-8}
 export const QQGroups: Community[] = [
-  new Community({
-    name: { "zh-CN": "Lyricify 用户群 1", en: "Lyricify Users Group 1" },
-    name: {
-      "zh-CN": "Lyricify 用户群 1",
-      en: "Lyricify Users Group 1",
-      ru: "Группа Lyricify 1",
-    },
-    value: "972282479",
-    url: "https://jq.qq.com/?_wv=1027&k=hZG8VRV4",
-    isFull: true,
-  }),
-];
+    new Community({
+        name: { 'zh-CN': 'Lyricify 用户群 1', en: 'Lyricify Users Group 1' },
+        name: {
+            'zh-CN': 'Lyricify 用户群 1',
+            en: 'Lyricify Users Group 1',
+            ru: 'Группа Lyricify 1',
+        },
+        value: '972282479',
+        url: 'https://jq.qq.com/?_wv=1027&k=hZG8VRV4',
+        isFull: true,
+    }),
+]
 ```
 
 ### 分文件结构（JSON 数据源）
@@ -176,8 +176,8 @@ export const QQGroups: Community[] = [
 
 ```json
 {
-  "lyricify.madeBy": "Made with ❤️ by WXRIW",
-  "lyricify.poweredBy": "Powered by Astro framework"
+    "lyricify.madeBy": "Made with ❤️ by WXRIW",
+    "lyricify.poweredBy": "Powered by Astro framework"
 }
 ```
 
@@ -216,9 +216,9 @@ export const QQGroups: Community[] = [
 
 ```json
 {
-  "custom.label1": "English Content 1",
-  "custom.label2": "English Content 2",
-  "other.label": "English Content 3"
+    "custom.label1": "English Content 1",
+    "custom.label2": "English Content 2",
+    "other.label": "English Content 3"
 }
 ```
 
@@ -226,7 +226,7 @@ export const QQGroups: Community[] = [
 
 ```json
 {
-  "custom.label": "English Content [INDEX]"
+    "custom.label": "English Content [INDEX]"
 }
 ```
 
