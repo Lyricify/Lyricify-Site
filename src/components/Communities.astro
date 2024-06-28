@@ -18,8 +18,7 @@ const { communities, language = Astro.currentLocale } = Astro.props
                 throw new Error('String is not localizable')
             }
 
-            const communityName =
-                item.name instanceof Object ? item.name[language] : item.name
+            const communityName = item.name instanceof Object ? item.name[language] : item.name
             const communityHasUrl = !!item.url
             const communityIsFull = !!item.isFull
             const wordIsFull = wordIsFullMap[language]

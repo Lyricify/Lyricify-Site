@@ -5,11 +5,7 @@ import Adaptive from '@components/Adaptive.astro'
 
 <div class="footer-container">
     <div class="brand not-content">
-        <img
-            class="logo"
-            src="/LyricifyIcon.png"
-            alt="Darker gray Lyricify logo"
-        />
+        <img class="logo" src="/LyricifyIcon.png" alt="Darker gray Lyricify logo" />
         <h1 class="brand-name"><b>Lyricify</b></h1>
     </div>
 
@@ -26,12 +22,7 @@ import Adaptive from '@components/Adaptive.astro'
                 <p>
                     {Astro.props.labels['lyricify.poweredBy']}
                     <br />
-                    {
-                        Astro.props.labels['lyricify.writtenBy'].replace(
-                            /\[CONTRIBUTOR]/,
-                            'TSAVPYN & fred913'
-                        )
-                    }
+                    {Astro.props.labels['lyricify.writtenBy'].replace(/\[CONTRIBUTOR]/, 'TSAVPYN & fred913')}
                 </p>
             </div>
         </Adaptive>

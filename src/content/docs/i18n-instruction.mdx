@@ -8,20 +8,13 @@ Thanks to the efforts of our i18n crews, now Lyricify has a more modern and beau
 
 Now it's time to make it worldwide available!
 
-Lyricify-Site uses[ **Astro** ](https://astro.build)**framework + Starlight theme** solution,
-Leverage the powerful extensibility of Astro to enhance the richness of your website, and quickly build
-a documentation site with the mature and easy-to-use templates and internationalization support of the Starlight theme.
+Lyricify-Site uses[ **Astro** ](https://astro.build)**framework + Starlight theme** solution, Leverage the powerful extensibility of Astro to enhance the richness of your website, and quickly build a documentation site with the mature and easy-to-use templates and internationalization support of the Starlight theme.
 
-Therefore, if you want to internationalize Lyricify-Site, you need to have a basic understanding of
-the content structure of Starlight —— everything is very simple, we will guide you through it, trying to
-minimize the learning cost.
+Therefore, if you want to internationalize Lyricify-Site, you need to have a basic understanding of the content structure of Starlight —— everything is very simple, we will guide you through it, trying to minimize the learning cost.
 
-:::tip[Let's cut to the chase]
-If you don’t want to read a bunch of abstract concept introductions and want to dive directly into the
-internationalization work, please jump to the ‘Start Internationalization’ section.
+:::tip[Let's cut to the chase] If you don’t want to read a bunch of abstract concept introductions and want to dive directly into the internationalization work, please jump to the ‘Start Internationalization’ section.
 
-If you have ample time, we still recommend that you read the complete guide to ensure maintainability in the future.
-:::
+If you have ample time, we still recommend that you read the complete guide to ensure maintainability in the future. :::
 
 ## Introduction
 
@@ -44,8 +37,7 @@ Pages are:
 
 ### Set of Docs
 
-Docs are important parts of Lyricify-Site, with large amount, simple and content-first, and are dedicated to
-give instructions and provide large-amount information.
+Docs are important parts of Lyricify-Site, with large amount, simple and content-first, and are dedicated to give instructions and provide large-amount information.
 
 Docs are:
 
@@ -56,16 +48,11 @@ Docs are:
 
 ### Data
 
-Some data and content may be used or required to be updated at many times, so they need to be independent from
-documents and pages, in order to achieve _Changed somewhere, changed everywhere_.
+Some data and content may be used or required to be updated at many times, so they need to be independent from documents and pages, in order to achieve _Changed somewhere, changed everywhere_.
 
-Data has two types:
-The one stores Lyricify data as constants in **TypeScript**,
-the other one stores labels of UI in **JSON** files.
+Data has two types: The one stores Lyricify data as constants in **TypeScript**, the other one stores labels of UI in **JSON** files.
 
-The first one provides information about Lyricify in the pages, such as **List of user communities**,
-**Info of version**, etc.,
-which are more complex and customizable.
+The first one provides information about Lyricify in the pages, such as **List of user communities**, **Info of version**, etc., which are more complex and customizable.
 
 The other one is used to internationalize components of UI, such as **the copyright and credits in footer**.
 
@@ -116,8 +103,7 @@ More information about Data could be found in chapters below.
 
 </FileTree>
 
-也就是说，除了根目录直接存放默认语言（英语，en）的内容外，剩余本地化目录的结构与根目录完全相同。
-这就是 **标准 i18n 结构**，符合这一结构的有[网页集](#网页集)和[文档集](#文档集)
+也就是说，除了根目录直接存放默认语言（英语，en）的内容外，剩余本地化目录的结构与根目录完全相同。这就是 **标准 i18n 结构**，符合这一结构的有[网页集](#网页集)和[文档集](#文档集)
 
 ### 数据键结构（TypeScript 数据源）
 
@@ -136,8 +122,7 @@ export const QQGroups: Community[] = [
 ]
 ```
 
-在上面的例子中，`name`键的值是一个对象（也可以大致理解为字典），这个对象特别地包含了几个键值对：
-而每个键都是一个语言代码，每个值都是对应的国际化
+在上面的例子中，`name`键的值是一个对象（也可以大致理解为字典），这个对象特别地包含了几个键值对：而每个键都是一个语言代码，每个值都是对应的国际化
 
 只需要做的只是修改这一行，仅此而已。比如，我为上面的例子增加了一门俄语（ru）翻译：
 
@@ -159,8 +144,7 @@ export const QQGroups: Community[] = [
 
 ### 分文件结构（JSON 数据源）
 
-专门用于网页部件的国际化翻译~~被迫~~储存在单独的 **JSON** 文件中，并存放于`/src/content/i18n/`下
-每个语言都是一个独立的 JSON 文件，例如，`i18n`文件夹具有如下结构：
+专门用于网页部件的国际化翻译~~被迫~~储存在单独的 **JSON** 文件中，并存放于`/src/content/i18n/`下每个语言都是一个独立的 JSON 文件，例如，`i18n`文件夹具有如下结构：
 
 <FileTree>
 
@@ -187,15 +171,13 @@ export const QQGroups: Community[] = [
 
 ### 第一步：国际化网页
 
-在`/src/pages/`下，根目录的文件和目录都是默认语言（英文，en）的页面，
-其他以`zh-CN`，`ru`等语言代码为名的目录都是对应语言的页面，具有和根目录相同的结构
+在`/src/pages/`下，根目录的文件和目录都是默认语言（英文，en）的页面，其他以`zh-CN`，`ru`等语言代码为名的目录都是对应语言的页面，具有和根目录相同的结构
 
 你只需要对`.astro`等格式的文件进行翻译即可，**文件夹名文件名无需进行翻译**
 
 ### 第二步：国际化文档
 
-在`/src/content/docs/`下，根目录的文件和目录都是默认语言（英文，en）的文档，
-其他以`zh-CN`，`ru`等语言代码为名的目录都是对应语言的文档，具有和根目录相同的结构
+在`/src/content/docs/`下，根目录的文件和目录都是默认语言（英文，en）的文档，其他以`zh-CN`，`ru`等语言代码为名的目录都是对应语言的文档，具有和根目录相同的结构
 
 你只需要对`.md`和`.mdx`等格式的文件进行翻译即可，**文件夹名文件名无需进行翻译**
 
@@ -211,8 +193,7 @@ export const QQGroups: Community[] = [
 
 ### 第四步：国际化 JSON 数据
 
-在`/src/content/i18n/`下，每个语言的内容都会作为一个 JSON 文件存储，
-每个 JSON 文件的结构类似于（以`en.json`）：
+在`/src/content/i18n/`下，每个语言的内容都会作为一个 JSON 文件存储，每个 JSON 文件的结构类似于（以`en.json`）：
 
 ```json
 {
