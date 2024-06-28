@@ -2,7 +2,7 @@
 export default {
     plugins: ['prettier-plugin-astro'],
     bracketSpacing: false,
-    embedLanguageFormatting: 'off',
+    embeddedLanguageFormatting: 'off',
     editorconfig: true,
     jsxSingleQuote: true,
     trailingComma: 'es5',
@@ -10,19 +10,4 @@ export default {
     tabWidth: 4,
     semi: true,
     printWidth: 120,
-    "overrides": [
-        {
-            "files": "*.json",
-            "options": {
-                "tabWidth": 2,
-                singleQuote: false,
-            }
-        },
-        {
-            "files": ["*.html", "legacy/**/*.js"],
-            "options": {
-                "tabWidth": 4
-            }
-        }
-    ]
 };
