@@ -1,6 +1,15 @@
 /** @type {import("prettier").Config} */
 export default {
     plugins: ['prettier-plugin-astro'],
+    overrides: [
+        {
+            files: '*.astro',
+            options: {
+                parser: 'astro',
+                bracketSpacing: false,
+            },
+        },
+    ],
     bracketSpacing: false,
     embeddedLanguageFormatting: 'off',
     editorconfig: true,
