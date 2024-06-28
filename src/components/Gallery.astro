@@ -1,40 +1,48 @@
 ---
 
 ---
+
 <div id="image-container" style="width: 30rem">
-    <img alt="Lyricify application showcase screenshots" src="/showcase/showcase1.png"/>
-    <img alt="Lyricify application showcase screenshots" src="/showcase/showcase2.png"/>
-    <img alt="Lyricify application showcase screenshots" src="/showcase/showcase3.png"/>
+  <img
+    alt="Lyricify application showcase screenshots"
+    src="/showcase/showcase1.png"
+  />
+  <img
+    alt="Lyricify application showcase screenshots"
+    src="/showcase/showcase2.png"
+  />
+  <img
+    alt="Lyricify application showcase screenshots"
+    src="/showcase/showcase3.png"
+  />
 </div>
 <style>
-    #image-container img {
-        position: absolute;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        width: inherit;
-    }
+  #image-container img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: inherit;
+  }
 
-    #image-container img.fade-in {
-        opacity: 1;
-    }
-
+  #image-container img.fade-in {
+    opacity: 1;
+  }
 </style>
 <script>
-    const images = Array.from(document.querySelectorAll('#image-container img'));
-    let currentIndex = 0;
+  const images = Array.from(document.querySelectorAll("#image-container img"));
+  let currentIndex = 0;
 
-    // 页面加载时立即为第一张图片添加淡入类
-    images[currentIndex].classList.add('fade-in');
+  // 页面加载时立即为第一张图片添加淡入类
+  images[currentIndex].classList.add("fade-in");
 
-    setInterval(() => {
-        // 移除当前图片的淡入类
-        images[currentIndex].classList.remove('fade-in');
+  setInterval(() => {
+    // 移除当前图片的淡入类
+    images[currentIndex].classList.remove("fade-in");
 
-        // 计算下一张图片的索引
-        currentIndex = (currentIndex + 1) % images.length;
+    // 计算下一张图片的索引
+    currentIndex = (currentIndex + 1) % images.length;
 
-        // 为下一张图片添加淡入类
-        images[currentIndex].classList.add('fade-in');
-    }, 3000);
-
+    // 为下一张图片添加淡入类
+    images[currentIndex].classList.add("fade-in");
+  }, 3000);
 </script>

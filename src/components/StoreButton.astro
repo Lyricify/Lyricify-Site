@@ -1,35 +1,42 @@
 ---
-import {Labels} from '@data/DataHelper';
+import { Labels } from "@data/DataHelper";
 
 interface Props {
-    url: string;
+  url: string;
 }
 
-const {url} = Astro.props;
+const { url } = Astro.props;
 const storeButtonPath = (theme: string) => {
-    return `/store-buttons/ms-store-${theme}-${Astro.currentLocale}.svg`
-}
+  return `/store-buttons/ms-store-${theme}-${Astro.currentLocale}.svg`;
+};
 const t = (translatable: object) => {
-    return translatable[Astro.currentLocale];
-}
+  return translatable[Astro.currentLocale];
+};
 ---
+
 <center>
-    <div class="store-button">
-        <a href={url}>
-            <img src={storeButtonPath('dark')}
-                 alt={t(Labels["label.getItFromMicrosoftStore"])} class="light:sl-hidden"/>
-            <img src={storeButtonPath('light')}
-                 alt={t(Labels["label.getItFromMicrosoftStore"])} class="dark:sl-hidden"/>
-        </a>
-    </div>
+  <div class="store-button">
+    <a href={url}>
+      <img
+        src={storeButtonPath("dark")}
+        alt={t(Labels["label.getItFromMicrosoftStore"])}
+        class="light:sl-hidden"
+      />
+      <img
+        src={storeButtonPath("light")}
+        alt={t(Labels["label.getItFromMicrosoftStore"])}
+        class="dark:sl-hidden"
+      />
+    </a>
+  </div>
 </center>
 <style>
-    .store-button {
-        width: 15rem;
-    }
+  .store-button {
+    width: 15rem;
+  }
 
-    .store-button a, img {
-        width: inherit;
-    }
-
+  .store-button a,
+  img {
+    width: inherit;
+  }
 </style>

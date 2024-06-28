@@ -1,10 +1,9 @@
 ---
-import type { Props } from '@astrojs/starlight/props';
-import Default from '@astrojs/starlight/components/Footer.astro';
-import LyricifyFooter from '@components/LyricifyFooter.astro';
+import type { Props } from "@astrojs/starlight/props";
+import Default from "@astrojs/starlight/components/Footer.astro";
+import LyricifyFooter from "@components/LyricifyFooter.astro";
 ---
+
 <Default {...Astro.props}><slot /></Default>
 
-<LyricifyFooter {...Astro.props}>
-
-</LyricifyFooter>
+<LyricifyFooter {...Astro.props} />
