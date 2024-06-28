@@ -1,16 +1,14 @@
 ---
-import {Community} from '../data/LyricifyCustomTypes';
+import {Community} from "../data/LyricifyCustomTypes";
 
 interface Props {
-    communities: Community[];
+    communities: Array<Community>,
     language?: string;
 }
+import {Labels} from '@data/DataHelper';
+const wordIsFullMap = Labels['label.communityIsFull'];
 
-const wordIsFullMap = {
-    'zh-CN': '已满', en: 'full'
-};
-
-const {communities, language=Astro.currentLocale} = Astro.props;
+const {communities, language = Astro.currentLocale} = Astro.props;
 ---
 <ul>
     {

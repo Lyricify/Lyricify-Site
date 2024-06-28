@@ -33,7 +33,9 @@
 :root {
 	--sl-color-accent-low: #002d0e;
 	--sl-color-accent: #008035;
-	--sl-color-accent-high: #a3d8ab;
+	/* Thanks fred913 for this optimized color for Dark Mode: #35c969*/
+	/*--sl-color-accent-high: #a3d8ab;*/
+	--sl-color-accent-high: #35c969;
 	--sl-color-white: #ffffff;
 	--sl-color-gray-1: #eeeeee;
 	--sl-color-gray-2: #c2c2c2;
@@ -72,4 +74,9 @@
 .site-title span {
     font-family: 'Spotify Circular', sans-serif;
     font-weight: bold;
+	color: var(--sl-color-accent);
+}
+
+:root[data-theme='dark'] .site-title span{
+	color: var(--sl-color-accent-high);
 }

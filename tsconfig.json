@@ -8,6 +8,8 @@
       "@data/*": [
         "src/data/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }

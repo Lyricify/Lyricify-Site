@@ -1,6 +1,6 @@
 ---
 // import type { Props } from '@astrojs/starlight/props';
-import Adaptive from '@components/Adaptive.astro';
+import {Adaptive} from '@components/custom.astro';
 ---
 <div class="footer-container">
 
@@ -49,7 +49,7 @@ import Adaptive from '@components/Adaptive.astro';
     }
 
     :root[data-theme="dark"] .footer-container .brand .logo {
-        filter: grayscale(50%);
+        filter: grayscale(100%);
     }
 
     .footer-container .brand .brand-name {
