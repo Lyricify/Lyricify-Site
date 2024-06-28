@@ -1,5 +1,9 @@
 {
     "javascript.format.semicolons": "insert",
     "typescript.format.semicolons": "insert",
-    "mdx.server.enable": true
+    "mdx.server.enable": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    }
 }
