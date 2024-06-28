@@ -1,71 +1,67 @@
 ---
 // Starlight components & layouts
-import {Card, CardGrid} from '@astrojs/starlight/components';
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Card, CardGrid } from "@astrojs/starlight/components"
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
 
 // Custom components
-import Communities from '@components/Communities.astro';
-import Adaptive from '@components/Adaptive.astro';
-import StoreButton from '@components/StoreButton.astro';
+import Adaptive from "@components/Adaptive.astro"
+import Communities from "@components/Communities.astro"
+import StoreButton from "@components/StoreButton.astro"
 
 // Data
-import {Data} from '@data/DataHelper';
+import { Data } from "@data/DataHelper"
 ---
-<StarlightPage frontmatter={
-    {
-        title: '不仅有歌词',
-        description: '为 Spotify 量身打造的强大的歌词工具',
-        template: 'splash',
+
+<StarlightPage
+    frontmatter={{
+        title: "不仅有歌词",
+        description: "为 Spotify 量身打造的强大的歌词工具",
+        template: "splash",
         hero: {
-            title: '不仅有歌词',
-            tagline: '地表最强歌词工具，专为 Spotify 打造',
+            title: "不仅有歌词",
+            tagline: "地表最强歌词工具，专为 Spotify 打造",
             actions: [
                 {
-                    text: '快速上手 Lyricify',
-                    link: './get-started/',
-                    icon: 'right-caret',
-                    variant: 'primary',
+                    text: "快速上手 Lyricify",
+                    link: "./get-started/",
+                    icon: "right-caret",
+                    variant: "primary",
                 },
                 {
-                    text: '立即获取 Lyricify',
-                    link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
-                    icon: 'seti:windows',
-                    variant: 'secondary',
+                    text: "立即获取 Lyricify",
+                    link: "https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full",
+                    icon: "seti:windows",
+                    variant: "secondary",
                 },
             ],
             image: {
                 html: `<img src="/showcase/showcase2.png" alt='Lyricify screenshot' width='100%'/>`,
-            }
-        }
-    }
-}>
+            },
+        },
+    }}
+>
     <h3>歌词从未如此生动</h3>
     <CardGrid stagger>
         <Card title="Spotify 原味界面" icon="bars">
-
-            清晰易用的 Spotify 样式歌词，让你清晰地感受每个音节。搭配上你一直以来喜爱而熟悉的界面风格：
+            清晰易用的 Spotify
+            样式歌词，让你清晰地感受每个音节。搭配上你一直以来喜爱而熟悉的界面风格：
             直白，流畅
-
         </Card>
         <Card title="1:1 复刻的 Apple Music 歌词样式" icon="apple">
-
-            精确到音节的<b>逐字歌词</b><sup>1</sup>、<b>流畅丝滑的动画</b>、<b>对唱视图</b>和<b>背景人声</b>，
-            甚至还有 Lyricify 独创<b>妙控条</b>给你不一样的操作体验
-
+            精确到音节的<b>逐字歌词</b><sup>1</sup>、<b>流畅丝滑的动画</b>、<b
+                >对唱视图</b
+            >和<b>背景人声</b>， 甚至还有 Lyricify 独创<b>妙控条</b>
+            给你不一样的操作体验
         </Card>
         <Card title="丰富的自定义选项" icon="setting">
-
-            你的歌词，你做主！从 Apple Music 样式歌词到灵动词岛，
-            我们提供
+            你的歌词，你做主！从 Apple Music 样式歌词到灵动词岛， 我们提供
             <del>可能是这个世界上最</del>
             丰富强大的可自定义歌词<sup>2</sup>。个性，从不妥协
-
         </Card>
         <Card title="由强大的 Lyricify 设计驱动" icon="rocket">
-
-            不仅有 <b>Lyricify 歌词库</b>为数万用户提供的歌词天地，更有独创 <b>Lyricify 智能引擎</b>强劲内驱<sup>3</sup>，
-            只为让你的音乐体验更上一层楼
-
+            不仅有 <b>Lyricify 歌词库</b>为数万用户提供的歌词天地，更有独创 <b
+                >Lyricify 智能引擎</b
+            >强劲内驱<sup>3</sup>， 只为让你的音乐体验更上一层楼
         </Card>
         <Card title="数不尽的更多功能" icon="list-format">
             <ul>
@@ -79,36 +75,39 @@ import {Data} from '@data/DataHelper';
             </ul>
         </Card>
     </CardGrid>
-    <hr/>
-    <br/>
+    <hr />
+    <br />
     <div style="text-align: center;">
         <h2>立即下载</h2>
         <h4>开启不一样的歌词体验</h4>
-        <StoreButton url="https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full"/>
+        <StoreButton
+            url="https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full"
+        />
         <p>
             在找 <b>Lyricify Mobile</b> 或其他版本？
-            <a href="https://github.com/WXRIW/Lyricify-App/">前往 GitHub 下载</a>
+            <a href="https://github.com/WXRIW/Lyricify-App/">前往 GitHub 下载</a
+            >
         </p>
     </div>
-    <br/>
-    <hr/>
+    <br />
+    <hr />
     <h2>因为有你，Lyricify 更精彩</h2>
     <h4>成为我们社区的一员</h4>
     <Adaptive mobile>
         <div>
             <h5>QQ 群</h5>
-            <Communities communities={Data['Community.QQ']}/>
+            <Communities communities={Data["Community.QQ"]} />
         </div>
         <div>
             <h5>Telegram</h5>
-            <Communities communities={Data['Community.Telegram']}/>
+            <Communities communities={Data["Community.Telegram"]} />
         </div>
     </Adaptive>
-    <hr/>
+    <hr />
     <p>
-        <sup>1</sup>逐字歌词并非所有歌曲可用<br/>
-        <sup>2</sup>部分自定义设置可能需要 Microsoft Store 版<br/>
-        <sup>3</sup>Lyricify 智能引擎需要有效的 Spotify Premium 订阅<br/>
+        <sup>1</sup>逐字歌词并非所有歌曲可用<br />
+        <sup>2</sup>部分自定义设置可能需要 Microsoft Store 版<br />
+        <sup>3</sup>Lyricify 智能引擎需要有效的 Spotify Premium 订阅<br />
         <sup>4</sup>俄文拉丁转写功能即将上线
     </p>
 </StarlightPage>
