@@ -80,3 +80,9 @@
 :root[data-theme='dark'] .site-title span{
 	color: var(--sl-color-accent-high);
 }
+
+/* Global */
+:root {
+	--sl-content-width: 60rem;
+	--sl-sidebar-width: 20rem;
+}
