@@ -81,8 +81,12 @@
 	color: var(--sl-color-accent-high);
 }
 
-/* Global */
+/* Misc */
 :root {
 	--sl-content-width: 60rem;
 	--sl-sidebar-width: 20rem;
+}
+
+.social-icons svg{
+	color: var(--sl-color-white);
 }
