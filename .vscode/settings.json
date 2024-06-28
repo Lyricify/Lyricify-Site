@@ -3,11 +3,25 @@
   "typescript.format.semicolons": "remove",
   "mdx.server.enable": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  "prettier.tabWidth": 4,
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
-  "editor.tabSize": 4
+  "editor.tabSize": 4,
+  "[markdown]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.tabSize": 2
+  },
+  "[mdx]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.configPath": ".prettierrc.ts"
 }
