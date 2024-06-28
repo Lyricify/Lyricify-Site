@@ -68,4 +68,8 @@ export default defineConfig({
             plugins: [],
         }),
     ],
+    trailingSlash: 'always',
+    build: {
+        assets: '_asset'
+    }
 });
