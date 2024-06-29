@@ -31,7 +31,7 @@ const config = {
     bracketSpacing: false,
     bracketSameLine: false,
     arrowParens: 'always',
-    htmlWhitespaceSensitivity: 'css',
+    htmlWhitespaceSensitivity: 'ignore',
     vueIndentScriptAndStyle: true,
     endOfLine: 'lf',
 };
