@@ -14,6 +14,12 @@ const config = {
                 parser: 'astro',
             },
         },
+        {
+            files: '*.mdx',
+            options: {
+                embeddedLanguageFormatting: 'off',
+            },
+        },
     ],
     trailingComma: 'es5',
     tabWidth: 4,
@@ -27,8 +33,7 @@ const config = {
     arrowParens: 'always',
     htmlWhitespaceSensitivity: 'css',
     vueIndentScriptAndStyle: true,
-    endOfLine: 'crlf',
-    embeddedLanguageFormatting: 'off',
+    endOfLine: 'lf',
 };
 
 export default config;
