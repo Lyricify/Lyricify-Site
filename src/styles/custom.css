@@ -35,13 +35,15 @@
     /*background-color: transparent;*/
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    background-color: hsla(150, 100%, 25%, 0.05);
-
+    background-color: rgba(24, 24, 24, 66%);
+    filter: url('/roughpaper.svg');
 }
 
 [data-has-hero] .page {
     background:
         linear-gradient(215deg, hsla(150, 100%, 25%, 0.2), transparent 40%),
-        radial-gradient(hsla(150, 100%, 25%, 0.2), transparent 40%) no-repeat -60vw -40vh / 105vw 200vh,
-        radial-gradient(hsla(150, 100%, 25%, 0.2), transparent 65%) no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
+        radial-gradient(hsla(150, 100%, 25%, 0.2), transparent 40%) no-repeat -60vw -40vh /
+            105vw 200vh,
+        radial-gradient(hsla(150, 100%, 25%, 0.2), transparent 65%) no-repeat
+            50% calc(100% + 20rem) / 60rem 30rem;
 }
