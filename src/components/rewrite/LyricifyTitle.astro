@@ -4,7 +4,7 @@
 
 <h1 id='_top' class='lyricify-title-lyrics-view'>{Astro.props.title}</h1>
 
-<style define:vars={{titleStr: Astro.props.title}}>
+<style define:vars={{titleStr: "'" + Astro.props.title + "'"}}>
     h1 {
         font-size: clamp(
             var(--sl-text-3xl),
