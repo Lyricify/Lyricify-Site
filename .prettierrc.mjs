@@ -1,22 +1,34 @@
-/** @type {import("prettier").Config} */
-export default {
+// prettier.config.js, .prettierrc.js, prettier.config.mjs, or .prettierrc.mjs
+
+/**
+ * @see https://prettier.io/docs/en/configuration.html
+ * @type {import("prettier").Config}
+ */
+
+const config = {
     plugins: ['prettier-plugin-astro'],
     overrides: [
         {
             files: '*.astro',
             options: {
                 parser: 'astro',
-                bracketSpacing: false,
             },
         },
     ],
-    bracketSpacing: false,
-    embeddedLanguageFormatting: 'off',
-    editorconfig: true,
-    jsxSingleQuote: true,
     trailingComma: 'es5',
-    singleQuote: true,
     tabWidth: 4,
+    useTabs: false,
     semi: true,
-    printWidth: 120,
+    singleQuote: true,
+    quoteProps: 'as-needed',
+    jsxSingleQuote: true,
+    bracketSpacing: false,
+    bracketSameLine: false,
+    arrowParens: 'always',
+    htmlWhitespaceSensitivity: 'css',
+    vueIndentScriptAndStyle: true,
+    endOfLine: 'crlf',
+    embeddedLanguageFormatting: 'off',
 };
+
+export default config;

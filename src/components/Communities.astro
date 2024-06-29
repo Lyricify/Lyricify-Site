@@ -53,15 +53,15 @@ const {communities} = Astro.props;
                         <p>
                             <b>{communityName}</b>:
                             {communityHasUrl ? (
-                                    communityIsFull ? (
-                                            <Fragment set:html={tmplWithUrlFull} />
-                                    ) : (
-                                            <Fragment set:html={tmplWithUrl} />
-                                    )
+                                communityIsFull ? (
+                                        <Fragment set:html={tmplWithUrlFull}/>
+                                ) : (
+                                        <Fragment set:html={tmplWithUrl}/>
+                                )
                             ) : communityIsFull ? (
-                                    <Fragment set:html={tmplFull} />
+                                    <Fragment set:html={tmplFull}/>
                             ) : (
-                                    <Fragment set:html={tmpl} />
+                                    <Fragment set:html={tmpl}/>
                             )}
                         </p>
                     </li>
