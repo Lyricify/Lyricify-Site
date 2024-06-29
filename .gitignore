@@ -118,3 +118,4 @@ fabric.properties
 /.idea/Lyricify-Site.iml
 /.idea/modules.xml
 /.idea/vcs.xml
+!/.idea/codeStyles/Project.xml
