@@ -53,8 +53,8 @@ export default defineConfig({
                 './src/styles/theme.css',
             ],
             components: {
-                Footer: '@src/components/rewrite/Footer.astro',
-                Hero: '@src/components/rewrite/LyricifyHero.astro',
+                Footer: './src/components/rewrite/Footer.astro',
+                Hero: './src/components/rewrite/Hero.astro',
             },
             defaultLocale: 'root',
             locales: {

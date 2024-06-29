@@ -39,7 +39,7 @@ if (image) {
 }
 
 // Check if it is on Home Page
-const isHomepage = Astro.props.slug === '';
+const isHomepage =  ['', 'zh-cn'].includes(Astro.props.slug);
 ---
 
 <div class='hero'>
