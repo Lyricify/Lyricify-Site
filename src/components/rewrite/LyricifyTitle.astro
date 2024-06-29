@@ -4,7 +4,7 @@
 
 <h1 id='_top' class='lyricify-title-lyrics-view'>{Astro.props.title}</h1>
 
-<style>
+<style define:vars={{titleStr: Astro.props.title}}>
     h1 {
         font-size: clamp(
             var(--sl-text-3xl),
@@ -78,7 +78,7 @@
         padding-right: var(--p-right);
         position: absolute;
         display: block;
-        content: 'More than lyrics';
+        content: var(--titleStr);
         top: 0;
         left: 0;
         width: calc(
