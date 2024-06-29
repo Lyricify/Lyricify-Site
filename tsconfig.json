@@ -1,18 +1,12 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@data/*": [
-        "src/data/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ]
-    },
-    "resolveJsonModule": true,
-    "esModuleInterop": true
-  }
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": ["src/components/*"],
+            "@data/*": ["src/data/*"],
+            "@assets/*": ["src/assets/*"]
+        },
+        "resolveJsonModule": true,
+        "esModuleInterop": true
+    }
 }

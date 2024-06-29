@@ -18,6 +18,7 @@ const config = {
             files: '*.mdx',
             options: {
                 embeddedLanguageFormatting: 'off',
+                tabWidth: 2,
             },
         },
     ],
@@ -29,7 +30,7 @@ const config = {
     quoteProps: 'as-needed',
     jsxSingleQuote: true,
     bracketSpacing: false,
-    bracketSameLine: false,
+    bracketSameLine: true,
     arrowParens: 'always',
     htmlWhitespaceSensitivity: 'ignore',
     vueIndentScriptAndStyle: true,

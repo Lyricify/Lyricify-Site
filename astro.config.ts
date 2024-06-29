@@ -47,9 +47,14 @@ export default defineConfig({
                     },
                 },
             ],
-            customCss: ['./src/styles/custom.css', './src/fonts/fontface.css', './src/styles/theme.css'],
+            customCss: [
+                './src/styles/custom.css',
+                './src/fonts/fontface.css',
+                './src/styles/theme.css',
+            ],
             components: {
                 Footer: './src/components/rewrite/Footer.astro',
+                Hero: './src/components/rewrite/Hero.astro',
             },
             defaultLocale: 'root',
             locales: {

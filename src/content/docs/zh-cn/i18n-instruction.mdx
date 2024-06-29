@@ -1,5 +1,6 @@
 ---
 title: i18n 工作指导
+draft: true
 ---
 
 import {FileTree} from '@astrojs/starlight/components';
@@ -20,27 +21,27 @@ Lyricify-Site 采用[ **Astro** ](https://astro.build)**框架 + Starlight 主�
 
 在 Lyricify-Site 中，可翻译的内容包括：
 
--   网页集
--   文档集
--   数据源（TypeScript, json 等）
+- 网页集
+- 文档集
+- 数据源（TypeScript, json 等）
 
 ### 网页集
 
 网页形式独立、功能专一，比如**主页、关于页**等，在本站中具有如下特征：
 
--   位于`/src/pages/`中
--   `.astro`格式
--   大部分用 **HTML**（Astro 规范）书写
--   [具有标准的 i18n 结构](标准-i18n-结构)
+- 位于`/src/pages/`中
+- `.astro`格式
+- 大部分用 **HTML**（Astro 规范）书写
+- [具有标准的 i18n 结构](标准-i18n-结构)
 
 ### 文档集
 
 文档是 Lyricify-Site 的重要部分，数量很大，形式简单、内容优先，以提供软件使用教学、说明和其他大量文本为首要目的。在本站中具有如下特征：
 
--   位于`/src/content/docs/`中
--   `.mdx`或`.md`格式
--   大部分用 Markdown / MDX 书写
--   具有标准的 i18n 结构
+- 位于`/src/content/docs/`中
+- `.mdx`或`.md`格式
+- 大部分用 Markdown / MDX 书写
+- 具有标准的 i18n 结构
 
 ### 数据源
 
