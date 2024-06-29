@@ -10,7 +10,6 @@ import GlowHero from '@components/GlowHero.astro';
 // Check if it is on Home Page
 const isHomepage =
     Astro.props.slug === '' || Astro.props.slug === Astro.props.locale;
-console.log(isHomepage);
 ---
 
 {isHomepage ? <GlowHero {...Astro.props} /> : <Default {...Astro.props} />}
