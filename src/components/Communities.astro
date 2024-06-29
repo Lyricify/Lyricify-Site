@@ -1,10 +1,10 @@
 ---
-import {Community} from '../data/LyricifyCustomTypes';
+import { Labels } from '@data/DataHelper';
+import { Community } from '../data/LyricifyCustomTypes';
 
 interface Props {
     communities: Array<Community>;
 }
-import {Labels} from '@data/DataHelper';
 const wordIsFullMap = Labels['label.communityIsFull'];
 
 const {communities} = Astro.props;
