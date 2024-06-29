@@ -1,0 +1,104 @@
+---
+
+---
+
+<h1 id='_top' class='lyricify-title-lyrics-view'>{Astro.props.title}</h1>
+
+<style>
+    h1 {
+        font-size: clamp(
+            var(--sl-text-3xl),
+            calc(0.25rem + 5vw),
+            var(--sl-text-6xl)
+        );
+        line-height: var(--sl-line-height-headings);
+        font-weight: 600;
+        color: var(--sl-color-white);
+    }
+
+    .lyricify-title-lyrics-view {
+        position: relative;
+
+        --base-f-unit: 0.182rem;
+
+        display: block;
+
+        --x-offset: calc(12 * var(--base-f-unit));
+        --y-offset: calc(8 * var(--base-f-unit));
+
+        margin-left: calc(var(--x-offset) * -1);
+        margin-top: calc(var(--y-offset) * -1);
+        padding: calc(var(--y-offset)) calc(var(--x-offset));
+        /* background-color: green; */
+        border-radius: calc(8 * var(--base-f-unit));
+
+        transition:
+            padding 0.34s cubic-bezier(0.19, 0.22, 0.18, 0.97),
+            backdrop-filter 0.48s ease-in-out,
+            transform 0.39s cubic-bezier(0.13, 0.44, 0.3, 1.69),
+            filter 0.62s cubic-bezier(0.13, 0.44, 0.3, 1.69);
+
+        --color-active: rgba(246, 245, 244, 1);
+        --color-inactive: rgba(246, 245, 244, 0.2);
+
+        --progress: 65;
+
+        cursor: default;
+
+        user-select: none;
+
+        --fade-width: 32;
+        background-image: linear-gradient(
+            to right,
+            var(--color-active),
+            var(--color-active)
+                calc(
+                    var(--progress) * 1% -
+                        calc(var(--fade-width) * 0.5 * var(--base-f-unit))
+                ),
+            var(--color-inactive)
+                calc(
+                    var(--progress) * 1% +
+                        calc(var(--fade-width) * 0.5 * var(--base-f-unit))
+                ),
+            var(--color-inactive)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+
+        color: transparent;
+    }
+
+    .lyricify-title-lyrics-view::before {
+        padding-top: calc(var(--y-offset));
+        clip-path: inset(0 0 var(--y-offset) 0);
+        padding-left: calc(var(--x-offset));
+        --p-right: 5px;
+        padding-right: var(--p-right);
+        position: absolute;
+        display: block;
+        content: 'More than lyrics';
+        top: 0;
+        left: 0;
+        width: calc(
+            var(--progress) * 1% - calc(var(--fade-width) * 0.5) *
+                var(--base-f-unit) + var(--p-right)
+        );
+        height: 100%;
+        z-index: 9999;
+        opacity: 1;
+        word-break: break-all;
+        overflow: hidden;
+        text-overflow: clip;
+        text-shadow: 0px 0px 4px var(--color-active);
+    }
+
+    .lyricify-title-lyrics-view:hover {
+        backdrop-filter: brightness(1.23);
+    }
+
+    .lyricify-title-lyrics-view:active {
+        transform: scale(0.95);
+    }
+</style>

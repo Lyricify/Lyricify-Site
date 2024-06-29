@@ -13,58 +13,64 @@ import {Data} from '@data/DataHelper';
 ---
 
 <StarlightPage
-        frontmatter={{
+    frontmatter={{
+        title: 'More than lyrics',
+        description: 'A powerful lyrics app designed for Spotify',
+        template: 'splash',
+        hero: {
             title: 'More than lyrics',
-            description: 'A powerful lyrics app designed for Spotify',
-            template: 'splash',
-            hero: {
-                title: 'More than lyrics',
-                tagline: 'A powerful lyrics app, designed for Spotify',
-                actions: [
-                    {
-                        text: 'Get started now',
-                        link: '/get-started/',
-                        icon: 'right-caret',
-                        variant: 'primary',
-                    },
-                    {
-                        text: 'Get Lyricify from Store',
-                        link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
-                        icon: 'seti:windows',
-                        variant: 'secondary',
-                    },
-                ],
-                image: {
-                    html: `<img src="/showcase/showcase1.png" alt="Lyricify" style="width: 100%;"/>`,
+            tagline: 'A powerful lyrics app, designed for Spotify',
+            actions: [
+                {
+                    text: 'Get started now',
+                    link: '/get-started/',
+                    icon: 'right-caret',
+                    variant: 'primary',
                 },
+                {
+                    text: 'Get Lyricify from Store',
+                    link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
+                    icon: 'seti:windows',
+                    variant: 'secondary',
+                },
+            ],
+            image: {
+                html: `<img src="/showcase/showcase1.png" alt="Lyricify" style="width: 100%;"/>`,
             },
-        }}
->
+        },
+    }}>
     <h3>Lyrics have never been that alive</h3>
     <CardGrid stagger>
         <Card title='Spotify Original Interface' icon='bars'>
-            Clear, easy-to-use Spotify-style lyrics interface makes every syllable beats right with your pulse, along
-            with the interface you know and love: Always straightforward and fluid
+            Clear, easy-to-use Spotify-style lyrics interface makes every
+            syllable beats right with your pulse, along with the interface you
+            know and love: Always straightforward and fluid
         </Card>
         <Card title='1:1 Apple Music Style' icon='apple'>
-            With <b>syllable-by-syllable lyrics</b><sup>1</sup>, <b>smooth and silky animations</b>,
-            <b>duet views</b> and <b>background vocals</b>, and even Lyricify's very own <b>Magic Stripe</b>, the
-            experience is totally different.
+            With <b>syllable-by-syllable lyrics</b><sup>1</sup>, <b>
+                smooth and silky animations
+            </b>,
+            <b>duet views</b> and <b>background vocals</b>, and even Lyricify's
+            very own <b>Magic Stripe</b>, the experience is totally different.
         </Card>
         <Card title='Rich Customizablility' icon='setting'>
-            Your lyrics are in your way! From Apple Music style lyrics to Dynamic Lyrics Island, we offer
+            Your lyrics are in your way! From Apple Music style lyrics to
+            Dynamic Lyrics Island, we offer
             <del>probably the richest and most</del>
             powerful customizable<sup>2</sup> lyrics. Personalization, without compromise
         </Card>
         <Card title='Powered By Lyricify Intelligence' icon='rocket'>
-            Not only <b>Lyricify Vault</b> that connects thousands of users, but also the
-            <b>Lyricify Intelligent Engine</b><sup>3</sup> are along with you, enriching your music experience
+            Not only <b>Lyricify Vault</b> that connects thousands of users, but
+            also the
+            <b>Lyricify Intelligent Engine</b><sup>3</sup> are along with you, enriching
+            your music experience
         </Card>
         <Card title='More fascinating features' icon='list-format'>
             <ul>
                 <li>Lyrics translations (Chinese)</li>
                 <li>
-                    Chinese Simplified/Traditional switch, Japanese Romaji, Russian Latinization<sup>4</sup>
+                    Chinese Simplified/Traditional switch, Japanese Romaji,
+                    Russian Latinization<sup>4</sup>
                 </li>
                 <li>Dynamic Lyrics Island and Byland Mode</li>
                 <li>Desktop lyrics</li>
@@ -74,36 +80,41 @@ import {Data} from '@data/DataHelper';
             </ul>
         </Card>
     </CardGrid>
-    <hr/>
-    <br/>
+    <hr />
+    <br />
     <div style='text-align: center;'>
         <h2>Download Now</h2>
         <h4>Enjoy the lyrics like you've never experienced before</h4>
-        <StoreButton url='https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full'/>
+        <StoreButton
+            url='https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full'
+        />
         <p>
             Looking for <b>Lyricify Mobile</b> or other versions?
             <a href='https://github.com/WXRIW/Lyricify-App/'>Go to GitHub</a>
         </p>
     </div>
-    <br/>
-    <hr/>
+    <br />
+    <hr />
     <h2>You Are with Lyricify</h2>
     <h4>Join our community</h4>
     <Adaptive mobile>
         <div>
             <h5>QQ Communities</h5>
-            <Communities communities={Data['Community.QQ']}/>
+            <Communities communities={Data['Community.QQ']} />
         </div>
         <div>
             <h5>Telegram</h5>
-            <Communities communities={Data['Community.Telegram']}/>
+            <Communities communities={Data['Community.Telegram']} />
         </div>
     </Adaptive>
-    <hr/>
+    <hr />
     <p>
-        <sup>1</sup>Syllable-by-syllable lyrics might not be available in some tracks<br/>
-        <sup>2</sup>A Microsoft Edition copy is required for some customization features<br/>
-        <sup>3</sup>Lyricify Intelligent Engine requires an active Spotify Premium subscription<br/>
+        <sup>1</sup>Syllable-by-syllable lyrics might not be available in some
+        tracks<br />
+        <sup>2</sup>A Microsoft Edition copy is required for some customization
+        features<br />
+        <sup>3</sup>Lyricify Intelligent Engine requires an active Spotify
+        Premium subscription<br />
         <sup>4</sup>Russian Latinization feature is on the way
     </p>
 </StarlightPage>

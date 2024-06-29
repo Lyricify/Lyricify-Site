@@ -3,9 +3,18 @@
 ---
 
 <div id='image-container' style='width: 30rem'>
-    <img alt='Lyricify application showcase screenshots' src='/showcase/showcase1.png'/>
-    <img alt='Lyricify application showcase screenshots' src='/showcase/showcase2.png'/>
-    <img alt='Lyricify application showcase screenshots' src='/showcase/showcase3.png'/>
+    <img
+        alt='Lyricify application showcase screenshots'
+        src='/showcase/showcase1.png'
+    />
+    <img
+        alt='Lyricify application showcase screenshots'
+        src='/showcase/showcase2.png'
+    />
+    <img
+        alt='Lyricify application showcase screenshots'
+        src='/showcase/showcase3.png'
+    />
 </div>
 <style>
     #image-container img {
@@ -20,7 +29,9 @@
     }
 </style>
 <script>
-    const images = Array.from(document.querySelectorAll('#image-container img'));
+    const images = Array.from(
+        document.querySelectorAll('#image-container img')
+    );
     let currentIndex = 0;
 
     // 页面加载时立即为第一张图片添加淡入类
