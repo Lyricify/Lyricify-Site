@@ -13,10 +13,11 @@
         );
         line-height: var(--sl-line-height-headings);
         font-weight: 600;
-        color: var(--sl-color-white);
     }
 
     .lyricify-title-lyrics-view {
+        z-index: 3;
+
         position: relative;
 
         --base-f-unit: 0.182rem;
@@ -86,7 +87,7 @@
                 var(--base-f-unit) + var(--p-right)
         );
         height: 100%;
-        z-index: 9999;
+        z-index: 5;
         opacity: 1;
         word-break: break-all;
         overflow: hidden;
