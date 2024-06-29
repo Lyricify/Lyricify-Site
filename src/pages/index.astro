@@ -1,6 +1,6 @@
 ---
 // Starlight components & layouts
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import {Card, CardGrid} from '@astrojs/starlight/components';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 // Custom components
@@ -9,36 +9,36 @@ import Communities from '@components/Communities.astro';
 import StoreButton from '@components/StoreButton.astro';
 
 // Data
-import { Data } from '@data/DataHelper';
+import {Data} from '@data/DataHelper';
 ---
 
 <StarlightPage
-    frontmatter={{
-        title: 'More than lyrics',
-        description: 'A powerful lyrics app designed for Spotify',
-        template: 'splash',
-        hero: {
+        frontmatter={{
             title: 'More than lyrics',
-            tagline: 'A powerful lyrics app, designed for Spotify',
-            actions: [
-                {
-                    text: 'Get started now',
-                    link: '/get-started/',
-                    icon: 'right-caret',
-                    variant: 'primary',
+            description: 'A powerful lyrics app designed for Spotify',
+            template: 'splash',
+            hero: {
+                title: 'More than lyrics',
+                tagline: 'A powerful lyrics app, designed for Spotify',
+                actions: [
+                    {
+                        text: 'Get started now',
+                        link: '/get-started/',
+                        icon: 'right-caret',
+                        variant: 'primary',
+                    },
+                    {
+                        text: 'Get Lyricify from Store',
+                        link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
+                        icon: 'seti:windows',
+                        variant: 'secondary',
+                    },
+                ],
+                image: {
+                    html: `<img src="/showcase/showcase1.png" alt="Lyricify" style="width: 100%;"/>`,
                 },
-                {
-                    text: 'Get Lyricify from Store',
-                    link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
-                    icon: 'seti:windows',
-                    variant: 'secondary',
-                },
-            ],
-            image: {
-                html: `<img src="/showcase/showcase1.png" alt="Lyricify" style="width: 100%;"/>`,
             },
-        },
-    }}
+        }}
 >
     <h3>Lyrics have never been that alive</h3>
     <CardGrid stagger>

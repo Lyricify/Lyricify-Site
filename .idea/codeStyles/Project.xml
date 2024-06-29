@@ -6,10 +6,19 @@
         <fileSet type="globPattern" pattern="*.mdx" />
       </list>
     </option>
+    <HTMLCodeStyleSettings>
+      <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+      <option name="HTML_NEWLINE_AFTER_LAST_ATTRIBUTE" value="When multiline" />
+    </HTMLCodeStyleSettings>
     <codeStyleSettings language="HTML">
       <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
       <indentOptions>
         <option name="CONTINUATION_INDENT_SIZE" value="4" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="JSON">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="4" />
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="Markdown">

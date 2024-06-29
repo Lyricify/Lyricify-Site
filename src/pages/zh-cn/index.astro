@@ -1,6 +1,6 @@
 ---
 // Starlight components & layouts
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import {Card, CardGrid} from '@astrojs/starlight/components';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 // Custom components
@@ -9,36 +9,36 @@ import Communities from '@components/Communities.astro';
 import StoreButton from '@components/StoreButton.astro';
 
 // Data
-import { Data } from '@data/DataHelper';
+import {Data} from '@data/DataHelper';
 ---
 
 <StarlightPage
-    frontmatter={{
-        title: '不仅有歌词',
-        description: '为 Spotify 量身打造的强大的歌词工具',
-        template: 'splash',
-        hero: {
+        frontmatter={{
             title: '不仅有歌词',
-            tagline: '地表最强歌词工具，专为 Spotify 打造',
-            actions: [
-                {
-                    text: '快速上手 Lyricify',
-                    link: './get-started/',
-                    icon: 'right-caret',
-                    variant: 'primary',
+            description: '为 Spotify 量身打造的强大的歌词工具',
+            template: 'splash',
+            hero: {
+                title: '不仅有歌词',
+                tagline: '地表最强歌词工具，专为 Spotify 打造',
+                actions: [
+                    {
+                        text: '快速上手 Lyricify',
+                        link: './get-started/',
+                        icon: 'right-caret',
+                        variant: 'primary',
+                    },
+                    {
+                        text: '立即获取 Lyricify',
+                        link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
+                        icon: 'seti:windows',
+                        variant: 'secondary',
+                    },
+                ],
+                image: {
+                    html: `<img src="/showcase/showcase2.png" alt='Lyricify screenshot' width='100%'/>`,
                 },
-                {
-                    text: '立即获取 Lyricify',
-                    link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
-                    icon: 'seti:windows',
-                    variant: 'secondary',
-                },
-            ],
-            image: {
-                html: `<img src="/showcase/showcase2.png" alt='Lyricify screenshot' width='100%'/>`,
             },
-        },
-    }}
+        }}
 >
     <h3>歌词从未如此生动</h3>
     <CardGrid stagger>
@@ -56,7 +56,7 @@ import { Data } from '@data/DataHelper';
         </Card>
         <Card title='由强大的 Lyricify 设计驱动' icon='rocket'>
             不仅有 <b>Lyricify 歌词库</b>为数万用户提供的歌词天地，更有独创 <b>Lyricify 智能引擎</b>强劲内驱<sup>3</sup
-            >， 只为让你的音乐体验更上一层楼
+        >， 只为让你的音乐体验更上一层楼
         </Card>
         <Card title='数不尽的更多功能' icon='list-format'>
             <ul>
