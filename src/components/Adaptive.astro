@@ -5,14 +5,12 @@ interface Props {
 
 const {mobile = false} = Astro.props;
 ---
+
 <div class={mobile ? 'mobile container' : 'container'}>
-
     <slot/>
-
 </div>
 
 <style>
-
     .container {
         display: flex;
         display: -webkit-flex;
@@ -34,5 +32,4 @@ const {mobile = false} = Astro.props;
             flex-direction: column;
         }
     }
-
 </style>

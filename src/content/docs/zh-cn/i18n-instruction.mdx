@@ -1,70 +1,64 @@
 ---
-title: i18n Instruction
+title: i18n 工作指导
 ---
 
 import {FileTree} from '@astrojs/starlight/components';
 
-Thanks to the efforts of our i18n crews, now Lyricify has a more modern and beautiful website.
+感谢所有国际化人员的努力和支持！经过不懈努力，Lyricify 终于拥有更好看、 更强大的官网了
 
-Now it's time to make it worldwide available!
+现在是时候让我们的 Lyricify 官网走向世界了！
 
-Lyricify-Site uses[ **Astro** ](https://astro.build)**framework + Starlight theme** solution, Leverage the powerful extensibility of Astro to enhance the richness of your website, and quickly build a documentation site with the mature and easy-to-use templates and internationalization support of the Starlight theme.
+Lyricify-Site 采用[ **Astro** ](https://astro.build)**框架 + Starlight 主题**解决方案，借助 Astro 强大的拓展能力来提升网站丰富程度，并借助 Starlight 主题成熟易用的模板和国际化支持来快速搭建文档网站
 
-Therefore, if you want to internationalize Lyricify-Site, you need to have a basic understanding of the content structure of Starlight —— everything is very simple, we will guide you through it, trying to minimize the learning cost.
+因此，若要对 Lyricify-Site 进行国际化工作，您需要对 Starlight 内容结构有基础了解 ——一切都很简单，我们会带您入手，尽量降低学习成本
 
-:::tip[Let's cut to the chase] If you don’t want to read a bunch of abstract concept introductions and want to dive directly into the internationalization work, please jump to the ‘Start Internationalization’ section.
+:::tip[搞快点搞快点] 如果你不想看一堆抽象的概念介绍，想要直接投入到国际化工作中，请跳转到[开始国际化](#开始国际化)小节
 
-If you have ample time, we still recommend that you read the complete guide to ensure maintainability in the future. :::
+如果有充足时间，我们仍建议您阅读完整的指导来确保日后的维护性 :::
 
-## Introduction
+## 介绍
 
-In Lyricify-Site, translatable contents include:
+在 Lyricify-Site 中，可翻译的内容包括：
 
--   Set of pages
--   Set of docs
--   Data (TypeScript, json, etc.)
+-   网页集
+-   文档集
+-   数据源（TypeScript, json 等）
 
-### Set of Pages
+### 网页集
 
-Pages are dedicated to serve single and simple functions, for example, **Home page, About page**, etc.
+网页形式独立、功能专一，比如**主页、关于页**等，在本站中具有如下特征：
 
-Pages are:
+-   位于`/src/pages/`中
+-   `.astro`格式
+-   大部分用 **HTML**（Astro 规范）书写
+-   [具有标准的 i18n 结构](标准-i18n-结构)
 
--   located under `/src/pages/`
--   formatted as `.astro`
--   mostly written in **HTML** (Astro standard)
--   came with [Standard i18n Structure](#standard-i18n-structure)
+### 文档集
 
-### Set of Docs
+文档是 Lyricify-Site 的重要部分，数量很大，形式简单、内容优先，以提供软件使用教学、说明和其他大量文本为首要目的。在本站中具有如下特征：
 
-Docs are important parts of Lyricify-Site, with large amount, simple and content-first, and are dedicated to give instructions and provide large-amount information.
+-   位于`/src/content/docs/`中
+-   `.mdx`或`.md`格式
+-   大部分用 Markdown / MDX 书写
+-   具有标准的 i18n 结构
 
-Docs are:
+### 数据源
 
--   located under `/src/content/docs/`
--   formatted as `.mdx` or `.md`
--   mostly written in Markdown / MDX
--   came with [Standard i18n Structure](#standard-i18n-structure)
+某些数据和内容可能需要频繁更新或者经常被大量引用，因此需要独立于文档和网页单独存在，实现 _一处更改、到处更新_，提高编写效率
 
-### Data
+数据源包含两类：一类是 存储在 **TypeScript** 中的 Lyricify 常量数据，一类是 存储在 **JSON** 中的 UI 标签数据
 
-Some data and content may be used or required to be updated at many times, so they need to be independent from documents and pages, in order to achieve _Changed somewhere, changed everywhere_.
+前者负责在页面中提供有关 Lyricify 的一些信息，比如**社区列表**，**版本信息**等，具有更高自由度和复杂性，后者则专门用于对一些网页部件进行国际化，比如**页脚的版权、贡献**信息
 
-Data has two types: The one stores Lyricify data as constants in **TypeScript**, the other one stores labels of UI in **JSON** files.
-
-The first one provides information about Lyricify in the pages, such as **List of user communities**, **Info of version**, etc., which are more complex and customizable.
-
-The other one is used to internationalize components of UI, such as **the copyright and credits in footer**.
-
-More information about Data could be found in chapters below.
+更多有关数据源的信息将在之后的章节中找到
 
 ## 国际化结构
 
 为了方便进行国际化，我们已经把所有可翻译的内容简化到三种结构
 
-### 标准 i18n 结构（网页、文档）
+### 标准 i18n 结构
 
-**标准 i18n 结构** 指的是具有这样结构的目录：
+（网页、文档）**标准 i18n 结构** 指的是具有这样结构的目录：
 
 <FileTree>
 
@@ -105,9 +99,9 @@ More information about Data could be found in chapters below.
 
 也就是说，除了根目录直接存放默认语言（英语，en）的内容外，剩余本地化目录的结构与根目录完全相同。这就是 **标准 i18n 结构**，符合这一结构的有[网页集](#网页集)和[文档集](#文档集)
 
-### 数据键结构（TypeScript 数据源）
+### 数据键结构
 
-TypeScript 数据源存放在`/src/data/LyricifyData.ts`里
+（TypeScript 数据源）TypeScript 数据源存放在`/src/data/LyricifyData.ts`里
 
 某些数据不得不存储在 TypeScript 中，看起来有些许复杂，但是您需要注意的只有一两行涉及国际化的内容，比如：
 
@@ -142,17 +136,17 @@ export const QQGroups: Community[] = [
 ];
 ```
 
-### 分文件结构（JSON 数据源）
+### 分文件结构
 
-专门用于网页部件的国际化翻译~~被迫~~储存在单独的 **JSON** 文件中，并存放于`/src/content/i18n/`下每个语言都是一个独立的 JSON 文件，例如，`i18n`文件夹具有如下结构：
+（JSON 数据源）专门用于网页部件的国际化翻译~~被迫~~储存在单独的 **JSON** 文件中，并存放于`/src/content/i18n/`下每个语言都是一个独立的 JSON 文件，例如，`i18n`文件夹具有如下结构：
 
 <FileTree>
 
     - /src/content/i18n/
-    - en.json 英文组件国际化文件
-    - zh-CN.json 中文（简体）组件国际化文件
-    - ru.json 俄文组件国际化文件
-    - ...
+        - en.json 英文组件国际化文件
+        - zh-CN.json 中文（简体）组件国际化文件
+        - ru.json 俄文组件国际化文件
+        - ...
 
 </FileTree>
 

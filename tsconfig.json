@@ -7,7 +7,12 @@
       ],
       "@data/*": [
         "src/data/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }

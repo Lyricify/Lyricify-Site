@@ -1,5 +1,4 @@
 import starlight from '@astrojs/starlight';
-// import lunaria from '@lunariajs/starlight';
 import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
@@ -9,7 +8,7 @@ export default defineConfig({
         starlight({
             title: 'Lyricify',
             logo: {
-                src: '/src/assets/icon.webp',
+                src: '/public/LyricifyIcon.png',
             },
             favicon: 'favicon.ico',
             social: {
@@ -44,14 +43,11 @@ export default defineConfig({
                     link: '/i18n-instruction',
                     badge: {
                         text: 'NEW',
-                        variant: 'default'
+                        variant: 'default',
                     },
-                }
+                },
             ],
-            customCss: [
-                './src/styles/custom.css',
-                './src/fonts/fontface.css',
-            ],
+            customCss: ['./src/styles/custom.css', './src/fonts/fontface.css', './src/styles/theme.css'],
             components: {
                 Footer: './src/components/rewrite/Footer.astro',
             },
@@ -66,14 +62,11 @@ export default defineConfig({
                     lang: 'zh-CN',
                 },
             },
-            plugins: [
-                /*lunaria({
-                        sync: true,
-                        route: "/i18n",
-                    },
-                ),*/
-            ],
-            // credits: true,
+            plugins: [],
         }),
     ],
+    trailingSlash: 'always',
+    build: {
+        assets: '_asset',
+    },
 });

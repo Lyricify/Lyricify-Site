@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters">
+  <defs>
+    <filter id="roughpaper">
+      <feTurbulence type="fractalNoise" baseFrequency="128" numOctaves="1" result="noise" />
+      <feDiffuseLighting in="noise" lighting-color="white" surfaceScale="1" result="diffLight">
+        <feDistantLight azimuth="45" elevation="60"/>
+      </feDiffuseLighting>
+      <feGaussianBlur in="diffLight" stdDeviation="0.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="in" result="specOut" />
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+  </defs>
+</svg>

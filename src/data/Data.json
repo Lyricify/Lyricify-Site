@@ -1,0 +1,72 @@
+{
+    "Community.QQ": [
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 1",
+                "en": "Lyricify Users Group 1"
+            },
+            "value": "972282479",
+            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4",
+            "isFull": true
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 2",
+                "en": "Lyricify Users Group 2"
+            },
+            "value": "653663090",
+            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4",
+            "isFull": true
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 3",
+                "en": "Lyricify Users Group 3"
+            },
+            "value": "515098369",
+            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 4",
+                "en": "Lyricify Users Group 4"
+            },
+            "value": "630964785",
+            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 5",
+                "en": "Lyricify Users Group 5"
+            },
+            "value": "561373781",
+            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 6",
+                "en": "Lyricify Users Group 6"
+            },
+            "value": "636998823",
+            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+        }
+    ],
+    "Community.Telegram": [
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群",
+                "en": "Lyricify Users Group"
+            },
+            "value": "https://t.me/lyricify",
+            "url": "https://t.me/lyricify"
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 发布频道",
+                "en": "Lyricify Releases"
+            },
+            "value": "https://t.me/lyricifyreleases",
+            "url": "https://t.me/lyricifyreleases"
+        }
+    ]
+}
