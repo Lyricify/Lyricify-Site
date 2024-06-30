@@ -1,6 +1,8 @@
 import starlight from '@astrojs/starlight';
 import {defineConfig} from 'astro/config';
 
+import node from '@astrojs/node';
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://lyricify.app',
@@ -17,14 +19,18 @@ export default defineConfig({
             sidebar: [
                 {
                     label: 'Get started',
-                    autogenerate: {directory: 'get-started'},
+                    autogenerate: {
+                        directory: 'get-started',
+                    },
                     translations: {
                         'zh-CN': '快速上手',
                     },
                 },
                 {
                     label: 'FAQ',
-                    autogenerate: {directory: 'faq'},
+                    autogenerate: {
+                        directory: 'faq',
+                    },
                     translations: {
                         'zh-CN': '常见问题',
                     },
@@ -74,4 +80,8 @@ export default defineConfig({
     build: {
         assets: '_asset',
     },
+    output: 'hybrid',
+    adapter: node({
+        mode: 'standalone',
+    }),
 });
