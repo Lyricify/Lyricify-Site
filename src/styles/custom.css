@@ -31,33 +31,28 @@
 /* Home Page Navbar & Background Effects */
 
 [data-has-hero] header {
-    border-bottom: 1px solid transparent;
-    /*background-color: transparent;*/
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
-    background-color: rgba(24, 24, 24, 66%);
+    /* border-bottom: 1px solid transparent; */
+    /* background-color: transparent; */
+    /* -webkit-backdrop-filter: blur(16px); */
+    /* backdrop-filter: blur(16px); */
+    /* background-color: rgba(24, 24, 24, 66%); */
     filter: url('/roughpaper.svg');
+
+    background-color: unset;
+
+    background-image: linear-gradient(to bottom, rgba(24, 24, 24, 88%), rgba(24, 24, 24, 0%));
 }
 
 [data-has-hero][data-theme='light'] header {
-    border-bottom: 1px solid transparent;
-    /*background-color: transparent;*/
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
-    background-color: rgba(0, 128, 53, 10%);
-    filter: url('/roughpaper.svg');
+    /* background-color: rgba(0, 128, 53, 10%); */
+    background-image: linear-gradient(to bottom, rgba(0, 128, 53, 55%), rgba(0, 128, 53, 0%));
 }
 
 [data-has-hero] .page {
     background:
-        linear-gradient(
-            215deg,
+        linear-gradient(215deg,
             var(--sl-custom-home-bg-color),
-            transparent 40%
-        ),
-        radial-gradient(var(--sl-custom-home-bg-color), transparent 40%)
-            no-repeat -60vw -40vh / 105vw 200vh,
-        radial-gradient(var(--sl-custom-home-bg-color), transparent 65%)
-            no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
+            transparent 40%),
+        radial-gradient(var(--sl-custom-home-bg-color), transparent 40%) no-repeat -60vw -40vh / 105vw 200vh,
+        radial-gradient(var(--sl-custom-home-bg-color), transparent 65%) no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
 }
-
