@@ -1,0 +1,30 @@
+---
+import type {Props} from '@astrojs/starlight/props';
+
+// Import original component
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+
+// Import custom components
+import LyricifyPageFrame from '@components/LyricifyPageFrame.astro';
+
+// Check if it is on Home Page
+const isHomepage =
+    Astro.props.slug === '' || Astro.props.slug === Astro.props.locale;
+---
+
+{
+    isHomepage ? (
+        // main slot & sidebar slot & header slot
+        <LyricifyPageFrame {...Astro.props}>
+            <slot name='sidebar' slot='sidebar' />
+            <slot name='header' slot='header' />
+            <slot />
+        </LyricifyPageFrame>
+    ) : (
+        <Default {...Astro.props}>
+            <slot name='sidebar' slot='sidebar' />
+            <slot name='header' slot='header' />
+            <slot />
+        </Default>
+    )
+}
