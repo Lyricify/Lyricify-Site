@@ -1,8 +1,8 @@
 ---
-import {Image} from 'astro:assets';
+import { Image } from 'astro:assets';
 // import {PAGE_TITLE_ID} from '@astrojs/starlight/constants';
-import type {Props} from '@astrojs/starlight/props';
 import CallToAction from '@astrojs/starlight/components/CallToAction.astro';
+import type { Props } from '@astrojs/starlight/props';
 
 const {data} = Astro.props.entry;
 const {title = data.title, tagline, image, actions = []} = data.hero || {};
@@ -184,6 +184,9 @@ const PAGE_TITLE_ID = '_top';
         font-weight: 600;
 
         overflow: visible;
+
+        cursor: default;
+        user-select: none;
     }
 
     .lyricify-title-lyrics-view {
@@ -204,10 +207,6 @@ const PAGE_TITLE_ID = '_top';
         padding: calc(var(--y-offset)) calc(var(--x-offset));
         /* background-color: green; */
 
-        cursor: default;
-
-        user-select: none;
-
         background-image: linear-gradient(
                 to right,
                 var(--color-active),
@@ -227,6 +226,9 @@ const PAGE_TITLE_ID = '_top';
         // -moz-background-clip: text;
 
         color: transparent;
+
+        cursor: default;
+        user-select: none;
 
         /* text-shadow: 0px 0px 16px var(--color-inactive); */
     }
