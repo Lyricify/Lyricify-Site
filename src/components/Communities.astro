@@ -5,25 +5,20 @@ import {Community} from '../data/LyricifyCustomTypes';
 interface Props {
     communities: Array<Community>;
 }
-const wordIsFullMap = Labels['label.communityIsFull'];
 
 const {communities} = Astro.props;
+
+const locale = Astro.currentLocale ?? 'en';
 ---
 
 <ul>
     {
         communities.map((item) => {
-            if (!(item.name instanceof Object)) {
-                throw new Error('String is not localizable');
-            }
-
             const communityName =
-                item.name instanceof Object
-                    ? item.name[Astro.currentLocale]
-                    : item.name;
+                item.name instanceof Object ? item.name[locale] : item.name;
             const communityHasUrl = !!item.url;
             const communityIsFull = !!item.isFull;
-            const wordIsFull = wordIsFullMap[Astro.currentLocale];
+            const wordIsFull = Labels['label.communityIsFull'][locale];
             const communityValue = item.value;
 
             const tmplWithUrl = (
