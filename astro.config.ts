@@ -8,12 +8,30 @@ export default defineConfig({
         starlight({
             title: 'Lyricify',
             logo: {
-                src: '/public/LyricifyIcon.png',
+                src: '/public/Lyricify-icon.png',
             },
             favicon: 'favicon.ico',
             social: {
                 github: 'https://github.com/WXRIW/Lyricify-App',
             },
+            head: [
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'keywords',
+                        content:
+                            'Lyricify, Spotify, lyrics, Apple Music, style, customization, ' +
+                            '声破天, 歌词, 逐字, 滚动歌词, 苹果音乐, 动画, 自定义, 歌词软件',
+                    },
+                },
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'viewport',
+                        content: 'width=device-width, initial-scale=1.0',
+                    },
+                },
+            ],
             sidebar: [
                 {
                     label: 'Get started',
