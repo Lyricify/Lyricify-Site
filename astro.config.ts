@@ -1,5 +1,5 @@
 import starlight from '@astrojs/starlight';
-import {defineConfig} from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,14 +35,14 @@ export default defineConfig({
             sidebar: [
                 {
                     label: 'Get started',
-                    autogenerate: {directory: 'get-started'},
+                    autogenerate: { directory: 'get-started' },
                     translations: {
                         'zh-CN': '快速上手',
                     },
                 },
                 {
                     label: 'FAQ',
-                    autogenerate: {directory: 'faq'},
+                    autogenerate: { directory: 'faq' },
                     translations: {
                         'zh-CN': '常见问题',
                     },
@@ -73,6 +73,7 @@ export default defineConfig({
             components: {
                 Footer: './src/components/rewrite/Footer.astro',
                 Hero: './src/components/rewrite/Hero.astro',
+                PageFrame: './src/components/rewrite/PageFrame.astro',
             },
             defaultLocale: 'root',
             locales: {

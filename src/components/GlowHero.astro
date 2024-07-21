@@ -20,11 +20,15 @@ let lightImage: ImageMetadata | undefined;
 let rawHtml: string | undefined;
 if (image) {
     if ('file' in image) {
+        // @ts-ignore
         darkImage = image.file;
     } else if ('dark' in image) {
+        // @ts-ignore
         darkImage = image.dark;
+        // @ts-ignore
         lightImage = image.light;
     } else {
+        // @ts-ignore
         rawHtml = image.html;
     }
 }
@@ -65,6 +69,7 @@ const PAGE_TITLE_ID = '_top';
             actions.length > 0 && (
                 <div class="sl-flex actions">
                     {actions.map(({text, ...attrs}) => (
+                        // @ts-ignore
                         <CallToAction {...attrs} set:html={text} />
                     ))}
                 </div>
