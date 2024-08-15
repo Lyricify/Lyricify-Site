@@ -27,6 +27,12 @@ export default defineConfig({
                 {
                     tag: 'meta',
                     attrs: {
+                        charset: 'UTF-8'
+                    }
+                },
+                {
+                    tag: 'meta',
+                    attrs: {
                         name: 'viewport',
                         content: 'width=device-width, initial-scale=1.0',
                     },
