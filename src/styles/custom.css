@@ -1,6 +1,19 @@
 /* Font */
 :root {
-    --sl-font-system: 'Spotify Mix', sans-serif;
+    --sl-font-system:
+        -apple-system,
+        BlinkMacSystemFont,
+        'SF Hello',
+        'Segoe UI',
+        Roboto,
+        'Helvetica Neue',
+        'Noto Sans',
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji';
 }
 
 /* Site Title and Logo */
@@ -10,12 +23,17 @@
 
 .site-title span {
     font-family: 'Spotify Circular', sans-serif;
+    font-size: 0.95em;
     font-weight: bold;
     color: var(--sl-color-accent);
 }
 
 :root[data-theme='dark'] .site-title span {
     color: var(--sl-color-accent-high);
+}
+
+html[data-font-scheme='spotify'] {
+    --sl-font-system: 'Spotify Mix', sans-serif;
 }
 
 /* Content & navbar */
@@ -26,6 +44,10 @@
 
 .social-icons svg {
     color: var(--sl-color-white);
+}
+
+html[data-hide-search='true'] site-search {
+    display: none;
 }
 
 /* Home Page Navbar & Background Effects */
@@ -60,4 +82,3 @@
         radial-gradient(var(--sl-custom-home-bg-color), transparent 65%)
             no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
 }
-

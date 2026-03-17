@@ -1,0 +1,162 @@
+---
+import StoreButton from '@components/StoreButton.astro';
+import { productVersions } from '@data/ProductVersions';
+
+const locale = Astro.currentLocale ?? 'en';
+const t = (value: string | Record<string, string>) =>
+    typeof value === 'string' ? value : value[locale] ?? value.en;
+const labels = {
+    heading: {
+        'zh-CN': '下载入口',
+        en: 'Download Directory',
+    },
+    subheading: {
+        'zh-CN': '按版本查看下载方式，并直接前往对应的下载地址。',
+        en: 'Choose a version below and jump straight to the right download source.',
+    },
+    docs: {
+        'zh-CN': '查看文档',
+        en: 'Documentation',
+    },
+};
+---
+
+<section class='download-directory'>
+    <h2>{t(labels.heading)}</h2>
+    <h4>{t(labels.subheading)}</h4>
+    <div class='download-list'>
+        {
+            productVersions.map((version) => (
+                <article
+                    id={version.id}
+                    class:list={{
+                        'download-card': true,
+                        recommended: version.id === 'lyricify-4',
+                        legacy: version.id === 'lyricify-3',
+                    }}
+                >
+                    <div class='download-header'>
+                        <div>
+                            <p class='download-badge'>{t(version.badge)}</p>
+                            <h3>{t(version.name)}</h3>
+                        </div>
+                        <a class='docs-link' href={t(version.docsUrl)}>
+                            {t(labels.docs)}
+                        </a>
+                    </div>
+                    <p>{t(version.summary)}</p>
+                    <div class='download-facts'>
+                        <p>{t(version.platforms)}</p>
+                        <p>{t(version.requirement)}</p>
+                        <p>{t(version.bestFor)}</p>
+                    </div>
+                    <div class='download-actions'>
+                        {
+                            version.downloads.map((item) =>
+                                item.kind === 'store' ? (
+                                    <div class='store-button-wrap'>
+                                        <StoreButton url={item.url} />
+                                    </div>
+                                ) : (
+                                    <a
+                                        class='download-action-link'
+                                        href={locale === 'en' && 'urlEn' in item ? item.urlEn || item.url : item.url}
+                                    >
+                                        {t(item.label)}
+                                    </a>
+                                )
+                            )
+                        }
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .download-directory,
+    .download-list {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .download-card {
+        padding: 1.25rem;
+        border-radius: 1rem;
+        border: 1px solid var(--sl-color-gray-5);
+        background: var(--sl-color-black);
+    }
+
+    .download-card.recommended {
+        border-color: color-mix(in srgb, var(--sl-color-accent-high) 50%, transparent);
+    }
+
+    .download-card.legacy {
+        background: color-mix(in srgb, var(--sl-color-black) 92%, var(--sl-color-accent-low));
+    }
+
+    .download-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    .download-badge {
+        display: inline-block;
+        margin: 0 0 0.65rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--sl-color-accent-low) 88%, transparent);
+        color: var(--sl-color-accent-high);
+        font-size: var(--sl-text-xs);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .docs-link,
+    .download-action-link {
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .docs-link {
+        color: var(--sl-color-text-accent);
+        white-space: nowrap;
+    }
+
+    .download-facts {
+        display: grid;
+        gap: 0.35rem;
+        color: var(--sl-color-gray-2);
+    }
+
+    .download-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1rem;
+        align-items: center;
+    }
+
+    .download-action-link {
+        display: inline-block;
+        padding: 0.8rem 1.1rem;
+        border-radius: 999px;
+        color: var(--sl-color-white);
+        background: color-mix(in srgb, var(--sl-color-accent-low) 40%, var(--sl-color-black));
+        border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 55%, transparent);
+    }
+
+    .store-button-wrap {
+        max-width: 20rem;
+    }
+
+    @media (width < 40rem) {
+        .download-header {
+            flex-direction: column;
+        }
+    }
+</style>

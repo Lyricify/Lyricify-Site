@@ -1,0 +1,71 @@
+---
+import {Card, CardGrid} from '@astrojs/starlight/components';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage
+        frontmatter={{
+            title: 'Lyricify 4',
+            description: '围绕 Spotify 与 Windows 的 Lyricify 4 版本介绍。',
+            template: 'splash',
+            head: [
+                {
+                    tag: 'title',
+                    content: 'Lyricify 4 介绍',
+                },
+            ],
+            hero: {
+                title: 'Lyricify 4',
+                tagline: '面向 Windows 与 Spotify 的旗舰歌词体验',
+                actions: [
+                    {
+                        text: '下载',
+                        link: '/zh-cn/download/#lyricify-4',
+                        icon: 'right-caret',
+                        variant: 'primary',
+                    },
+                    {
+                        text: '查看文档',
+                        link: 'https://docs.lyricify.app/lyricify-4/guide/',
+                        icon: 'external',
+                        variant: 'secondary',
+                    },
+                ],
+                image: {
+                    html: `<img src="/showcase/showcase2.png" alt="Lyricify 4" style="width: 100%;"/>`,
+                },
+            },
+        }}>
+    <h3>歌词从未如此生动</h3>
+    <CardGrid stagger>
+        <Card title='Spotify 原味界面' icon='bars'>
+            清晰易用的 Spotify 样式歌词，让你清晰地感受每个音节，同时保留你已经熟悉的界面体验。
+        </Card>
+        <Card title='1:1 复刻的 Apple Music 歌词样式' icon='apple'>
+            借助<b>逐字歌词</b><sup>1</sup>、<b>丝滑动画</b>、<b>对唱视图</b>和<b>背景人声</b>，Lyricify 4 能带来明显不同的歌词体验。
+        </Card>
+        <Card title='丰富的自定义选项' icon='setting'>
+            从 Apple Music 样式歌词到灵动词岛，Lyricify 4 提供了高度可定制的歌词体验<sup>2</sup>。
+        </Card>
+        <Card title='由 Lyricify Intelligence 驱动' icon='rocket'>
+            Lyricify 歌词库与智能引擎<sup>3</sup>共同工作，提升歌词可用性并丰富整体使用体验。
+        </Card>
+        <Card title='更多功能' icon='list-format'>
+            <ul>
+                <li>歌词翻译</li>
+                <li>桌面歌词</li>
+                <li>灵动词岛和 Byland Mode</li>
+                <li>QQ 音乐与网易云音乐歌词</li>
+                <li>歌词分享</li>
+                <li>日语罗马字与俄文拉丁转写<sup>4</sup></li>
+            </ul>
+        </Card>
+    </CardGrid>
+    <hr/>
+    <p>
+        <sup>1</sup>逐字歌词并非所有歌曲可用<br/>
+        <sup>2</sup>部分自定义设置可能需要 Microsoft Store 版<br/>
+        <sup>3</sup>Lyricify 智能引擎需要有效的 Spotify Premium 订阅<br/>
+        <sup>4</sup>俄文拉丁转写功能即将上线
+    </p>
+</StarlightPage>

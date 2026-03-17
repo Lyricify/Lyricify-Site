@@ -18,7 +18,7 @@ const copyrightText = Astro.props.labels['lyricify.copyright'].replace(/\b\d{4}\
             src='/Lyricify-icon.png'
             alt='Darker gray Lyricify logo'
         />
-        <h1 class='brand-name'><b>Lyricify</b></h1>
+        <h1 class='brand-name'>Lyricify</h1>
     </div>
 
     <div class='credits'>
@@ -40,11 +40,6 @@ const copyrightText = Astro.props.labels['lyricify.copyright'].replace(/\b\d{4}\
                             'TSAVPYN & fred913'
                         )
                     }
-                    <br />
-                    {Astro.props.labels['lyricify.docsLabel']}:
-                    <a href='https://docs.lyricify.app/'>
-                        {Astro.props.labels['lyricify.docsCta']}
-                    </a>
                 </p>
             </div>
         </Adaptive>
@@ -59,18 +54,23 @@ const copyrightText = Astro.props.labels['lyricify.copyright'].replace(/\b\d{4}\
     }
 
     .footer-container .brand {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 
     :root .footer-container .brand .logo {
         filter: none;
-        width: 3rem;
-        vertical-align: middle;
+        width: 3.25rem;
+        flex: none;
     }
 
     .footer-container .brand .brand-name {
-        display: inline-block;
-        vertical-align: middle;
+        margin: 0;
+        font-family: 'Spotify Circular', sans-serif;
+        font-size: 1.65rem;
+        line-height: 1;
+        font-weight: 700;
     }
 
     div#right {

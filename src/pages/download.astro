@@ -1,0 +1,44 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DownloadDirectory from '@components/DownloadDirectory.astro';
+---
+
+<StarlightPage
+        frontmatter={{
+            title: 'Download',
+            description: 'Download Lyricify 4, Lyricify Lite, Lyricify Mobile, and legacy releases.',
+            template: 'splash',
+            head: [
+                {
+                    tag: 'title',
+                    content: 'Lyricify Download',
+                },
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'description',
+                        content: 'Download Lyricify 4, Lyricify Lite, Lyricify Mobile, and legacy releases from the right source.',
+                    },
+                },
+            ],
+            hero: {
+                title: 'Download Lyricify',
+                tagline: 'Choose the edition that matches your platform and jump to the right download source',
+                actions: [
+                    {
+                        text: 'Documentation',
+                        link: 'https://docs.lyricify.app/en/',
+                        icon: 'external',
+                        variant: 'secondary',
+                    },
+                    {
+                        text: 'GitHub Releases',
+                        link: 'https://github.com/WXRIW/Lyricify-App/releases',
+                        icon: 'external',
+                        variant: 'secondary',
+                    },
+                ],
+            },
+        }}>
+    <DownloadDirectory />
+</StarlightPage>

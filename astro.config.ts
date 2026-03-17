@@ -37,6 +37,36 @@ export default defineConfig({
                         content: 'width=device-width, initial-scale=1.0',
                     },
                 },
+                {
+                    tag: 'script',
+                    content: `
+                        (() => {
+                            const applyFontScheme = () => {
+                                const isSpotifyPage =
+                                    window.location.pathname === '/lyricify-4/' ||
+                                    window.location.pathname === '/zh-cn/lyricify-4/';
+                                const shouldHideSearch =
+                                    window.location.pathname === '/' ||
+                                    window.location.pathname === '/lyricify-4/';
+
+                                if (isSpotifyPage) {
+                                    document.documentElement.dataset.fontScheme = 'spotify';
+                                } else {
+                                    delete document.documentElement.dataset.fontScheme;
+                                }
+
+                                if (shouldHideSearch) {
+                                    document.documentElement.dataset.hideSearch = 'true';
+                                } else {
+                                    delete document.documentElement.dataset.hideSearch;
+                                }
+                            };
+
+                            applyFontScheme();
+                            document.addEventListener('astro:page-load', applyFontScheme);
+                        })();
+                    `,
+                },
             ],
             sidebar: [
                 {

@@ -1,0 +1,156 @@
+---
+import { productVersions } from '@data/ProductVersions';
+
+const locale = Astro.currentLocale ?? 'en';
+const downloadBase = locale === 'zh-CN' ? '/zh-cn/download/' : '/download/';
+const t = (value: string | Record<string, string>) =>
+    typeof value === 'string' ? value : value[locale] ?? value.en;
+const labels = {
+    heading: {
+        'zh-CN': '选择合适的版本',
+        en: 'Choose the Right Version',
+    },
+    subheading: {
+        'zh-CN': '按平台、播放器和使用场景快速找到最适合你的 Lyricify。',
+        en: 'Pick the Lyricify edition that fits your platform, player, and workflow.',
+    },
+    download: {
+        'zh-CN': '下载',
+        en: 'Download',
+    },
+    docs: {
+        'zh-CN': '文档',
+        en: 'Documentation',
+    },
+    overview: {
+        'zh-CN': '介绍',
+        en: 'Overview',
+    },
+};
+---
+
+<section class='version-overview'>
+    <h2>{t(labels.heading)}</h2>
+    <h4>{t(labels.subheading)}</h4>
+    <div class='version-grid'>
+        {
+            productVersions.map((version) => (
+                <article
+                    id={version.id}
+                    class:list={{
+                        'version-card': true,
+                        recommended: version.id === 'lyricify-4',
+                        legacy: version.id === 'lyricify-3',
+                    }}
+                >
+                    <p class='version-badge'>{t(version.badge)}</p>
+                    <h3>{t(version.name)}</h3>
+                    <p>{t(version.summary)}</p>
+                    <p class='version-meta'>{t(version.platforms)}</p>
+                    <p class='version-fit'>{t(version.bestFor)}</p>
+                    <div class='version-links'>
+                        <a class='version-link-button' href={`${downloadBase}#${version.id}`}>{t(labels.download)}</a>
+                        <a class='version-link-button secondary' href={t(version.docsUrl)}>{t(labels.docs)}</a>
+                        {
+                            version.id === 'lyricify-4' && (
+                                <a class='version-link-button secondary' href={locale === 'zh-CN' ? '/zh-cn/lyricify-4/' : '/lyricify-4/'}>
+                                    {t(labels.overview)}
+                                </a>
+                            )
+                        }
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .version-overview {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .version-grid {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .version-card {
+        padding: 1.25rem;
+        border-radius: 1rem;
+        border: 1px solid var(--sl-color-gray-5);
+        background:
+            linear-gradient(155deg, color-mix(in srgb, var(--sl-custom-home-bg-color) 70%, transparent), transparent 60%),
+            var(--sl-color-black);
+    }
+
+    .version-card.recommended {
+        border-color: color-mix(in srgb, var(--sl-color-accent-high) 45%, transparent);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .version-card.legacy {
+        opacity: 0.9;
+    }
+
+    .version-badge {
+        display: inline-block;
+        margin: 0 0 0.65rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--sl-color-accent-low) 88%, transparent);
+        color: var(--sl-color-accent-high);
+        font-size: var(--sl-text-xs);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .version-meta,
+    .version-fit {
+        color: var(--sl-color-gray-2);
+    }
+
+    .version-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .version-link-button {
+        display: inline-block;
+        padding: 0.38rem 1rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        color: var(--sl-color-accent-high);
+        background: color-mix(in srgb, var(--sl-color-accent-low) 40%, var(--sl-color-black));
+        border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 55%, transparent);
+    }
+
+    .version-link-button.secondary {
+        color: var(--sl-color-accent-high);
+        background: color-mix(in srgb, var(--sl-color-accent-low) 40%, var(--sl-color-black));
+        border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 55%, transparent);
+    }
+
+    :root[data-theme='light'] .version-link-button {
+        color: var(--sl-color-accent-high);
+        background: var(--sl-color-accent-low);
+        border-color: color-mix(in srgb, var(--sl-color-accent) 24%, transparent);
+    }
+
+    :root[data-theme='light'] .version-link-button.secondary {
+        color: var(--sl-color-accent-high);
+        background: var(--sl-color-accent-low);
+        border-color: color-mix(in srgb, var(--sl-color-accent) 24%, transparent);
+    }
+
+    @media (min-width: 50rem) {
+        .version-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+</style>

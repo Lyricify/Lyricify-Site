@@ -1,0 +1,71 @@
+---
+import {Card, CardGrid} from '@astrojs/starlight/components';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage
+        frontmatter={{
+            title: 'Lyricify 4',
+            description: 'A focused overview of Lyricify 4 for Spotify on Windows.',
+            template: 'splash',
+            head: [
+                {
+                    tag: 'title',
+                    content: 'Lyricify 4 Overview',
+                },
+            ],
+            hero: {
+                title: 'Lyricify 4',
+                tagline: 'The flagship Lyricify experience for Spotify on Windows',
+                actions: [
+                    {
+                        text: 'Download',
+                        link: '/download/#lyricify-4',
+                        icon: 'right-caret',
+                        variant: 'primary',
+                    },
+                    {
+                        text: 'Documentation',
+                        link: 'https://docs.lyricify.app/en/lyricify-4/guide/',
+                        icon: 'external',
+                        variant: 'secondary',
+                    },
+                ],
+                image: {
+                    html: `<img src="/showcase/showcase1.png" alt="Lyricify 4" style="width: 100%;"/>`,
+                },
+            },
+        }}>
+    <h3>Lyrics have never been that alive</h3>
+    <CardGrid stagger>
+        <Card title='Spotify Original Interface' icon='bars'>
+            Clear, easy-to-use Spotify-style lyrics interface makes every syllable beat right with your pulse, while keeping the interface you already know.
+        </Card>
+        <Card title='1:1 Apple Music Style' icon='apple'>
+            With <b>syllable-by-syllable lyrics</b><sup>1</sup>, <b>smooth animations</b>, <b>duet views</b>, and <b>background vocals</b>, Lyricify 4 brings a very different listening experience.
+        </Card>
+        <Card title='Rich Customization' icon='setting'>
+            From Apple Music style lyrics to Dynamic Lyrics Island, Lyricify 4 offers a deeply customizable<sup>2</sup> lyrics experience without compromise.
+        </Card>
+        <Card title='Powered by Lyricify Intelligence' icon='rocket'>
+            Lyricify Vault and the Lyricify Intelligent Engine<sup>3</sup> work together to enrich your music experience and improve lyrics availability.
+        </Card>
+        <Card title='More Features' icon='list-format'>
+            <ul>
+                <li>Lyrics translations</li>
+                <li>Desktop lyrics</li>
+                <li>Dynamic Lyrics Island and Byland Mode</li>
+                <li>Lyrics from QQ Music and Netease Cloud Music</li>
+                <li>Lyrics sharing</li>
+                <li>Japanese Romaji and Russian Latinization<sup>4</sup></li>
+            </ul>
+        </Card>
+    </CardGrid>
+    <hr/>
+    <p>
+        <sup>1</sup>Syllable-by-syllable lyrics might not be available in some tracks<br/>
+        <sup>2</sup>A Microsoft Store edition may be required for some customization features<br/>
+        <sup>3</sup>Lyricify Intelligent Engine requires an active Spotify Premium subscription<br/>
+        <sup>4</sup>Russian Latinization is on the way
+    </p>
+</StarlightPage>

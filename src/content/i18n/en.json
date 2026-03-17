@@ -3,7 +3,5 @@
     "lyricify.copyright": "Copyright © 2024 WXRIW, All Rights Reserved",
     "lyricify.writtenBy": "Built by [CONTRIBUTOR]",
     "lyricify.poweredBy": "Site powered by Astro framework",
-    "lyricify.communityIsFull": "full",
-    "lyricify.docsLabel": "Documentation",
-    "lyricify.docsCta": "Browse docs.lyricify.app"
+    "lyricify.communityIsFull": "full"
 }

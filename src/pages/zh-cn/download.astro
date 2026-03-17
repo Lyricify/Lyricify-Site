@@ -1,0 +1,44 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DownloadDirectory from '@components/DownloadDirectory.astro';
+---
+
+<StarlightPage
+        frontmatter={{
+            title: '下载',
+            description: '下载 Lyricify 4、Lyricify Lite、Lyricify Mobile 以及旧版历史版本。',
+            template: 'splash',
+            head: [
+                {
+                    tag: 'title',
+                    content: 'Lyricify 下载',
+                },
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'description',
+                        content: '按版本查看 Lyricify 4、Lyricify Lite、Lyricify Mobile 与旧版历史版本的下载入口。',
+                    },
+                },
+            ],
+            hero: {
+                title: '下载 Lyricify',
+                tagline: '根据平台和使用场景选择合适的版本，并直接前往对应的下载入口',
+                actions: [
+                    {
+                        text: '查看文档',
+                        link: 'https://docs.lyricify.app/',
+                        icon: 'external',
+                        variant: 'secondary',
+                    },
+                    {
+                        text: 'GitHub Releases',
+                        link: 'https://github.com/WXRIW/Lyricify-App/releases',
+                        icon: 'external',
+                        variant: 'secondary',
+                    },
+                ],
+            },
+        }}>
+    <DownloadDirectory />
+</StarlightPage>

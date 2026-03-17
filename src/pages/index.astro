@@ -1,14 +1,10 @@
 ---
-// Starlight components & layouts
-import {Card, CardGrid} from '@astrojs/starlight/components';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
-// Custom components
 import Adaptive from '@components/Adaptive.astro';
 import Communities from '@components/Communities.astro';
-import StoreButton from '@components/StoreButton.astro';
+import ProductVersionsOverview from '@components/ProductVersionsOverview.astro';
 
-// Data
 import {Data} from '@data/DataHelper';
 ---
 <StarlightPage
@@ -32,24 +28,24 @@ import {Data} from '@data/DataHelper';
             ],
             hero: {
                 title: 'More than lyrics',
-                tagline: 'A powerful lyrics app, designed for Spotify',
+                tagline: 'Your ultimate cross-platform lyrics solution',
                 actions: [
                     {
-                        text: 'Get started now',
-                        link: '/get-started/',
+                        text: 'Download',
+                        link: '/download/',
                         icon: 'right-caret',
                         variant: 'primary',
                     },
                     {
                         text: 'Documentation',
-                        link: 'https://docs.lyricify.app/',
+                        link: 'https://docs.lyricify.app/en/',
                         icon: 'external',
                         variant: 'secondary',
                     },
                     {
-                        text: 'Get Lyricify from Store',
-                        link: 'https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full',
-                        icon: 'seti:windows',
+                        text: 'GitHub',
+                        link: 'https://github.com/WXRIW/Lyricify-App',
+                        icon: 'external',
                         variant: 'secondary',
                     },
                 ],
@@ -58,77 +54,41 @@ import {Data} from '@data/DataHelper';
                 },
             },
         }}>
-    <h3>Lyrics have never been that alive</h3>
-    <CardGrid stagger>
-        <Card title='Spotify Original Interface' icon='bars'>
-            Clear, easy-to-use Spotify-style lyrics interface makes every syllable beats
-            right with your pulse, along with the interface you know and love:
-            Always straightforward and fluid
-        </Card>
-        <Card title='1:1 Apple Music Style' icon='apple'>
-            With <b>syllable-by-syllable lyrics</b><sup>1</sup>, <b>smooth and silky animations</b>,
-            <b>duet views</b> and <b>background vocals</b>, and even Lyricify's very own
-            <b>Magic Stripe</b>, the experience is totally different.
-        </Card>
-        <Card title='Rich Customizablility' icon='setting'>
-            Your lyrics are in your way! From Apple Music style lyrics
-            to Dynamic Lyrics Island, we offer
-            <del>probably the richest and most</del>
-            powerful customizable<sup>2</sup> lyrics. Personalization, without
-            compromise
-        </Card>
-        <Card title='Powered By Lyricify Intelligence' icon='rocket'>
-            Not only <b>Lyricify Vault</b> that connects thousands of users, but also the
-            <b>Lyricify Intelligent Engine</b><sup>3</sup> are along with you, enriching your music experience
-        </Card>
-        <Card title='More fascinating features' icon='list-format'>
-            <ul>
-                <li>Lyrics translations (Chinese)</li>
-                <li>
-                    Chinese Simplified/Traditional switch, Japanese Romaji, Russian Latinization<sup>4</sup>
-                </li>
-                <li>Dynamic Lyrics Island and Byland Mode</li>
-                <li>Desktop lyrics</li>
-                <li>
-                    Lyrics from Netease Cloud Music and Tencent Music
-                </li>
-                <li>Lyrics share</li>
-                ...
-            </ul>
-        </Card>
-    </CardGrid>
+    <ProductVersionsOverview />
     <hr/>
     <br/>
     <div style='text-align: center;'>
-        <h2>Download Now</h2>
-        <h4>Enjoy the lyrics like you've never experienced before</h4>
-        <StoreButton
-                url='https://apps.microsoft.com/store/detail/9P4WB75RHWCH?launch=true&mode=full'
-        />
+        <h2>Download Lyricify</h2>
+        <h4>Open the download page to choose the right edition and download source</h4>
+        <p class='cta-row'>
+            <a class='docs-guide-link' href='/download/'>
+                Open Download Page
+            </a>
+            <a class='docs-guide-link secondary' href='https://docs.lyricify.app/en/'>
+                Documentation
+            </a>
+        </p>
         <p>
-            Get Lyricify 4 for Windows. Also see <a
-                href='/get-started/versions/#requirements'>
-            requirements
-        </a>
+            Compare Lyricify 4, Lyricify Lite, Lyricify Mobile, and the legacy Lyricify 3 in one place.
         </p>
         <h6>
-            Looking for <b>Lyricify Mobile</b> or other versions?
-            <a href='https://github.com/WXRIW/Lyricify-App/'>
-                Go to GitHub
+            Need setup details before downloading?
+            <a href='https://docs.lyricify.app/en/'>
+                Browse the docs
             </a>
         </h6>
     </div>
     <br/>
     <hr/>
-    <div class='docs-guide'>
+    <div class='docs-guide docs-guide-plain'>
         <h2>Need Help Getting Started?</h2>
         <h4>Find installation guides, setup steps, troubleshooting help, and version details in the documentation</h4>
         <p>
             For requirements, step-by-step guides, and detailed usage instructions, visit
-            <a href='https://docs.lyricify.app/'>docs.lyricify.app</a>.
+            <a href='https://docs.lyricify.app/en/'>docs.lyricify.app</a>.
         </p>
         <p>
-            <a class='docs-guide-link' href='https://docs.lyricify.app/'>
+            <a class='docs-guide-link' href='https://docs.lyricify.app/en/'>
                 Browse the Documentation
             </a>
         </p>
@@ -146,13 +106,6 @@ import {Data} from '@data/DataHelper';
             <Communities communities={Data['Community.Telegram']}/>
         </div>
     </Adaptive>
-    <hr/>
-    <p>
-        <sup>1</sup>Syllable-by-syllable lyrics might not be available in some tracks<br/>
-        <sup>2</sup>A Microsoft Edition copy is required for some customization features<br/>
-        <sup>3</sup>Lyricify Intelligent Engine requires an active Spotify Premium subscription<br/>
-        <sup>4</sup>Russian Latinization feature is on the way
-    </p>
 </StarlightPage>
 
 <style>
@@ -181,5 +134,19 @@ import {Data} from '@data/DataHelper';
         color: var(--sl-color-accent-high);
         background: var(--sl-color-accent-low);
         border-color: color-mix(in srgb, var(--sl-color-accent) 24%, transparent);
+    }
+
+    .docs-guide-plain {
+        padding-inline: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .cta-row {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 </style>
