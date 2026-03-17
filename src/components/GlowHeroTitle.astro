@@ -189,6 +189,12 @@ const PAGE_TITLE_ID = '_top';
         user-select: none;
     }
 
+    :root[data-theme='light'] .lyricify-title-lyrics-container {
+        --color-active: rgba(24, 24, 24, 1);
+        --color-inactive: rgba(24, 24, 24, 0.2);
+        --color-inactive-s: rgba(24, 24, 24, 0.4);
+    }
+
     .lyricify-title-lyrics-view {
         /* font-size: var(--f-size);
         line-height: var(--sl-line-height-headings);
@@ -222,8 +228,8 @@ const PAGE_TITLE_ID = '_top';
         );
         background-clip: text;
         -webkit-background-clip: text;
-        // This is being outdated
-        // -moz-background-clip: text;
+        /* This is outdated. */
+        /* -moz-background-clip: text; */
 
         color: transparent;
 
@@ -241,8 +247,8 @@ const PAGE_TITLE_ID = '_top';
 
         background-clip: text;
         -webkit-background-clip: text;
-        // This is being outdated
-        // -moz-background-clip: text;
+        /* This is outdated. */
+        /* -moz-background-clip: text; */
 
         background-image: linear-gradient(
                 to right,
@@ -297,10 +303,6 @@ const PAGE_TITLE_ID = '_top';
 
     .lyricify-title-lyrics-container:active {
         transform: scale(0.95);
-    }
-
-    :root[data-theme='light'] .lyricify-title-lyrics-container {
-        color: var(--sl-color-white);
     }
 
     :root[data-theme='light'] .lyricify-title-lyrics-container::before {

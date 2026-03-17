@@ -11,22 +11,25 @@ import StoreButton from '@components/StoreButton.astro';
 // Data
 import {Data} from '@data/DataHelper';
 ---
-
-<html>
-<head>
-    <title>Lyricify, more than lyrics</title>
-    <meta
-            name='description'
-            content='A powerful lyrics app designed for Spotify, along with
-            special features enhancing your music experience.'
-    />
-</head>
-<body>
 <StarlightPage
         frontmatter={{
             title: 'More than lyrics',
             description: 'A powerful lyrics app designed for Spotify',
             template: 'splash',
+            head: [
+                {
+                    tag: 'title',
+                    content: 'Lyricify, more than lyrics',
+                },
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'description',
+                        content:
+                            'A powerful lyrics app designed for Spotify, along with special features enhancing your music experience.',
+                    },
+                },
+            ],
             hero: {
                 title: 'More than lyrics',
                 tagline: 'A powerful lyrics app, designed for Spotify',
@@ -36,6 +39,12 @@ import {Data} from '@data/DataHelper';
                         link: '/get-started/',
                         icon: 'right-caret',
                         variant: 'primary',
+                    },
+                    {
+                        text: 'Documentation',
+                        link: 'https://docs.lyricify.app/',
+                        icon: 'external',
+                        variant: 'secondary',
                     },
                     {
                         text: 'Get Lyricify from Store',
@@ -111,6 +120,20 @@ import {Data} from '@data/DataHelper';
     </div>
     <br/>
     <hr/>
+    <div class='docs-guide'>
+        <h2>Need Help Getting Started?</h2>
+        <h4>Find installation guides, setup steps, troubleshooting help, and version details in the documentation</h4>
+        <p>
+            For requirements, step-by-step guides, and detailed usage instructions, visit
+            <a href='https://docs.lyricify.app/'>docs.lyricify.app</a>.
+        </p>
+        <p>
+            <a class='docs-guide-link' href='https://docs.lyricify.app/'>
+                Browse the Documentation
+            </a>
+        </p>
+    </div>
+    <hr/>
     <h2>You Are with Lyricify</h2>
     <h4>Join our community</h4>
     <Adaptive mobile>
@@ -131,5 +154,32 @@ import {Data} from '@data/DataHelper';
         <sup>4</sup>Russian Latinization feature is on the way
     </p>
 </StarlightPage>
-</body>
-</html>
+
+<style>
+    .docs-guide {
+        text-align: center;
+        padding: 1.5rem;
+        border: 1px solid var(--sl-color-gray-5);
+        border-radius: 1rem;
+        background:
+            linear-gradient(135deg, var(--sl-color-accent-low), transparent 65%),
+            var(--sl-color-black);
+    }
+
+    .docs-guide-link {
+        display: inline-block;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--sl-color-white);
+        background: color-mix(in srgb, var(--sl-color-accent-low) 40%, var(--sl-color-black));
+        font-weight: 700;
+        border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 55%, transparent);
+    }
+
+    :root[data-theme='light'] .docs-guide-link {
+        color: var(--sl-color-accent-high);
+        background: var(--sl-color-accent-low);
+        border-color: color-mix(in srgb, var(--sl-color-accent) 24%, transparent);
+    }
+</style>

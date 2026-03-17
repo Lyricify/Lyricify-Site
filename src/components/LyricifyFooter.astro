@@ -1,6 +1,9 @@
 ---
 // import type { Props } from '@astrojs/starlight/props';
 import Adaptive from '@components/Adaptive.astro';
+
+const currentYear = new Date().getFullYear();
+const copyrightText = Astro.props.labels['lyricify.copyright'].replace(/\b\d{4}\b/, String(currentYear));
 ---
 
 <div class='footer-container'>
@@ -19,7 +22,7 @@ import Adaptive from '@components/Adaptive.astro';
                 <p>
                     {Astro.props.labels['lyricify.madeBy']}
                     <br />
-                    {Astro.props.labels['lyricify.copyright']}
+                    {copyrightText}
                 </p>
             </div>
             <div class='info-item' id='right'>

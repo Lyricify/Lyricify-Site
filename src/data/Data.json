@@ -15,7 +15,7 @@
                 "en": "Lyricify Users Group 2"
             },
             "value": "653663090",
-            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4",
+            "url": "https://jq.qq.com/?_wv=1027&k=l0Sy2aGi",
             "isFull": true
         },
         {
@@ -24,7 +24,8 @@
                 "en": "Lyricify Users Group 3"
             },
             "value": "515098369",
-            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+            "url": "https://jq.qq.com/?_wv=1027&k=nUr4jHVU",
+            "isFull": true
         },
         {
             "name": {
@@ -32,7 +33,8 @@
                 "en": "Lyricify Users Group 4"
             },
             "value": "630964785",
-            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+            "url": "https://qm.qq.com/q/ejJ0huLLsQ",
+            "isFull": true
         },
         {
             "name": {
@@ -40,7 +42,8 @@
                 "en": "Lyricify Users Group 5"
             },
             "value": "561373781",
-            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+            "url": "https://qm.qq.com/q/wGe070e4rS",
+            "isFull": true
         },
         {
             "name": {
@@ -48,7 +51,25 @@
                 "en": "Lyricify Users Group 6"
             },
             "value": "636998823",
-            "url": "https://jq.qq.com/?_wv=1027&k=hZG8VRV4"
+            "url": "https://qm.qq.com/q/TEj2v8gvK2",
+            "isFull": true
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 7",
+                "en": "Lyricify Users Group 7"
+            },
+            "value": "748154703",
+            "url": "https://qm.qq.com/q/DcxXikjjcA",
+            "isFull": true
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 用户群 8",
+                "en": "Lyricify Users Group 8"
+            },
+            "value": "452502909",
+            "url": "https://qm.qq.com/q/QfdlJk8keI"
         }
     ],
     "Community.Telegram": [

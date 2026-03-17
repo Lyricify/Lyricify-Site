@@ -2,6 +2,9 @@
 import Default from '@astrojs/starlight/components/Footer.astro';
 import type {Props} from '@astrojs/starlight/props';
 import Adaptive from '../Adaptive.astro';
+
+const currentYear = new Date().getFullYear();
+const copyrightText = Astro.props.labels['lyricify.copyright'].replace(/\b\d{4}\b/, String(currentYear));
 ---
 
 <Default {...Astro.props}>
@@ -24,7 +27,7 @@ import Adaptive from '../Adaptive.astro';
                 <p>
                     {Astro.props.labels['lyricify.madeBy']}
                     <br />
-                    {Astro.props.labels['lyricify.copyright']}
+                    {copyrightText}
                 </p>
             </div>
             <div class='info-item' id='right'>
@@ -37,6 +40,11 @@ import Adaptive from '../Adaptive.astro';
                             'TSAVPYN & fred913'
                         )
                     }
+                    <br />
+                    {Astro.props.labels['lyricify.docsLabel']}:
+                    <a href='https://docs.lyricify.app/'>
+                        {Astro.props.labels['lyricify.docsCta']}
+                    </a>
                 </p>
             </div>
         </Adaptive>

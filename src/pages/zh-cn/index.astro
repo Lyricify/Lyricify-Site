@@ -11,17 +11,24 @@ import StoreButton from '@components/StoreButton.astro';
 // Data
 import {Data} from '@data/DataHelper';
 ---
-<html>
-<head>
-    <title>Lyricify，不仅有歌词</title>
-    <meta name="description" content="为 Spotify 量身打造的强大的歌词工具，更有独家功能设计助推音乐体验。"/>
-</head>
-<body>
 <StarlightPage
         frontmatter={{
             title: '不仅有歌词',
             description: '为 Spotify 量身打造的强大的歌词工具',
             template: 'splash',
+            head: [
+                {
+                    tag: 'title',
+                    content: 'Lyricify，不仅有歌词',
+                },
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'description',
+                        content: '为 Spotify 量身打造的强大的歌词工具，更有独家功能设计助推音乐体验。',
+                    },
+                },
+            ],
             hero: {
                 title: '不仅有歌词',
                 tagline: '地表最强歌词工具，专为 Spotify 打造',
@@ -31,6 +38,12 @@ import {Data} from '@data/DataHelper';
                         link: './get-started/',
                         icon: 'right-caret',
                         variant: 'primary',
+                    },
+                    {
+                        text: '查看文档',
+                        link: 'https://docs.lyricify.app/',
+                        icon: 'external',
+                        variant: 'secondary',
                     },
                     {
                         text: '立即获取 Lyricify',
@@ -94,6 +107,20 @@ import {Data} from '@data/DataHelper';
     </div>
     <br/>
     <hr/>
+    <div class='docs-guide'>
+        <h2>查看详细文档</h2>
+        <h4>安装、配置、排障和版本说明都已整理到独立文档站</h4>
+        <p>
+            如果需要更完整的使用说明、运行要求和故障排查，请前往
+            <a href='https://docs.lyricify.app/'>docs.lyricify.app</a>。
+        </p>
+        <p>
+            <a class='docs-guide-link' href='https://docs.lyricify.app/'>
+                打开 Lyricify 文档站
+            </a>
+        </p>
+    </div>
+    <hr/>
     <h2>因为有你，Lyricify 更精彩</h2>
     <h4>成为我们社区的一员</h4>
     <Adaptive mobile>
@@ -114,5 +141,32 @@ import {Data} from '@data/DataHelper';
         <sup>4</sup>俄文拉丁转写功能即将上线
     </p>
 </StarlightPage>
-</body>
-</html>
+
+<style>
+    .docs-guide {
+        text-align: center;
+        padding: 1.5rem;
+        border: 1px solid var(--sl-color-gray-5);
+        border-radius: 1rem;
+        background:
+            linear-gradient(135deg, var(--sl-color-accent-low), transparent 65%),
+            var(--sl-color-black);
+    }
+
+    .docs-guide-link {
+        display: inline-block;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--sl-color-white);
+        background: color-mix(in srgb, var(--sl-color-accent-low) 40%, var(--sl-color-black));
+        font-weight: 700;
+        border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 55%, transparent);
+    }
+
+    :root[data-theme='light'] .docs-guide-link {
+        color: var(--sl-color-accent-high);
+        background: var(--sl-color-accent-low);
+        border-color: color-mix(in srgb, var(--sl-color-accent) 24%, transparent);
+    }
+</style>
