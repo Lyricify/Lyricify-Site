@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets';
+import {Image} from 'astro:assets';
 // import {PAGE_TITLE_ID} from '@astrojs/starlight/constants';
 import CallToAction from '@astrojs/starlight/components/CallToAction.astro';
-import type { Props } from '@astrojs/starlight/props';
+import type {Props} from '@astrojs/starlight/props';
 
 const {data} = Astro.props.entry;
 const {title = data.title, tagline, image, actions = []} = data.hero || {};
@@ -33,7 +33,7 @@ if (image) {
 const PAGE_TITLE_ID = '_top';
 ---
 
-<div class="hero">
+<div class='hero'>
     {
         darkImage && (
             <Image
@@ -43,27 +43,32 @@ const PAGE_TITLE_ID = '_top';
             />
         )
     }
-    {lightImage &&
-        <Image src={lightImage} {...imageAttrs} class="dark:sl-hidden" />}
-    {rawHtml &&
-        <div class="hero-html sl-flex" set:html={rawHtml} />}
-    <div class="sl-flex stack">
-        <div class="sl-flex copy">
+    {
+        lightImage && (
+            <Image src={lightImage} {...imageAttrs} class='dark:sl-hidden' />
+        )
+    }
+    {rawHtml && <div class='hero-html sl-flex' set:html={rawHtml} />}
+    <div class='sl-flex stack'>
+        <div class='sl-flex copy'>
             <!--<h1 id={PAGE_TITLE_ID} data-page-title set:html={title} />-->
             <!-- Rewrite start of Hero title-->
-            <div class="lyricify-title-lyrics-container">
-                <div class="lyricify-title-lyrics-effect1">
+            <div class='lyricify-title-lyrics-container'>
+                <div class='lyricify-title-lyrics-effect1'>
                     <span>{title}</span>
                 </div>
-                <h1 id={PAGE_TITLE_ID} class="lyricify-title-lyrics-view" set:html={title}></h1>
+                <h1
+                    id={PAGE_TITLE_ID}
+                    class='lyricify-title-lyrics-view'
+                    set:html={title}
+                />
             </div>
             <!-- Rewrite end-->
-            {tagline &&
-                <div class="tagline" set:html={tagline} />}
+            {tagline && <div class='tagline' set:html={tagline} />}
         </div>
         {
             actions.length > 0 && (
-                <div class="sl-flex actions">
+                <div class='sl-flex actions'>
                     {actions.map(({text, ...attrs}) => (
                         <CallToAction {...attrs} set:html={text} />
                     ))}
@@ -106,14 +111,22 @@ const PAGE_TITLE_ID = '_top';
     }
 
     h1 {
-        font-size: clamp(var(--sl-text-3xl), calc(0.25rem + 5vw), var(--sl-text-6xl));
+        font-size: clamp(
+            var(--sl-text-3xl),
+            calc(0.25rem + 5vw),
+            var(--sl-text-6xl)
+        );
         line-height: var(--sl-line-height-headings);
         font-weight: 600;
         color: var(--sl-color-white);
     }
 
     .tagline {
-        font-size: clamp(var(--sl-text-base), calc(0.0625rem + 2vw), var(--sl-text-xl));
+        font-size: clamp(
+            var(--sl-text-base),
+            calc(0.0625rem + 2vw),
+            var(--sl-text-xl)
+        );
         color: var(--sl-color-gray-2);
     }
 
@@ -150,34 +163,36 @@ const PAGE_TITLE_ID = '_top';
     }
 </style>
 
-<style define:vars={{titleStr: '\'' + Astro.props.title + '\''}}>
-
+<style define:vars={{titleStr: "'" + Astro.props.title + "'"}}>
     .lyricify-title-lyrics-container {
         position: relative;
 
-        --progress: 40;
+        --progress: 50;
 
         --color-active: rgba(246, 245, 244, 1);
         --color-inactive: rgba(246, 245, 244, 0.2);
         --color-inactive-s: rgba(246, 245, 244, 0.4);
-        --fade-width: 32;
+        --glow-blur: 12px;
+        --glow-opacity: 0.7;
+        --fade-width: 24;
         --x-offset: calc(12 * var(--base-f-unit));
         --y-offset: calc(8 * var(--base-f-unit));
         --base-f-unit: 0.182rem;
 
-        transition: padding 0.34s cubic-bezier(0.19, 0.22, 0.18, 0.97),
-        backdrop-filter 0.48s ease-in-out,
-        transform 0.39s cubic-bezier(0.13, 0.44, 0.3, 1.69),
-        filter 0.62s cubic-bezier(0.13, 0.44, 0.3, 1.69);
+        transition:
+            padding 0.34s cubic-bezier(0.19, 0.22, 0.18, 0.97),
+            backdrop-filter 0.48s ease-in-out,
+            transform 0.39s cubic-bezier(0.13, 0.44, 0.3, 1.69),
+            filter 0.62s cubic-bezier(0.13, 0.44, 0.3, 1.69);
 
         margin-left: calc(var(--x-offset) * -1);
         margin-top: calc(var(--y-offset) * -1);
         border-radius: calc(8 * var(--base-f-unit));
 
         --f-size: clamp(
-                var(--sl-text-3xl),
-                calc(0.25rem + 5vw),
-                var(--sl-text-6xl)
+            var(--sl-text-3xl),
+            calc(0.25rem + 5vw),
+            var(--sl-text-6xl)
         );
         font-size: var(--f-size);
         line-height: var(--sl-line-height-headings);
@@ -193,6 +208,12 @@ const PAGE_TITLE_ID = '_top';
         --color-active: rgba(24, 24, 24, 1);
         --color-inactive: rgba(24, 24, 24, 0.2);
         --color-inactive-s: rgba(24, 24, 24, 0.4);
+    }
+
+    :root[data-theme='dark'] .lyricify-title-lyrics-container {
+        --color-inactive: rgba(246, 245, 244, 0.16);
+        --color-inactive-s: rgba(246, 245, 244, 0.28);
+        --glow-opacity: 0.5;
     }
 
     .lyricify-title-lyrics-view {
@@ -214,17 +235,19 @@ const PAGE_TITLE_ID = '_top';
         /* background-color: green; */
 
         background-image: linear-gradient(
-                to right,
-                var(--color-active),
-                var(--color-active) calc(
-                        var(--progress) * 1% -
+            to right,
+            var(--color-active),
+            var(--color-active)
+                calc(
+                    var(--progress) * 1% -
                         calc(var(--fade-width) * 0.5 * var(--base-f-unit))
                 ),
-                var(--color-inactive) calc(
-                        var(--progress) * 1% +
+            var(--color-inactive)
+                calc(
+                    var(--progress) * 1% +
                         calc(var(--fade-width) * 0.5 * var(--base-f-unit))
                 ),
-                var(--color-inactive)
+            var(--color-inactive)
         );
         background-clip: text;
         -webkit-background-clip: text;
@@ -232,6 +255,7 @@ const PAGE_TITLE_ID = '_top';
         /* -moz-background-clip: text; */
 
         color: transparent;
+        mix-blend-mode: plus-lighter;
 
         cursor: default;
         user-select: none;
@@ -251,17 +275,19 @@ const PAGE_TITLE_ID = '_top';
         /* -moz-background-clip: text; */
 
         background-image: linear-gradient(
-                to right,
-                var(--color-active),
-                var(--color-active) calc(
-                        var(--progress) * 1% -
+            to right,
+            var(--color-active),
+            var(--color-active)
+                calc(
+                    var(--progress) * 1% -
                         calc(var(--fade-width) * 0.5 * var(--base-f-unit))
                 ),
-                var(--color-inactive-s) calc(
-                        var(--progress) * 1% +
+            var(--color-inactive-s)
+                calc(
+                    var(--progress) * 1% +
                         calc(var(--fade-width) * 0.5 * var(--base-f-unit))
                 ),
-                var(--color-inactive-s)
+            var(--color-inactive-s)
         );
 
         color: transparent;
@@ -293,8 +319,24 @@ const PAGE_TITLE_ID = '_top';
         font-size: var(--f-size);
         /* text-shadow: 0 0 4px var(--color-active); */
         /* color: var(--color-active); */
-        filter: blur(12px);
-        opacity: 0.7;
+        filter: blur(var(--glow-blur));
+        opacity: var(--glow-opacity);
+        mix-blend-mode: plus-lighter;
+    }
+
+    @media (dynamic-range: high) {
+        :root[data-theme='dark'] .lyricify-title-lyrics-container {
+            dynamic-range-limit: no-limit;
+            --color-active: color(display-p3 1.08 1.08 1.08);
+            --color-inactive: color(display-p3 0.72 0.78 0.74 / 0.22);
+            --color-inactive-s: color(display-p3 0.78 0.86 0.8 / 0.34);
+            --glow-opacity: 0.62;
+        }
+
+        :root[data-theme='dark'] .lyricify-title-lyrics-view,
+        :root[data-theme='dark'] .lyricify-title-lyrics-effect1 {
+            dynamic-range-limit: no-limit;
+        }
     }
 
     .lyricify-title-lyrics-container:hover {
