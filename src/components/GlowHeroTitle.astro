@@ -350,4 +350,16 @@ const PAGE_TITLE_ID = '_top';
     :root[data-theme='light'] .lyricify-title-lyrics-container::before {
         opacity: 0;
     }
+
+    @media (max-width: 49.999rem) {
+        .lyricify-title-lyrics-container {
+            margin-left: 0;
+            margin-inline: auto;
+        }
+
+        .lyricify-title-lyrics-effect1 {
+            padding-left: calc(var(--x-offset));
+            padding-right: calc(var(--x-offset));
+        }
+    }
 </style>
