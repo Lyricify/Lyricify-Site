@@ -146,6 +146,7 @@ export default defineConfig({
             ],
             components: {
                 Footer: './src/components/rewrite/Footer.astro',
+                Header: './src/components/rewrite/Header.astro',
                 Hero: './src/components/rewrite/Hero.astro',
             },
             defaultLocale: 'root',
