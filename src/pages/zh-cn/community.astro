@@ -1,0 +1,152 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+import Communities from '@components/Communities.astro';
+import {Data} from '@data/DataHelper';
+---
+
+<StarlightPage
+        frontmatter={{
+            title: '社区',
+            description: '加入 Lyricify 的 QQ 群与 Telegram 社区。',
+            template: 'splash',
+            hero: {
+                title: 'Lyricify 社区',
+                tagline: '加入 QQ 群、Telegram 群组和频道，与 Lyricify 用户及开发者交流，获取最新动态。',
+            },
+        }}>
+    <div class='community-grid'>
+        <section class='community-panel' id='qq'>
+            <div class='community-panel-head'>
+                <h2>QQ 群</h2>
+                <p>加入官方 QQ 群，与其他用户交流使用体验。</p>
+            </div>
+            <Communities communities={Data['Community.QQ']} />
+        </section>
+        <section class='community-panel' id='telegram'>
+            <div class='community-panel-head'>
+                <h2>Telegram</h2>
+                <p>在 Telegram 查看用户群与发布频道。</p>
+            </div>
+            <Communities communities={Data['Community.Telegram']} />
+        </section>
+        <section class='beta-panel' id='beta'>
+            <div class='community-panel-head beta-head'>
+                <h2>内测群</h2>
+                <p>如果你希望抢先体验新功能、关注开发进展，并愿意参与测试和反馈，欢迎加入 Lyricify 内测群。</p>
+            </div>
+            <Communities communities={Data['Community.Beta']} />
+        </section>
+    </div>
+</StarlightPage>
+
+<style>
+    :global(.hero .copy > *) {
+        max-width: none;
+    }
+
+    :global(.hero .tagline) {
+        max-width: none;
+    }
+
+    @media (min-width: 50rem) {
+        :global(.hero) {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+
+    .community-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .community-panel {
+        box-sizing: border-box;
+        margin: 0;
+        margin-block-start: 0;
+        padding: 1.4rem;
+        position: relative;
+        top: 0;
+        border: 1px solid var(--sl-color-gray-5);
+        border-radius: 1rem;
+        background:
+            linear-gradient(135deg, color-mix(in srgb, var(--sl-color-accent-low) 50%, transparent), transparent 70%),
+            var(--sl-color-black);
+    }
+
+    .community-panel p {
+        color: var(--sl-color-gray-2);
+    }
+
+    .community-panel-head {
+        min-height: 5.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .community-panel-head h2 {
+        margin: 0 0 0.5rem;
+        line-height: 1.08;
+    }
+
+    .community-panel-head p {
+        margin: 0;
+    }
+
+    .community-panel :global(ul) {
+        margin: 0;
+    }
+
+    .beta-panel {
+        box-sizing: border-box;
+        margin: 1.5rem 0 0;
+        margin-block-start: 1.5rem;
+        padding: 1.4rem;
+        border: 1px solid var(--sl-color-gray-5);
+        border-radius: 1rem;
+        background:
+            linear-gradient(135deg, color-mix(in srgb, var(--sl-color-accent-low) 50%, transparent), transparent 70%),
+            var(--sl-color-black);
+    }
+
+    .beta-head {
+        min-height: 5.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .beta-note {
+        margin: 0.9rem 0 0;
+        color: var(--sl-color-gray-2);
+    }
+
+    @media (min-width: 50rem) {
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-areas:
+                'qq telegram'
+                'qq beta';
+            align-items: start;
+        }
+
+        .community-grid > * {
+            align-self: start;
+            margin-top: 0 !important;
+            margin-block-start: 0 !important;
+        }
+
+        #qq {
+            grid-area: qq;
+        }
+
+        #telegram {
+            grid-area: telegram;
+        }
+
+        #beta {
+            grid-area: beta;
+            margin-top: 0;
+        }
+    }
+</style>

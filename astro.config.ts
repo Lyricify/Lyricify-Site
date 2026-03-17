@@ -44,13 +44,18 @@ export default defineConfig({
                             let removeScrollListener;
 
                             const applyFontScheme = () => {
+                                const pathname = window.location.pathname;
                                 const isSpotifyPage =
-                                    window.location.pathname === '/lyricify-4/' ||
-                                    window.location.pathname === '/zh-cn/lyricify-4/';
-                                const shouldHideSearch =
-                                    window.location.pathname === '/' ||
-                                    window.location.pathname === '/lyricify-4/' ||
-                                    window.location.pathname === '/zh-cn/';
+                                    pathname === '/lyricify-4/' ||
+                                    pathname === '/zh-cn/lyricify-4/';
+                                const isDocsPage =
+                                    pathname.startsWith('/get-started/') ||
+                                    pathname.startsWith('/zh-cn/get-started/') ||
+                                    pathname.startsWith('/faq/') ||
+                                    pathname.startsWith('/zh-cn/faq/') ||
+                                    pathname === '/i18n-instruction/' ||
+                                    pathname === '/zh-cn/i18n-instruction/';
+                                const shouldHideSearch = !isDocsPage;
 
                                 if (isSpotifyPage) {
                                     document.documentElement.dataset.fontScheme = 'spotify';

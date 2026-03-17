@@ -89,5 +89,31 @@
             "value": "https://t.me/lyricifyreleases",
             "url": "https://t.me/lyricifyreleases"
         }
+    ],
+    "Community.Beta": [
+        {
+            "name": {
+                "zh-CN": "Lyricify 4 内测群",
+                "en": "Lyricify 4 Beta Group"
+            },
+            "value": "1080219510",
+            "url": "https://qm.qq.com/q/13mfKBBpN2"
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify Lite 内测群",
+                "en": "Lyricify Lite Beta Group"
+            },
+            "value": "665831280",
+            "url": "https://qm.qq.com/q/fv9Bmh2sH6"
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify Mobile 内测群",
+                "en": "Lyricify Mobile Beta Group"
+            },
+            "value": "432378147",
+            "url": "https://qm.qq.com/q/YkYL07AFCk"
+        }
     ]
 }

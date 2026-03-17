@@ -29,20 +29,15 @@ const locale = Astro.currentLocale ?? 'en';
             const tmpl = <code>{item.value}</code>;
             const tmplFull = (
                 <>
-                    <del>
-                        <code>{item.value}</code>
-                    </del>
-                    <b>{wordIsFull}</b>
+                    <code>{item.value}</code> ({wordIsFull})
                 </>
             );
             const tmplWithUrlFull = (
                 <>
-                    <del>
-                        <a href={item.url} style='text-decoration: none'>
-                            {communityValue}
-                        </a>
-                    </del>
-                    <b>{wordIsFull}</b>
+                    <a href={item.url} style='text-decoration: none'>
+                        {communityValue}
+                    </a>{' '}
+                    ({wordIsFull})
                 </>
             );
 
@@ -67,3 +62,18 @@ const locale = Astro.currentLocale ?? 'en';
         })
     }
 </ul>
+
+<style>
+    ul {
+        margin: 0;
+        padding-inline-start: 1.25rem;
+    }
+
+    li {
+        margin-bottom: -0.35rem;
+    }
+
+    p {
+        margin: 0;
+    }
+</style>

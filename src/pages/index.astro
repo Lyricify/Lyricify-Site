@@ -1,11 +1,7 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
-import Adaptive from '@components/Adaptive.astro';
-import Communities from '@components/Communities.astro';
 import ProductVersionsOverview from '@components/ProductVersionsOverview.astro';
-
-import {Data} from '@data/DataHelper';
 ---
 <StarlightPage
         frontmatter={{
@@ -43,7 +39,7 @@ import {Data} from '@data/DataHelper';
                         variant: 'secondary',
                     },
                     {
-                        text: 'GitHub',
+                        text: 'GitHub Repository',
                         link: 'https://github.com/WXRIW/Lyricify-App',
                         icon: 'external',
                         variant: 'secondary',
@@ -94,18 +90,21 @@ import {Data} from '@data/DataHelper';
         </p>
     </div>
     <hr/>
-    <h2>You Are with Lyricify</h2>
-    <h4>Join our community</h4>
-    <Adaptive mobile>
-        <div>
-            <h5>QQ Communities</h5>
-            <Communities communities={Data['Community.QQ']}/>
+    <br/>
+    <div class='community-section'>
+        <div class='community-copy'>
+            <h2>You Are with Lyricify</h2>
+            <h4>Join our community</h4>
+            <p>
+                Find official QQ communities and Telegram channels in one place. If you want to contact the Lyricify developer or reach out to the Lyricify team, this is the page to start from.
+            </p>
+            <p class='cta-row'>
+                <a class='docs-guide-link' href='/community/'>
+                    Open Community Page
+                </a>
+            </p>
         </div>
-        <div>
-            <h5>Telegram</h5>
-            <Communities communities={Data['Community.Telegram']}/>
-        </div>
-    </Adaptive>
+    </div>
 </StarlightPage>
 
 <style>
@@ -149,4 +148,21 @@ import {Data} from '@data/DataHelper';
         justify-content: center;
         flex-wrap: wrap;
     }
+
+    .community-section {
+        text-align: center;
+        padding-inline: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .community-copy {
+        text-align: center;
+    }
+
+    .community-copy p:not(.cta-row) {
+        color: var(--sl-color-gray-2);
+    }
+
 </style>
