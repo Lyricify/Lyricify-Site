@@ -15,7 +15,7 @@ import {Data} from '@data/DataHelper';
                 tagline: '加入 QQ 群、Telegram 群组和频道，与 Lyricify 用户及开发者交流，获取最新动态。',
             },
         }}>
-    <div class='community-grid'>
+    <div class='community-layout'>
         <section class='community-panel' id='qq'>
             <div class='community-panel-head'>
                 <h2>QQ 群</h2>
@@ -23,13 +23,29 @@ import {Data} from '@data/DataHelper';
             </div>
             <Communities communities={Data['Community.QQ']} />
         </section>
-        <section class='community-panel' id='telegram'>
-            <div class='community-panel-head'>
-                <h2>Telegram</h2>
-                <p>在 Telegram 查看用户群与发布频道。</p>
-            </div>
-            <Communities communities={Data['Community.Telegram']} />
-        </section>
+        <div class='community-right'>
+            <section class='community-panel' id='telegram'>
+                <div class='community-panel-head'>
+                    <h2>Telegram</h2>
+                    <p>在 Telegram 查看用户群与发布频道。</p>
+                </div>
+                <Communities communities={Data['Community.Telegram']} />
+            </section>
+            <section class='community-panel' id='github'>
+                <div class='community-panel-head'>
+                    <h2>GitHub</h2>
+                    <p>可以在 GitHub Issues 中反馈问题、提交建议并交流。</p>
+                </div>
+                <Communities communities={Data['Community.GitHub']} />
+            </section>
+            <section class='community-panel' id='email'>
+                <div class='community-panel-head'>
+                    <h2>邮件</h2>
+                    <p>可以通过邮件联系 Lyricify 开发者；如通过邮件联系，请在邮件中注明来意。</p>
+                </div>
+                <Communities communities={Data['Community.Email']} />
+            </section>
+        </div>
         <section class='beta-panel' id='beta'>
             <div class='community-panel-head beta-head'>
                 <h2>内测群</h2>
@@ -56,10 +72,16 @@ import {Data} from '@data/DataHelper';
         }
     }
 
-    .community-grid {
+    .community-layout {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
+    }
+
+    .community-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
     }
 
     .community-panel {
@@ -121,16 +143,16 @@ import {Data} from '@data/DataHelper';
     }
 
     @media (min-width: 50rem) {
-        .community-grid {
+        .community-layout {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             grid-template-areas:
-                'qq telegram'
-                'qq beta';
+                'qq right'
+                'beta right';
             align-items: start;
         }
 
-        .community-grid > * {
+        .community-layout > * {
             align-self: start;
             margin-top: 0 !important;
             margin-block-start: 0 !important;
@@ -140,13 +162,13 @@ import {Data} from '@data/DataHelper';
             grid-area: qq;
         }
 
-        #telegram {
-            grid-area: telegram;
-        }
-
         #beta {
             grid-area: beta;
             margin-top: 0;
+        }
+
+        .community-right {
+            grid-area: right;
         }
     }
 </style>

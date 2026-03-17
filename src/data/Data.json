@@ -78,7 +78,7 @@
                 "zh-CN": "Lyricify 用户群",
                 "en": "Lyricify Users Group"
             },
-            "value": "https://t.me/lyricify",
+            "value": "@lyricify",
             "url": "https://t.me/lyricify"
         },
         {
@@ -86,7 +86,7 @@
                 "zh-CN": "Lyricify 发布频道",
                 "en": "Lyricify Releases"
             },
-            "value": "https://t.me/lyricifyreleases",
+            "value": "@lyricifyreleases",
             "url": "https://t.me/lyricifyreleases"
         }
     ],
@@ -114,6 +114,34 @@
             },
             "value": "432378147",
             "url": "https://qm.qq.com/q/YkYL07AFCk"
+        }
+    ],
+    "Community.GitHub": [
+        {
+            "name": {
+                "zh-CN": "GitHub 仓库",
+                "en": "GitHub Repository"
+            },
+            "value": "github.com/WXRIW/Lyricify-App",
+            "url": "https://github.com/WXRIW/Lyricify-App"
+        },
+        {
+            "name": {
+                "zh-CN": "GitHub Issues",
+                "en": "GitHub Issues"
+            },
+            "value": "github.com/WXRIW/Lyricify-App/issues",
+            "url": "https://github.com/WXRIW/Lyricify-App/issues"
+        }
+    ],
+    "Community.Email": [
+        {
+            "name": {
+                "zh-CN": "XY Wang (WXRIW)",
+                "en": "XY Wang (WXRIW)"
+            },
+            "value": "wxriw@foxmail.com",
+            "url": "mailto:wxriw@foxmail.com"
         }
     ]
 }
