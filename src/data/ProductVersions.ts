@@ -10,11 +10,11 @@ export const productVersions = [
             en: 'Lyricify 4',
         },
         summary: {
-            'zh-CN': '面向 Spotify 的完整桌面歌词与增强功能方案，适合 Windows 用户。',
-            en: 'A full desktop lyrics and enhancement solution for Spotify, designed for Windows users.',
+            'zh-CN': '面向 Spotify 的完整歌词体验与增强功能方案。',
+            en: 'A full desktop lyrics and enhancement solution for Spotify.',
         },
         bestFor: {
-            'zh-CN': '适合：主要在 Windows 上使用 Spotify，并需要完整歌词、管理与高级功能的用户。',
+            'zh-CN': '适合：使用 Spotify，并需要完整歌词体验、管理与高级功能的用户。',
             en: 'Best for: Windows users who primarily use Spotify and want the full lyrics, management, and advanced feature set.',
         },
         platforms: {
@@ -55,12 +55,12 @@ export const productVersions = [
             en: 'Lyricify Lite',
         },
         summary: {
-            'zh-CN': '面向支持 SMTC 的 Windows 播放器，提供桌面歌词与灵动词岛等轻量功能。',
-            en: 'Desktop lyrics and Dynamic Island style lyrics for Windows players that support SMTC.',
+            'zh-CN': '面向支持 SMTC 的播放器，提供灵动词岛、桌面歌词、任务栏歌词等轻量功能。',
+            en: 'A lightweight lyrics companion for SMTC-supported players, with Dynamic Lyrics Island, desktop lyrics, and taskbar lyrics.',
         },
         bestFor: {
-            'zh-CN': '适合：不主要使用 Spotify，而是使用 Apple Music、QQ 音乐、网易云音乐等 Windows 播放器的用户。',
-            en: 'Best for: Windows users who do not mainly use Spotify and instead use Apple Music, QQ Music, Netease Cloud Music, or other SMTC-enabled players.',
+            'zh-CN': '适合：使用 Apple Music、QQ 音乐、网易云音乐、酷狗音乐等音乐软件的用户。',
+            en: 'Best for: users of Apple Music, QQ Music, Netease Cloud Music, Kugou Music, and other music apps with SMTC support.',
         },
         platforms: {
             'zh-CN': '平台：Windows',
@@ -100,20 +100,20 @@ export const productVersions = [
             en: 'Lyricify Mobile',
         },
         summary: {
-            'zh-CN': '面向 Android、iPhone、iPad、macOS 等平台的移动端歌词体验。',
-            en: 'A mobile lyrics experience for Android, iPhone, iPad, macOS, and more.',
+            'zh-CN': '面向 Android、iPhone、iPad、Mac 等平台设备的移动端歌词体验。',
+            en: 'A Lyricify experience for mobile and Apple platforms, including Android, iPhone, iPad, and Mac.',
         },
         bestFor: {
-            'zh-CN': '适合：需要在手机、平板、Apple 设备或跨平台场景下使用 Lyricify 的用户。',
-            en: 'Best for: users who want Lyricify on phones, tablets, Apple devices, or across multiple platforms.',
+            'zh-CN': '适合：需要在手机、平板、或 Mac 电脑设备上使用 Lyricify 的用户。',
+            en: 'Best for: users who want to use Lyricify on phones, tablets, or Mac devices.',
         },
         platforms: {
-            'zh-CN': '平台：Android / iPhone / iPad / macOS / Windows 内置视图',
-            en: 'Platforms: Android / iPhone / iPad / macOS / built-in Windows view',
+            'zh-CN': '平台：Android / iOS / iPadOS / macOS / Windows',
+            en: 'Platforms: Android / iOS / iPadOS / macOS / Windows',
         },
         requirement: {
             'zh-CN': '安装提示：Apple 设备可参考自签安装教程',
-            en: 'Install note: Apple devices may require the sideloading guide',
+            en: 'Install note: Apple devices can follow the sideloading guide',
         },
         docsUrl: {
             'zh-CN': 'https://docs.lyricify.app/lyricify-mobile/guide/',
@@ -150,20 +150,20 @@ export const productVersions = [
             en: 'Lyricify 3',
         },
         summary: {
-            'zh-CN': 'Lyricify 3 已停止功能更新与维护，适合仍在使用旧工作流或历史版本的用户。',
-            en: 'Lyricify 3 has reached end of life and is only intended for users who still rely on older workflows or historical builds.',
+            'zh-CN': 'Lyricify 3 已停止功能更新与维护。新用户建议直接选择 Lyricify 4。',
+            en: 'Lyricify 3 is no longer receiving feature updates or maintenance. New users should choose Lyricify 4 directly.',
         },
         bestFor: {
-            'zh-CN': '适合：仅在确实需要旧版兼容性时使用。新用户建议直接选择 Lyricify 4。',
-            en: 'Best for: legacy compatibility only. New users should go straight to Lyricify 4.',
+            'zh-CN': '说明：仅作为历史版本保留',
+            en: 'Note: retained as a historical version only',
         },
         platforms: {
             'zh-CN': '状态：已于 2024 年 6 月结束功能更新与维护',
             en: 'Status: feature updates and maintenance ended in June 2024',
         },
         requirement: {
-            'zh-CN': '说明：仅作为历史版本保留',
-            en: 'Note: retained as a historical version only',
+            'zh-CN': '',
+            en: '',
         },
         docsUrl: {
             'zh-CN': 'https://github.com/WXRIW/Lyricify-App/blob/main/docs/Lyricify%203/README.md',

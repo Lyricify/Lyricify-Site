@@ -40,6 +40,7 @@ html[data-font-scheme='spotify'] {
 :root {
     --sl-content-width: 60rem;
     --sl-sidebar-width: 20rem;
+    --hero-header-visibility: 1;
 }
 
 .social-icons svg {
@@ -57,8 +58,14 @@ html[data-hide-search='true'] site-search {
     /*background-color: transparent;*/
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    background-color: rgba(24, 24, 24, 66%);
+    background-color: rgba(
+        24,
+        24,
+        24,
+        calc(0.66 * var(--hero-header-visibility))
+    );
     filter: url('/roughpaper.svg');
+    transition: background-color 180ms ease;
 }
 
 [data-has-hero][data-theme='light'] header {
@@ -66,8 +73,14 @@ html[data-hide-search='true'] site-search {
     /*background-color: transparent;*/
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    background-color: rgba(0, 128, 53, 10%);
+    background-color: rgba(
+        0,
+        128,
+        53,
+        calc(0.10 * var(--hero-header-visibility))
+    );
     filter: url('/roughpaper.svg');
+    transition: background-color 180ms ease;
 }
 
 [data-has-hero] .page {

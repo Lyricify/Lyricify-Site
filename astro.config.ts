@@ -41,13 +41,16 @@ export default defineConfig({
                     tag: 'script',
                     content: `
                         (() => {
+                            let removeScrollListener;
+
                             const applyFontScheme = () => {
                                 const isSpotifyPage =
                                     window.location.pathname === '/lyricify-4/' ||
                                     window.location.pathname === '/zh-cn/lyricify-4/';
                                 const shouldHideSearch =
                                     window.location.pathname === '/' ||
-                                    window.location.pathname === '/lyricify-4/';
+                                    window.location.pathname === '/lyricify-4/' ||
+                                    window.location.pathname === '/zh-cn/';
 
                                 if (isSpotifyPage) {
                                     document.documentElement.dataset.fontScheme = 'spotify';
@@ -62,8 +65,43 @@ export default defineConfig({
                                 }
                             };
 
-                            applyFontScheme();
-                            document.addEventListener('astro:page-load', applyFontScheme);
+                            const applyHeroHeaderVisibility = () => {
+                                if (removeScrollListener) {
+                                    removeScrollListener();
+                                    removeScrollListener = undefined;
+                                }
+
+                                const root = document.documentElement;
+                                const hasHero = root.hasAttribute('data-has-hero');
+
+                                if (!hasHero) {
+                                    root.style.setProperty('--hero-header-visibility', '1');
+                                    return;
+                                }
+
+                                const updateVisibility = () => {
+                                    const progress = Math.min(window.scrollY / 120, 1);
+                                    root.style.setProperty(
+                                        '--hero-header-visibility',
+                                        progress.toFixed(3)
+                                    );
+                                };
+
+                                updateVisibility();
+                                window.addEventListener('scroll', updateVisibility, {
+                                    passive: true,
+                                });
+                                removeScrollListener = () =>
+                                    window.removeEventListener('scroll', updateVisibility);
+                            };
+
+                            const applyPageChrome = () => {
+                                applyFontScheme();
+                                applyHeroHeaderVisibility();
+                            };
+
+                            applyPageChrome();
+                            document.addEventListener('astro:page-load', applyPageChrome);
                         })();
                     `,
                 },
