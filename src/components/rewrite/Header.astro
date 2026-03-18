@@ -1,6 +1,6 @@
 ---
 import config from 'virtual:starlight/user-config';
-import type { Props } from '@astrojs/starlight/props';
+import type {Props} from '@astrojs/starlight/props';
 
 import LanguageSelect from 'virtual:starlight/components/LanguageSelect';
 import Search from 'virtual:starlight/components/Search';
@@ -9,22 +9,45 @@ import SocialIcons from 'virtual:starlight/components/SocialIcons';
 import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
 
 const shouldRenderSearch =
-    config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+    config.pagefind ||
+    config.components.Search !== '@astrojs/starlight/components/Search.astro';
+const useGradientBlur = !Astro.props.hasSidebar;
 ---
 
-<div class="header sl-flex">
-    <div class="title-wrapper sl-flex">
+<div
+    class:list={[
+        'header',
+        'sl-flex',
+        {'gradient-blur-header': useGradientBlur},
+    ]}>
+    {
+        useGradientBlur && (
+            <div class='header-gradient-blur' aria-hidden='true'>
+                <div class='header-gradient-blur__surface'>
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--1' />
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--2' />
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--3' />
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--4' />
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--5' />
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--6' />
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--7' />
+                    <div class='header-gradient-blur__layer header-gradient-blur__layer--8' />
+                </div>
+            </div>
+        )
+    }
+    <div class='title-wrapper sl-flex'>
         <SiteTitle {...Astro.props} />
     </div>
-    <div class="sl-flex search-slot">
+    <div class='sl-flex search-slot'>
         {shouldRenderSearch && <Search {...Astro.props} />}
     </div>
-    <div class="sl-flex mobile-controls">
+    <div class='sl-flex mobile-controls'>
         <ThemeSelect {...Astro.props} />
         <LanguageSelect {...Astro.props} />
     </div>
-    <div class="sl-hidden md:sl-flex right-group">
-        <div class="sl-flex social-icons">
+    <div class='sl-hidden md:sl-flex right-group'>
+        <div class='sl-flex social-icons'>
             <SocialIcons {...Astro.props} />
         </div>
         <ThemeSelect {...Astro.props} />
@@ -32,12 +55,158 @@ const shouldRenderSearch =
     </div>
 </div>
 
+<style is:global>
+    html header.header:has(.gradient-blur-header) {
+        border-bottom-color: transparent;
+        background: transparent;
+        background-color: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        filter: none;
+        overflow: visible;
+    }
+</style>
+
 <style>
     .header {
         gap: var(--sl-nav-gap);
         justify-content: space-between;
         align-items: center;
         height: 100%;
+    }
+
+    .gradient-blur-header {
+        position: relative;
+        isolation: isolate;
+        --header-gradient-blur-height: clamp(
+            calc(var(--sl-nav-height) + 1rem),
+            14vh,
+            calc(var(--sl-nav-height) + 2.5rem)
+        );
+    }
+
+    .gradient-blur-header > :not(.header-gradient-blur) {
+        position: relative;
+        z-index: 1;
+    }
+
+    .header-gradient-blur {
+        pointer-events: none;
+        position: absolute;
+        inset: calc(var(--sl-nav-pad-y) * -1) calc(var(--sl-nav-pad-x) * -1)
+            auto;
+        z-index: 0;
+        width: calc(100% + (2 * var(--sl-nav-pad-x)));
+        height: var(--header-gradient-blur-height);
+        overflow: hidden;
+    }
+
+    .header-gradient-blur__surface {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header-gradient-blur__layer {
+        position: absolute;
+        inset: 0;
+        -webkit-backdrop-filter: blur(var(--header-gradient-blur-amount));
+        backdrop-filter: blur(var(--header-gradient-blur-amount));
+        -webkit-mask-image: var(--header-gradient-mask);
+        mask-image: var(--header-gradient-mask);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+    }
+
+    .header-gradient-blur__layer--1 {
+        --header-gradient-blur-amount: 64px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            #000 0%,
+            transparent 12.5%
+        );
+    }
+
+    .header-gradient-blur__layer--2 {
+        --header-gradient-blur-amount: 32px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            #000 0%,
+            #000 12.5%,
+            transparent 25%
+        );
+    }
+
+    .header-gradient-blur__layer--3 {
+        --header-gradient-blur-amount: 16px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            transparent 0%,
+            #000 12.5%,
+            #000 25%,
+            transparent 37.5%
+        );
+    }
+
+    .header-gradient-blur__layer--4 {
+        --header-gradient-blur-amount: 8px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            transparent 12.5%,
+            #000 25%,
+            #000 37.5%,
+            transparent 50%
+        );
+    }
+
+    .header-gradient-blur__layer--5 {
+        --header-gradient-blur-amount: 4px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            transparent 25%,
+            #000 37.5%,
+            #000 50%,
+            transparent 62.5%
+        );
+    }
+
+    .header-gradient-blur__layer--6 {
+        --header-gradient-blur-amount: 2px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            transparent 37.5%,
+            #000 50%,
+            #000 62.5%,
+            transparent 75%
+        );
+    }
+
+    .header-gradient-blur__layer--7 {
+        --header-gradient-blur-amount: 1px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            transparent 50%,
+            #000 62.5%,
+            #000 75%,
+            transparent 87.5%
+        );
+    }
+
+    .header-gradient-blur__layer--8 {
+        --header-gradient-blur-amount: 0.5px;
+        --header-gradient-mask: linear-gradient(
+            180deg,
+            transparent 62.5%,
+            #000 75%,
+            #000 87.5%,
+            transparent 100%
+        );
+    }
+
+    @media (max-width: 49.999rem) {
+        .gradient-blur-header {
+            --header-gradient-blur-height: calc(var(--sl-nav-height) + 0.65rem);
+        }
     }
 
     .title-wrapper {
@@ -93,18 +262,29 @@ const shouldRenderSearch =
         }
 
         .header {
-            --__sidebar-width: max(0rem, var(--sl-content-inline-start, 0rem) - var(--sl-nav-pad-x));
+            --__sidebar-width: max(
+                0rem,
+                var(--sl-content-inline-start, 0rem) - var(--sl-nav-pad-x)
+            );
             --__main-column-fr: calc(
                 (
-                    100% + var(--__sidebar-pad, 0rem) - var(--__toc-width, var(--sl-sidebar-width)) -
-                        (2 * var(--__toc-width, var(--sl-nav-pad-x))) - var(--sl-content-inline-start, 0rem) -
-                        var(--sl-content-width)
-                ) / 2
+                        100% + var(--__sidebar-pad, 0rem) -
+                            var(--__toc-width, var(--sl-sidebar-width)) -
+                            (2 * var(--__toc-width, var(--sl-nav-pad-x))) -
+                            var(--sl-content-inline-start, 0rem) -
+                            var(--sl-content-width)
+                    ) / 2
             );
             display: grid;
             grid-template-columns:
                 minmax(
-                    calc(var(--__sidebar-width) + max(0rem, var(--__main-column-fr) - var(--sl-nav-gap))),
+                    calc(
+                        var(--__sidebar-width) +
+                            max(
+                                0rem,
+                                var(--__main-column-fr) - var(--sl-nav-gap)
+                            )
+                    ),
                     auto
                 )
                 1fr
