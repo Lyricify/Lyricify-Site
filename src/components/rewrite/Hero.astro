@@ -13,3 +13,13 @@ const isHomepage =
 ---
 
 {isHomepage ? <GlowHero {...Astro.props} /> : <Default {...Astro.props} />}
+
+<style is:global>
+    :root {
+        --lyricify-hero-actions-gap: 0.8rem 1.25rem;
+    }
+
+    html .hero .actions {
+        gap: var(--lyricify-hero-actions-gap);
+    }
+</style>

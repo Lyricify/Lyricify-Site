@@ -1,5 +1,4 @@
 ---
-// @ts-nocheck
 import {Labels} from '@data/DataHelper';
 
 interface Props {
@@ -7,36 +6,50 @@ interface Props {
 }
 
 const {url} = Astro.props;
-const storeButtonPath = (theme: string) => {
-    return `/store-buttons/ms-store-${theme}-${Astro.currentLocale}.svg`;
-};
-const t = (translatable: object) => {
-    return translatable[Astro.currentLocale];
-};
+const locale = (Astro.currentLocale ?? 'en').toLowerCase();
+const language = locale.startsWith('en') ? 'en-us' : 'zh-cn';
+const badgeSrc = (theme: 'light' | 'dark') =>
+    `https://get.microsoft.com/images/${language}%20${theme}.svg`;
+const alt =
+    Labels['label.getItFromMicrosoftStore'][
+        locale.startsWith('en') ? 'en' : 'zh-CN'
+    ];
 ---
-<center>
-    <div class='store-button'>
-        <a href={url}>
-            <img
-                src={storeButtonPath('dark')}
-                alt={t(Labels['label.getItFromMicrosoftStore'])}
-                class='light:sl-hidden'
-            />
-            <img
-                src={storeButtonPath('light')}
-                alt={t(Labels['label.getItFromMicrosoftStore'])}
-                class='dark:sl-hidden'
-            />
-        </a>
-    </div>
-</center>
+
+<a class='store-button not-content' href={url}>
+    <img
+        src={badgeSrc('dark')}
+        alt={alt}
+        loading='lazy'
+        decoding='async'
+        class='store-button__img store-button__img--dark light:sl-hidden'
+    />
+    <img
+        src={badgeSrc('light')}
+        alt={alt}
+        loading='lazy'
+        decoding='async'
+        class='store-button__img store-button__img--light dark:sl-hidden'
+    />
+</a>
+
 <style>
     .store-button {
-        width: 20rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
     }
 
-    .store-button a,
-    img {
-        width: inherit;
+    .store-button__img {
+        display: block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    .store-button__img--light {
+        transform: translateY(-1.5px);
     }
 </style>
