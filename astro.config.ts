@@ -42,6 +42,95 @@ export default defineConfig({
                     content: `
                         (() => {
                             let removeScrollListener;
+                            const homepageLocaleStorageKey =
+                                'lyricify-homepage-locale';
+
+                            const setHomepageLocalePreference = (locale) => {
+                                try {
+                                    window.localStorage.setItem(
+                                        homepageLocaleStorageKey,
+                                        locale
+                                    );
+                                } catch {}
+                            };
+
+                            const getHomepageLocalePreference = () => {
+                                try {
+                                    const locale = window.localStorage.getItem(
+                                        homepageLocaleStorageKey
+                                    );
+
+                                    if (locale === 'root' || locale === 'zh-cn') {
+                                        return locale;
+                                    }
+                                } catch {}
+
+                                return undefined;
+                            };
+
+                            const getPreferredHomepageLocale = () => {
+                                const storedLocale =
+                                    getHomepageLocalePreference();
+
+                                if (storedLocale) {
+                                    return storedLocale;
+                                }
+
+                                const browserLanguages =
+                                    window.navigator.languages?.length
+                                        ? window.navigator.languages
+                                        : [window.navigator.language];
+
+                                return browserLanguages.some(
+                                    (language) =>
+                                        typeof language === 'string' &&
+                                        language.toLowerCase().startsWith('zh')
+                                )
+                                    ? 'zh-cn'
+                                    : 'root';
+                            };
+
+                            const bindHomepageLocalePreference = () => {
+                                if (window.__lyricifyLocalePreferenceBound) {
+                                    return;
+                                }
+
+                                window.__lyricifyLocalePreferenceBound = true;
+                                document.addEventListener('change', (event) => {
+                                    const target = event.target;
+
+                                    if (!(target instanceof HTMLSelectElement)) {
+                                        return;
+                                    }
+
+                                    if (!target.closest('starlight-lang-select')) {
+                                        return;
+                                    }
+
+                                    const locale = target.value.startsWith(
+                                        '/zh-cn/'
+                                    )
+                                        ? 'zh-cn'
+                                        : 'root';
+
+                                    setHomepageLocalePreference(locale);
+                                });
+                            };
+
+                            const applyHomepageLocaleRedirect = () => {
+                                if (window.location.pathname !== '/') {
+                                    return false;
+                                }
+
+                                if (getPreferredHomepageLocale() !== 'zh-cn') {
+                                    return false;
+                                }
+
+                                const targetUrl = new URL(window.location.href);
+                                targetUrl.pathname = '/zh-cn/';
+                                window.location.replace(targetUrl.toString());
+                                return true;
+                            };
 
                             const applyFontScheme = () => {
                                 const pathname = window.location.pathname;
@@ -104,6 +193,12 @@ export default defineConfig({
                                 applyFontScheme();
                                 applyHeroHeaderVisibility();
                             };
+
+                            bindHomepageLocalePreference();
+
+                            if (applyHomepageLocaleRedirect()) {
+                                return;
+                            }
 
                             applyPageChrome();
                             document.addEventListener('astro:page-load', applyPageChrome);
