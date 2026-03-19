@@ -7,7 +7,7 @@ const cacheRoot = path.join(repoRoot, '.cache', 'ci-translations');
 const cacheFilesRoot = path.join(cacheRoot, 'files');
 const manifestPath = path.join(cacheRoot, 'manifest.json');
 
-const promptVersion = '2026-03-19-v2';
+const promptVersion = '2026-03-19-v3';
 const model = process.env.TRANSLATION_MODEL;
 const apiBaseUrl = (
     process.env.TRANSLATION_BASE_URL || 'https://api.openai.com/v1'
