@@ -1,6 +1,7 @@
 ---
-import {Labels} from '@data/DataHelper';
+import {getLabels} from '@data/DataHelper';
 import {Community} from '../data/LyricifyCustomTypes';
+import {getSiteTranslationKey, normalizeSiteLocale} from '@utils/siteI18n';
 
 interface Props {
     communities: Array<Community>;
@@ -8,17 +9,21 @@ interface Props {
 
 const {communities} = Astro.props;
 
-const locale = Astro.currentLocale ?? 'en';
+const locale = normalizeSiteLocale(Astro.currentLocale);
+const translationKey = getSiteTranslationKey(locale);
+const labels = getLabels(locale);
 ---
 
 <ul>
     {
         communities.map((item) => {
             const communityName =
-                item.name instanceof Object ? item.name[locale] : item.name;
+                item.name instanceof Object
+                    ? item.name[translationKey] ?? item.name.en
+                    : item.name;
             const communityHasUrl = !!item.url;
             const communityIsFull = !!item.isFull;
-            const wordIsFull = Labels['label.communityIsFull'][locale];
+            const wordIsFull = labels['label.communityIsFull'][translationKey];
             const communityValue = item.value;
 
             const tmplWithUrl = (

@@ -1,0 +1,34 @@
+{
+    "productVersionsOverview.heading": {
+        "zh-CN": "选择合适的版本",
+        "en": "Choose the Right Version"
+    },
+    "productVersionsOverview.subheading": {
+        "zh-CN": "按平台、播放器和使用场景快速找到最适合你的 Lyricify。",
+        "en": "Pick the Lyricify edition that fits your platform, player, and workflow."
+    },
+    "productVersionsOverview.download": {
+        "zh-CN": "下载",
+        "en": "Download"
+    },
+    "productVersionsOverview.docs": {
+        "zh-CN": "文档",
+        "en": "Documentation"
+    },
+    "productVersionsOverview.overview": {
+        "zh-CN": "介绍",
+        "en": "Overview"
+    },
+    "downloadDirectory.heading": {
+        "zh-CN": "下载入口",
+        "en": "Download Directory"
+    },
+    "downloadDirectory.subheading": {
+        "zh-CN": "按版本查看下载方式，并直接前往对应的下载地址。",
+        "en": "Choose a version below and jump straight to the right download source."
+    },
+    "downloadDirectory.docs": {
+        "zh-CN": "查看文档",
+        "en": "Documentation"
+    }
+}

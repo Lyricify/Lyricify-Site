@@ -1,37 +1,28 @@
 ---
-import { productVersions } from '@data/ProductVersions';
+import {getComponentLabels} from '@data/DataHelper';
+import {getProductVersions} from '@data/ProductVersions';
+import {
+    getSitePathPrefix,
+    localizeDocsUrl,
+    normalizeSiteLocale,
+    translateSiteValue,
+} from '@utils/siteI18n';
 
-const locale = Astro.currentLocale ?? 'en';
-const downloadBase = locale === 'zh-CN' ? '/zh-cn/download/' : '/download/';
+const locale = normalizeSiteLocale(Astro.currentLocale);
+const productVersions = getProductVersions(locale);
+const componentLabels = getComponentLabels(locale);
+const sitePathPrefix = getSitePathPrefix(locale);
+const downloadBase = sitePathPrefix ? `${sitePathPrefix}/download/` : '/download/';
+const lyricify4OverviewPath = sitePathPrefix
+    ? `${sitePathPrefix}/lyricify-4/`
+    : '/lyricify-4/';
 const t = (value: string | Record<string, string>) =>
-    typeof value === 'string' ? value : value[locale] ?? value.en;
-const labels = {
-    heading: {
-        'zh-CN': '选择合适的版本',
-        en: 'Choose the Right Version',
-    },
-    subheading: {
-        'zh-CN': '按平台、播放器和使用场景快速找到最适合你的 Lyricify。',
-        en: 'Pick the Lyricify edition that fits your platform, player, and workflow.',
-    },
-    download: {
-        'zh-CN': '下载',
-        en: 'Download',
-    },
-    docs: {
-        'zh-CN': '文档',
-        en: 'Documentation',
-    },
-    overview: {
-        'zh-CN': '介绍',
-        en: 'Overview',
-    },
-};
+    translateSiteValue(value, locale);
 ---
 
 <section class='version-overview'>
-    <h2>{t(labels.heading)}</h2>
-    <h4>{t(labels.subheading)}</h4>
+    <h2>{t(componentLabels['productVersionsOverview.heading'])}</h2>
+    <h4>{t(componentLabels['productVersionsOverview.subheading'])}</h4>
     <div class='version-grid'>
         {
             productVersions.map((version) => (
@@ -49,12 +40,16 @@ const labels = {
                     <p class='version-meta'>{t(version.platforms)}</p>
                     <p class='version-fit'>{t(version.bestFor)}</p>
                     <div class='version-links'>
-                        <a class='version-link-button' href={`${downloadBase}#${version.id}`}>{t(labels.download)}</a>
-                        <a class='version-link-button secondary' href={t(version.docsUrl)}>{t(labels.docs)}</a>
+                        <a class='version-link-button' href={`${downloadBase}#${version.id}`}>
+                            {t(componentLabels['productVersionsOverview.download'])}
+                        </a>
+                        <a class='version-link-button secondary' href={localizeDocsUrl(t(version.docsUrl), locale)}>
+                            {t(componentLabels['productVersionsOverview.docs'])}
+                        </a>
                         {
                             version.id === 'lyricify-4' && (
-                                <a class='version-link-button secondary' href={locale === 'zh-CN' ? '/zh-cn/lyricify-4/' : '/lyricify-4/'}>
-                                    {t(labels.overview)}
+                                <a class='version-link-button secondary' href={lyricify4OverviewPath}>
+                                    {t(componentLabels['productVersionsOverview.overview'])}
                                 </a>
                             )
                         }

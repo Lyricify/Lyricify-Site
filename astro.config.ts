@@ -60,7 +60,11 @@ export default defineConfig({
                                         homepageLocaleStorageKey
                                     );
 
-                                    if (locale === 'root' || locale === 'zh-cn') {
+                                    if (
+                                        locale === 'root' ||
+                                        locale === 'zh-cn' ||
+                                        locale === 'zh-hant'
+                                    ) {
                                         return locale;
                                     }
                                 } catch {}
@@ -81,13 +85,31 @@ export default defineConfig({
                                         ? window.navigator.languages
                                         : [window.navigator.language];
 
-                                return browserLanguages.some(
-                                    (language) =>
-                                        typeof language === 'string' &&
-                                        language.toLowerCase().startsWith('zh')
-                                )
-                                    ? 'zh-cn'
-                                    : 'root';
+                                for (const language of browserLanguages) {
+                                    if (typeof language !== 'string') {
+                                        continue;
+                                    }
+
+                                    const normalizedLanguage =
+                                        language.toLowerCase();
+
+                                    if (
+                                        normalizedLanguage.startsWith(
+                                            'zh-hant'
+                                        ) ||
+                                        normalizedLanguage.startsWith('zh-tw') ||
+                                        normalizedLanguage.startsWith('zh-hk') ||
+                                        normalizedLanguage.startsWith('zh-mo')
+                                    ) {
+                                        return 'zh-hant';
+                                    }
+
+                                    if (normalizedLanguage.startsWith('zh')) {
+                                        return 'zh-cn';
+                                    }
+                                }
+
+                                return 'root';
                             };
 
                             const bindHomepageLocalePreference = () => {
@@ -107,11 +129,16 @@ export default defineConfig({
                                         return;
                                     }
 
-                                    const locale = target.value.startsWith(
-                                        '/zh-cn/'
-                                    )
-                                        ? 'zh-cn'
-                                        : 'root';
+                                    const locale =
+                                        target.value.startsWith('/zh-hant/') ||
+                                        target.value === '/zh-hant'
+                                            ? 'zh-hant'
+                                            : target.value.startsWith(
+                                                    '/zh-cn/'
+                                                ) ||
+                                                  target.value === '/zh-cn'
+                                              ? 'zh-cn'
+                                              : 'root';
 
                                     setHomepageLocalePreference(locale);
                                 });
@@ -122,12 +149,18 @@ export default defineConfig({
                                     return false;
                                 }
 
-                                if (getPreferredHomepageLocale() !== 'zh-cn') {
+                                const preferredLocale =
+                                    getPreferredHomepageLocale();
+
+                                if (preferredLocale === 'root') {
                                     return false;
                                 }
 
                                 const targetUrl = new URL(window.location.href);
-                                targetUrl.pathname = '/zh-cn/';
+                                targetUrl.pathname =
+                                    preferredLocale === 'zh-hant'
+                                        ? '/zh-hant/'
+                                        : '/zh-cn/';
                                 window.location.replace(targetUrl.toString());
                                 return true;
                             };
@@ -136,14 +169,18 @@ export default defineConfig({
                                 const pathname = window.location.pathname;
                                 const isSpotifyPage =
                                     pathname === '/lyricify-4/' ||
-                                    pathname === '/zh-cn/lyricify-4/';
+                                    pathname === '/zh-cn/lyricify-4/' ||
+                                    pathname === '/zh-hant/lyricify-4/';
                                 const isDocsPage =
                                     pathname.startsWith('/get-started/') ||
                                     pathname.startsWith('/zh-cn/get-started/') ||
+                                    pathname.startsWith('/zh-hant/get-started/') ||
                                     pathname.startsWith('/faq/') ||
                                     pathname.startsWith('/zh-cn/faq/') ||
+                                    pathname.startsWith('/zh-hant/faq/') ||
                                     pathname === '/i18n-instruction/' ||
-                                    pathname === '/zh-cn/i18n-instruction/';
+                                    pathname === '/zh-cn/i18n-instruction/' ||
+                                    pathname === '/zh-hant/i18n-instruction/';
                                 const shouldHideSearch = !isDocsPage;
 
                                 if (isSpotifyPage) {
@@ -212,6 +249,8 @@ export default defineConfig({
                     autogenerate: {directory: 'get-started'},
                     translations: {
                         'zh-CN': '快速上手',
+                        'zh-Hant': '快速上手',
+                        'zh-hant': '快速上手',
                     },
                 },
                 {
@@ -219,6 +258,8 @@ export default defineConfig({
                     autogenerate: {directory: 'faq'},
                     translations: {
                         'zh-CN': '常见问题',
+                        'zh-Hant': '常見問題',
+                        'zh-hant': '常見問題',
                     },
                 },
                 {
@@ -231,6 +272,8 @@ export default defineConfig({
                     label: 'i18n Guide',
                     translations: {
                         'zh-CN': '本站 i18n 指导',
+                        'zh-Hant': '本站 i18n 指導',
+                        'zh-hant': '本站 i18n 指導',
                     },
                     link: '/i18n-instruction',
                     badge: {
@@ -258,6 +301,10 @@ export default defineConfig({
                 'zh-cn': {
                     label: '简体中文',
                     lang: 'zh-CN',
+                },
+                'zh-hant': {
+                    label: '繁體中文',
+                    lang: 'zh-Hant',
                 },
             },
             plugins: [],

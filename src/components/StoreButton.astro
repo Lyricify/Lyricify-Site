@@ -1,19 +1,19 @@
 ---
-import {Labels} from '@data/DataHelper';
+import {getLabels} from '@data/DataHelper';
+import {getSiteTranslationKey, normalizeSiteLocale} from '@utils/siteI18n';
 
 interface Props {
     url: string;
 }
 
 const {url} = Astro.props;
-const locale = (Astro.currentLocale ?? 'en').toLowerCase();
-const language = locale.startsWith('en') ? 'en-us' : 'zh-cn';
+const locale = normalizeSiteLocale(Astro.currentLocale);
+const translationKey = getSiteTranslationKey(locale);
+const labels = getLabels(locale);
+const language = locale === 'en' ? 'en-us' : 'zh-cn';
 const badgeSrc = (theme: 'light' | 'dark') =>
     `https://get.microsoft.com/images/${language}%20${theme}.svg`;
-const alt =
-    Labels['label.getItFromMicrosoftStore'][
-        locale.startsWith('en') ? 'en' : 'zh-CN'
-    ];
+const alt = labels['label.getItFromMicrosoftStore'][translationKey];
 ---
 
 <a class='store-button not-content' href={url}>

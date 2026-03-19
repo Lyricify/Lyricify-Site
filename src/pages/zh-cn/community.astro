@@ -2,7 +2,9 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 import Communities from '@components/Communities.astro';
-import {Data} from '@data/DataHelper';
+import {getData} from '@data/DataHelper';
+
+const data = getData(Astro.currentLocale);
 ---
 
 <StarlightPage
@@ -21,7 +23,7 @@ import {Data} from '@data/DataHelper';
                 <h2>QQ 群</h2>
                 <p>加入官方 QQ 群，与其他用户交流使用体验。</p>
             </div>
-            <Communities communities={Data['Community.QQ']} />
+            <Communities communities={data['Community.QQ']} />
         </section>
         <div class='community-right'>
             <section class='community-panel' id='telegram'>
@@ -29,21 +31,21 @@ import {Data} from '@data/DataHelper';
                     <h2>Telegram</h2>
                     <p>在 Telegram 查看用户群与发布频道。</p>
                 </div>
-                <Communities communities={Data['Community.Telegram']} />
+                <Communities communities={data['Community.Telegram']} />
             </section>
             <section class='community-panel' id='github'>
                 <div class='community-panel-head'>
                     <h2>GitHub</h2>
                     <p>可以在 GitHub Issues 中反馈问题、提交建议并交流。</p>
                 </div>
-                <Communities communities={Data['Community.GitHub']} />
+                <Communities communities={data['Community.GitHub']} />
             </section>
             <section class='community-panel' id='email'>
                 <div class='community-panel-head'>
                     <h2>邮件</h2>
                     <p>可以通过邮件联系 Lyricify 开发者；如通过邮件联系，请在邮件中注明来意。</p>
                 </div>
-                <Communities communities={Data['Community.Email']} />
+                <Communities communities={data['Community.Email']} />
             </section>
         </div>
         <section class='beta-panel' id='beta'>
@@ -51,7 +53,7 @@ import {Data} from '@data/DataHelper';
                 <h2>内测群</h2>
                 <p>如果你希望抢先体验新功能、关注开发进展，并愿意参与测试和反馈，欢迎加入 Lyricify 内测群。</p>
             </div>
-            <Communities communities={Data['Community.Beta']} />
+            <Communities communities={data['Community.Beta']} />
         </section>
     </div>
 </StarlightPage>
