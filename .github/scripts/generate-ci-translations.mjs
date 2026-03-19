@@ -15,6 +15,9 @@ const apiBaseUrl = (
 ).replace(/\/$/, '');
 const apiKey = process.env.TRANSLATION_API_KEY;
 const canUseApiTranslation = Boolean(apiKey && model);
+const shouldSkipTranslations =
+    process.env.SKIP_CI_TRANSLATIONS === '1' ||
+    process.env.SKIP_CI_TRANSLATIONS === 'true';
 
 const commonTranslationInstructions = [
     'Output must be a complete translated file body in the same format as the source file.',
@@ -768,6 +771,13 @@ async function resetGeneratedOutputs() {
 }
 
 async function main() {
+    if (shouldSkipTranslations) {
+        console.log(
+            'Skipping Traditional Chinese generation because SKIP_CI_TRANSLATIONS is enabled.',
+        );
+        return;
+    }
+
     await ensureDir(cacheFilesRoot);
     await resetGeneratedOutputs();
 
