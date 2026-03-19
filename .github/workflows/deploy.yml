@@ -63,7 +63,7 @@ jobs:
 
       - name: Save translation cache
         uses: actions/cache/save@v4
-        if: always()
+        if: always() && steps.translation-cache-restore.outputs.cache-hit != 'true'
         with:
           path: .cache/ci-translations
           key: translation-cache-${{ runner.os }}-${{ hashFiles('.github/scripts/generate-ci-translations.mjs') }}-${{ github.sha }}
