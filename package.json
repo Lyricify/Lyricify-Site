@@ -3,9 +3,12 @@
     "type": "module",
     "version": "0.0.1",
     "scripts": {
+        "predev": "npm run generate:ci-translations",
         "dev": "astro dev",
+        "prestart": "npm run generate:ci-translations",
         "start": "astro dev",
         "generate:ci-translations": "node ./.github/scripts/generate-ci-translations.mjs",
+        "prebuild": "npm run generate:ci-translations",
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro"
