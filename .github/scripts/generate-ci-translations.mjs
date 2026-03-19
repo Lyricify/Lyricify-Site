@@ -1,5 +1,4 @@
 import {createHash} from 'node:crypto';
-import {spawn} from 'node:child_process';
 import {promises as fs} from 'node:fs';
 import path from 'node:path';
 
@@ -511,7 +510,12 @@ function restoreAstroModuleStatements(relativePath, sourceContent, translatedCon
 
 async function translateFile(target, relativePath, sourceContent) {
     if (!canUseApiTranslation) {
-        return translateFileLocally(relativePath, sourceContent);
+        throw new Error(
+            [
+                'Missing TRANSLATION_API_KEY or TRANSLATION_MODEL.',
+                `Cannot translate ${relativePath}.`,
+            ].join('\n'),
+        );
     }
 
     const requestBody = {
@@ -577,138 +581,6 @@ async function translateFile(target, relativePath, sourceContent) {
     }
 
     throw lastError;
-}
-
-async function translateFileLocally(relativePath, sourceContent) {
-    if (process.platform === 'darwin') {
-        return translateFileWithSwift(relativePath, sourceContent);
-    }
-
-    return translateFileWithOpenCC(relativePath, sourceContent);
-}
-
-async function translateFileWithSwift(relativePath, sourceContent) {
-    const swiftCode = `
-import Foundation
-
-let inputData = FileHandle.standardInput.readDataToEndOfFile()
-guard let input = String(data: inputData, encoding: .utf8) else {
-    fputs("Unable to decode UTF-8 input.\\n", stderr)
-    exit(1)
-}
-
-guard let output = input.applyingTransform(StringTransform("Simplified-Traditional"), reverse: false) else {
-    fputs("Unable to convert Simplified Chinese to Traditional Chinese.\\n", stderr)
-    exit(1)
-}
-
-FileHandle.standardOutput.write(Data(output.utf8))
-`;
-
-    const swiftHome = path.join(repoRoot, '.tmp', 'swift-home');
-    const swiftModuleCache = path.join(repoRoot, '.tmp', 'swift-module-cache');
-    await ensureDir(swiftHome);
-    await ensureDir(swiftModuleCache);
-
-    const transformed = await new Promise((resolve, reject) => {
-        const child = spawn('swift', ['-e', swiftCode], {
-            cwd: repoRoot,
-            stdio: ['pipe', 'pipe', 'pipe'],
-            env: {
-                ...process.env,
-                HOME: swiftHome,
-                CLANG_MODULE_CACHE_PATH: swiftModuleCache,
-            },
-        });
-
-        let stdout = '';
-        let stderr = '';
-
-        child.stdout.setEncoding('utf8');
-        child.stderr.setEncoding('utf8');
-        child.stdout.on('data', (chunk) => {
-            stdout += chunk;
-        });
-        child.stderr.on('data', (chunk) => {
-            stderr += chunk;
-        });
-        child.on('error', reject);
-        child.on('close', (code) => {
-            if (code === 0) {
-                resolve(stdout);
-                return;
-            }
-
-            reject(
-                new Error(
-                    [
-                        `Swift conversion failed for ${relativePath} with exit code ${code}.`,
-                        stderr.trim(),
-                    ]
-                        .filter(Boolean)
-                        .join('\n'),
-                ),
-            );
-        });
-
-        child.stdin.end(sourceContent);
-    });
-
-    return normalizeTranslatedContent(transformed, sourceContent);
-}
-
-async function translateFileWithOpenCC(relativePath, sourceContent) {
-    const transformed = await new Promise((resolve, reject) => {
-        const child = spawn('opencc', ['-c', 's2t.json'], {
-            cwd: repoRoot,
-            stdio: ['pipe', 'pipe', 'pipe'],
-        });
-
-        let stdout = '';
-        let stderr = '';
-
-        child.stdout.setEncoding('utf8');
-        child.stderr.setEncoding('utf8');
-        child.stdout.on('data', (chunk) => {
-            stdout += chunk;
-        });
-        child.stderr.on('data', (chunk) => {
-            stderr += chunk;
-        });
-        child.on('error', (error) => {
-            reject(
-                new Error(
-                    [
-                        'Missing TRANSLATION_API_KEY or TRANSLATION_MODEL, and no local Traditional Chinese fallback is available on this platform.',
-                        'Tried to use the `opencc` CLI, but it is not installed or not available in PATH.',
-                        `Cannot translate ${relativePath}.`,
-                        error.message,
-                    ].join('\n'),
-                ),
-            );
-        });
-        child.on('close', (code) => {
-            if (code === 0) {
-                resolve(stdout);
-                return;
-            }
-
-            reject(
-                new Error(
-                    [
-                        `OpenCC conversion failed for ${relativePath} with exit code ${code}.`,
-                        stderr.trim(),
-                    ]
-                        .filter(Boolean)
-                        .join('\n'),
-                ),
-            );
-        });
-
-        child.stdin.end(sourceContent);
-    });
-
-    return normalizeTranslatedContent(transformed, sourceContent);
 }
 
 async function writeFileEnsured(targetPath, content) {

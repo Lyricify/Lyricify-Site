@@ -32,17 +32,13 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache/ci-translations
-          key: translation-cache-${{ runner.os }}-${{ hashFiles('.github/workflows/deploy.yml', '.github/scripts/generate-ci-translations.mjs') }}-${{ github.sha }}
+          key: translation-cache-${{ runner.os }}-${{ hashFiles('.github/scripts/generate-ci-translations.mjs') }}-${{ github.sha }}
           restore-keys: |
-            translation-cache-${{ runner.os }}-${{ hashFiles('.github/workflows/deploy.yml', '.github/scripts/generate-ci-translations.mjs') }}-
+            translation-cache-${{ runner.os }}-${{ hashFiles('.github/scripts/generate-ci-translations.mjs') }}-
+            translation-cache-${{ runner.os }}-
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Install OpenCC fallback
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y opencc
 
       - name: Generate incremental Traditional Chinese files for CI
         run: npm run generate:ci-translations
@@ -67,9 +63,10 @@ jobs:
 
       - name: Save translation cache
         uses: actions/cache/save@v4
+        if: always()
         with:
           path: .cache/ci-translations
-          key: translation-cache-${{ runner.os }}-${{ hashFiles('.github/workflows/deploy.yml', '.github/scripts/generate-ci-translations.mjs') }}-${{ github.sha }}
+          key: translation-cache-${{ runner.os }}-${{ hashFiles('.github/scripts/generate-ci-translations.mjs') }}-${{ github.sha }}
 
   deploy:
     needs: build
