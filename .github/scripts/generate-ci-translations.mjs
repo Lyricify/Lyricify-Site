@@ -780,15 +780,18 @@ async function main() {
     }
 
     if (pendingTranslations.length > 0) {
-        if (canUseApiTranslation) {
-            console.log(
-                `Using translation API for ${pendingTranslations.length} file(s).`,
-            );
-        } else {
-            console.log(
-                `Using local Simplified-to-Traditional conversion for ${pendingTranslations.length} file(s).`,
+        if (!canUseApiTranslation) {
+            throw new Error(
+                [
+                    `Missing TRANSLATION_API_KEY or TRANSLATION_MODEL for ${pendingTranslations.length} file(s).`,
+                    'Traditional Chinese generation is configured to run only through the translation API.',
+                ].join('\n'),
             );
         }
+
+        console.log(
+            `Using translation API for ${pendingTranslations.length} file(s).`,
+        );
     }
 
     for (const item of pendingTranslations) {
