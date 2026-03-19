@@ -26,8 +26,8 @@ export const productVersions = [
             en: '.NET Desktop Runtime 6.0 required',
         },
         docsUrl: {
-            'zh-CN': 'https://docs.lyricify.app/lyricify-4/guide/',
-            en: 'https://docs.lyricify.app/en/lyricify-4/guide/',
+            'zh-CN': 'https://docs.lyricify.app/lyricify-4/',
+            en: 'https://docs.lyricify.app/en/lyricify-4/',
         },
         downloads: [
             {
@@ -71,8 +71,8 @@ export const productVersions = [
             en: '.NET Desktop Runtime 8.0 required',
         },
         docsUrl: {
-            'zh-CN': 'https://docs.lyricify.app/lyricify-lite/guide/',
-            en: 'https://docs.lyricify.app/en/lyricify-lite/guide/',
+            'zh-CN': 'https://docs.lyricify.app/lyricify-lite/',
+            en: 'https://docs.lyricify.app/en/lyricify-lite/',
         },
         downloads: [
             {
@@ -116,8 +116,8 @@ export const productVersions = [
             en: 'Install note: Apple devices can follow the sideloading guide',
         },
         docsUrl: {
-            'zh-CN': 'https://docs.lyricify.app/lyricify-mobile/guide/',
-            en: 'https://docs.lyricify.app/en/lyricify-mobile/guide/',
+            'zh-CN': 'https://docs.lyricify.app/lyricify-mobile/',
+            en: 'https://docs.lyricify.app/en/lyricify-mobile/',
         },
         downloads: [
             {
