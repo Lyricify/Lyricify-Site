@@ -1,4 +1,4 @@
-import {normalizeSiteLocale} from '@utils/siteI18n';
+import {normalizeSiteLocale, withZhHantFallback} from '@utils/siteI18n';
 
 import {productVersions as baseProductVersions} from '@data/ProductVersions.data';
 
@@ -10,7 +10,8 @@ const zhHantProductVersionsModule = import.meta.glob(
     | undefined;
 
 const zhHantProductVersions =
-    zhHantProductVersionsModule?.productVersions ?? baseProductVersions;
+    zhHantProductVersionsModule?.productVersions ??
+    withZhHantFallback(baseProductVersions);
 
 export const productVersions = baseProductVersions;
 

@@ -53,6 +53,29 @@ export function translateSiteValue(
     );
 }
 
+export function withZhHantFallback<T>(value: T): T {
+    if (Array.isArray(value)) {
+        return value.map((entry) => withZhHantFallback(entry)) as T;
+    }
+
+    if (!value || typeof value !== 'object') {
+        return value;
+    }
+
+    const record = value as Record<string, unknown>;
+    const nextValue: Record<string, unknown> = {};
+
+    for (const [key, entry] of Object.entries(record)) {
+        nextValue[key] = withZhHantFallback(entry);
+    }
+
+    if ('zh-CN' in record && !('zh-Hant' in record)) {
+        nextValue['zh-Hant'] = withZhHantFallback(record['zh-CN']);
+    }
+
+    return nextValue as T;
+}
+
 export function getSitePathPrefix(locale?: string | null) {
     const normalizedLocale = normalizeSiteLocale(locale);
 
