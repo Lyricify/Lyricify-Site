@@ -577,15 +577,14 @@ async function translateFile(target, relativePath, sourceContent) {
 }
 
 async function translateFileLocally(relativePath, sourceContent) {
-    if (process.platform !== 'darwin') {
-        throw new Error(
-            [
-                'Missing TRANSLATION_API_KEY or TRANSLATION_MODEL, and no local Traditional Chinese fallback is available on this platform.',
-                `Cannot translate ${relativePath}.`,
-            ].join('\n'),
-        );
+    if (process.platform === 'darwin') {
+        return translateFileWithSwift(relativePath, sourceContent);
     }
 
+    return translateFileWithOpenCC(relativePath, sourceContent);
+}
+
+async function translateFileWithSwift(relativePath, sourceContent) {
     const swiftCode = `
 import Foundation
 
@@ -641,6 +640,60 @@ FileHandle.standardOutput.write(Data(output.utf8))
                 new Error(
                     [
                         `Swift conversion failed for ${relativePath} with exit code ${code}.`,
+                        stderr.trim(),
+                    ]
+                        .filter(Boolean)
+                        .join('\n'),
+                ),
+            );
+        });
+
+        child.stdin.end(sourceContent);
+    });
+
+    return normalizeTranslatedContent(transformed, sourceContent);
+}
+
+async function translateFileWithOpenCC(relativePath, sourceContent) {
+    const transformed = await new Promise((resolve, reject) => {
+        const child = spawn('opencc', ['-c', 's2t.json'], {
+            cwd: repoRoot,
+            stdio: ['pipe', 'pipe', 'pipe'],
+        });
+
+        let stdout = '';
+        let stderr = '';
+
+        child.stdout.setEncoding('utf8');
+        child.stderr.setEncoding('utf8');
+        child.stdout.on('data', (chunk) => {
+            stdout += chunk;
+        });
+        child.stderr.on('data', (chunk) => {
+            stderr += chunk;
+        });
+        child.on('error', (error) => {
+            reject(
+                new Error(
+                    [
+                        'Missing TRANSLATION_API_KEY or TRANSLATION_MODEL, and no local Traditional Chinese fallback is available on this platform.',
+                        'Tried to use the `opencc` CLI, but it is not installed or not available in PATH.',
+                        `Cannot translate ${relativePath}.`,
+                        error.message,
+                    ].join('\n'),
+                ),
+            );
+        });
+        child.on('close', (code) => {
+            if (code === 0) {
+                resolve(stdout);
+                return;
+            }
+
+            reject(
+                new Error(
+                    [
+                        `OpenCC conversion failed for ${relativePath} with exit code ${code}.`,
                         stderr.trim(),
                     ]
                         .filter(Boolean)
