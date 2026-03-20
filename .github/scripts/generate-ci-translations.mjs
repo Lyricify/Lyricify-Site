@@ -39,6 +39,7 @@ const terminologyGlossary = [
     '拖动效果 => 拖動效果',
     '单词发光效果 => 單字發光效果',
     'Lyricify 全屏 => Lyricify 全螢幕',
+    '用户 => 用戶',
 ].join(' ');
 
 const translationTargets = [
