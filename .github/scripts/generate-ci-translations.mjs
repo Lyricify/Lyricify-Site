@@ -14,6 +14,8 @@ const apiBaseUrl = (
 ).replace(/\/$/, '');
 const apiKey = process.env.TRANSLATION_API_KEY;
 const canUseApiTranslation = Boolean(apiKey && model);
+const isCiEnvironment =
+    process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
 const shouldSkipTranslations =
     process.env.SKIP_CI_TRANSLATIONS === '1' ||
     process.env.SKIP_CI_TRANSLATIONS === 'true';
@@ -782,6 +784,16 @@ async function main() {
 
     if (pendingTranslations.length > 0) {
         if (!canUseApiTranslation) {
+            if (!isCiEnvironment) {
+                console.log(
+                    [
+                        'Skipping Traditional Chinese generation for local development.',
+                        'Set TRANSLATION_API_KEY and TRANSLATION_MODEL to generate zh-hant locally.',
+                    ].join(' '),
+                );
+                return;
+            }
+
             throw new Error(
                 [
                     `Missing TRANSLATION_API_KEY or TRANSLATION_MODEL for ${pendingTranslations.length} file(s).`,
