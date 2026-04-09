@@ -151,6 +151,14 @@
             },
             "value": "wxriw@foxmail.com",
             "url": "mailto:wxriw@foxmail.com"
+        },
+        {
+            "name": {
+                "zh-CN": "Lyricify 团队",
+                "en": "Lyricify Team"
+            },
+            "value": "lyricify@qq.com",
+            "url": "mailto:lyricify@qq.com"
         }
     ]
 }
