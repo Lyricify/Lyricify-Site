@@ -118,7 +118,7 @@ jobs:
           export RCLONE_CONFIG_OPENLIST_USER="${WEBDAV_USERNAME}"
           export RCLONE_CONFIG_OPENLIST_PASS
 
-          rclone sync ./dist/ openlist: \
+          rclone sync ./dist/ openlist:lyricify-site \
             --create-empty-src-dirs \
             --delete-during \
             --retries 3 \
