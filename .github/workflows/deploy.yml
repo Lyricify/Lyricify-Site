@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy website
 
 on:
   # Trigger the workflow every time you push to the `main` branch
@@ -89,14 +89,39 @@ jobs:
           name: site-dist
           path: ./dist
 
-      - name: Setup SSH key
+      - name: Install rclone
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DOCS_SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p ${{ secrets.DOCS_SERVER_PORT }} ${{ secrets.DOCS_SERVER_HOST }} >> ~/.ssh/known_hosts
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends --yes rclone
 
-      - name: Sync dist to server
+      - name: Sync dist to OpenList via WebDAV
+        env:
+          WEBDAV_URL: ${{ secrets.OPENLIST_WEBDAV_URL }}
+          WEBDAV_USERNAME: ${{ secrets.OPENLIST_WEBDAV_USERNAME }}
+          WEBDAV_PASSWORD: ${{ secrets.OPENLIST_WEBDAV_PASSWORD }}
         run: |
-          rsync -avz --delete -e "ssh -p ${{ secrets.DOCS_SERVER_PORT }}" ./dist/ \
-            ${{ secrets.DOCS_SERVER_USER }}@${{ secrets.DOCS_SERVER_HOST }}:${{ secrets.DOCS_SERVER_PATH }}/
+          set -euo pipefail
+
+          for variable in WEBDAV_URL WEBDAV_USERNAME WEBDAV_PASSWORD; do
+            if [[ -z "${!variable}" ]]; then
+              echo "::error::Required secret for ${variable} is not configured."
+              exit 1
+            fi
+          done
+
+          RCLONE_CONFIG_OPENLIST_PASS="$(rclone obscure "${WEBDAV_PASSWORD}")"
+          echo "::add-mask::${RCLONE_CONFIG_OPENLIST_PASS}"
+
+          export RCLONE_CONFIG_OPENLIST_TYPE=webdav
+          export RCLONE_CONFIG_OPENLIST_URL="${WEBDAV_URL%/}/"
+          export RCLONE_CONFIG_OPENLIST_VENDOR=other
+          export RCLONE_CONFIG_OPENLIST_USER="${WEBDAV_USERNAME}"
+          export RCLONE_CONFIG_OPENLIST_PASS
+
+          rclone sync ./dist/ openlist: \
+            --create-empty-src-dirs \
+            --delete-during \
+            --retries 3 \
+            --low-level-retries 10 \
+            --stats 30s \
+            --stats-one-line
