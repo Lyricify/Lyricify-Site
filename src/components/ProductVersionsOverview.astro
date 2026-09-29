@@ -34,6 +34,7 @@ const t = (value: string | Record<string, string>) =>
                         legacy: version.id === 'lyricify-3',
                     }}
                 >
+                    {version.id === 'lyricify-fusion' && <span id='lyricify-lite' aria-hidden='true'></span>}
                     <p class='version-badge'>{t(version.badge)}</p>
                     <h3>{t(version.name)}</h3>
                     <p>{t(version.summary)}</p>

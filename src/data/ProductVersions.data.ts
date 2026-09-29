@@ -45,18 +45,18 @@ export const productVersions = [
         ],
     },
     {
-        id: 'lyricify-lite',
+        id: 'lyricify-fusion',
         badge: {
-            'zh-CN': '轻量',
-            en: 'Lightweight',
+            'zh-CN': '多播放器',
+            en: 'Multi-app',
         },
         name: {
-            'zh-CN': 'Lyricify Lite',
-            en: 'Lyricify Lite',
+            'zh-CN': 'Lyricify Fusion',
+            en: 'Lyricify Fusion',
         },
         summary: {
-            'zh-CN': '面向支持 SMTC 的播放器，提供灵动词岛、桌面歌词、任务栏歌词等轻量功能。',
-            en: 'A lightweight lyrics companion for SMTC-supported players, with Dynamic Lyrics Island, desktop lyrics, and taskbar lyrics.',
+            'zh-CN': '面向支持 SMTC 的播放器，提供灵动词岛、桌面歌词、任务栏歌词等歌词界面。',
+            en: 'A lyrics companion for SMTC-supported players, with Dynamic Lyrics Island, desktop lyrics, and taskbar lyrics.',
         },
         bestFor: {
             'zh-CN': '适合：使用 Apple Music、QQ 音乐、网易云音乐、酷狗音乐等音乐软件的用户。',
@@ -71,8 +71,8 @@ export const productVersions = [
             en: '.NET Desktop Runtime 8.0 required',
         },
         docsUrl: {
-            'zh-CN': 'https://docs.lyricify.app/lyricify-lite/',
-            en: 'https://docs.lyricify.app/en/lyricify-lite/',
+            'zh-CN': 'https://docs.lyricify.app/lyricify-fusion/',
+            en: 'https://docs.lyricify.app/en/lyricify-fusion/',
         },
         downloads: [
             {

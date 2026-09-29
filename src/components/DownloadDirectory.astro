@@ -28,6 +28,7 @@ const t = (value: string | Record<string, string>) =>
                         recommended: version.id === 'lyricify-4',
                         legacy: version.id === 'lyricify-3',
                     }}>
+                    {version.id === 'lyricify-fusion' && <span id='lyricify-lite' aria-hidden='true'></span>}
                     <div class='download-header'>
                         <div>
                             <p class='download-badge'>{t(version.badge)}</p>
