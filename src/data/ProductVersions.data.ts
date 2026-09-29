@@ -55,8 +55,8 @@ export const productVersions = [
             en: 'Lyricify Fusion',
         },
         summary: {
-            'zh-CN': '面向支持 SMTC 的播放器，提供灵动词岛、桌面歌词、任务栏歌词等歌词界面。',
-            en: 'A lyrics companion for SMTC-supported players, with Dynamic Lyrics Island, desktop lyrics, and taskbar lyrics.',
+            'zh-CN': '面向接入 SMTC 的播放器和媒体应用，提供灵动词岛、桌面歌词、任务栏歌词、Apple Music 歌词、Lyricify 歌词舞台及曲目与歌词管理。',
+            en: 'For players and media apps with SMTC support: Dynamic Lyrics Island, Desktop Lyrics, Taskbar Lyrics, Apple Music Lyrics, Lyricify Lyrics Stage, and Tracks & Lyrics Management.',
         },
         bestFor: {
             'zh-CN': '适合：使用 Apple Music、QQ 音乐、网易云音乐、酷狗音乐等音乐软件的用户。',
