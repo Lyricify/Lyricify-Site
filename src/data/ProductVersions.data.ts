@@ -108,8 +108,8 @@ export const productVersions = [
             en: 'Best for: users who want to use Lyricify on phones, tablets, or Mac devices.',
         },
         platforms: {
-            'zh-CN': '平台：Android / iOS / iPadOS / macOS / Windows',
-            en: 'Platforms: Android / iOS / iPadOS / macOS / Windows',
+            'zh-CN': '平台：Android / iOS / iPadOS / macOS',
+            en: 'Platforms: Android / iOS / iPadOS / macOS',
         },
         requirement: {
             'zh-CN': '安装提示：Apple 设备可参考自签安装教程',
