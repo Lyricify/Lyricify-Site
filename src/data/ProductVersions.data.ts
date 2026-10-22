@@ -104,12 +104,12 @@ export const productVersions = [
             en: 'A Lyricify experience for mobile and Apple platforms, including Android, iPhone, iPad, and Mac.',
         },
         bestFor: {
-            'zh-CN': '适合：需要在手机、平板、或 Mac 电脑设备上使用 Lyricify 的用户。',
-            en: 'Best for: users who want to use Lyricify on phones, tablets, or Mac devices.',
+            'zh-CN': '适合：在手机、平板或 Mac 上使用 Spotify、Apple Music 等音乐应用的用户。',
+            en: 'Best for: users of Spotify, Apple Music, and other music apps on phones, tablets, or Mac.',
         },
         platforms: {
-            'zh-CN': '平台：Android / iOS / iPadOS / macOS',
-            en: 'Platforms: Android / iOS / iPadOS / macOS',
+            'zh-CN': '平台：Android、iOS、iPadOS、macOS',
+            en: 'Platforms: Android, iOS, iPadOS, macOS',
         },
         requirement: {
             'zh-CN': '安装提示：Apple 设备可参考自签安装教程',
